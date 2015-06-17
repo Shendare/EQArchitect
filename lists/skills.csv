@@ -1,0 +1,77 @@
+;ID,Nick,Name
+0,1HB,One Hand Blunt
+1,1HS,One Hand Slash
+2,2HB,Two Hand Blunt
+3,2HS,Two Hand Slash
+4,Abj,Abjuration
+5,Alt,Alteration
+6,APn,Apply Poison
+7,Arc,Archery
+8,Bsb,Backstab
+9,BWd,Bind Wound
+10,Bsh,Bash
+11,Blk,Block
+12,Brs,Brass
+13,Chn,Channeling
+14,Con,Conjuration
+15,Def,Defense
+16,Dis,Disarm
+17,DTp,Disarm Traps
+18,Div,Divination
+19,Dod,Dodge
+20,Dbl,Double Attack
+21,DrP,Dragon Punch
+22,2Wd,Dual Wield
+23,Eag,Eagle Strike
+24,Evo,Evocation
+25,Fgn,Feign Death
+26,FlK,Flying Kick
+27,For,Forage
+28,H2H,Hand to Hand
+29,Hid,Hide
+30,Kck,Kick
+31,Med,Meditate
+32,Mnd,Mend
+33,Off,Offense
+34,Pry,Parry
+35,PkL,Pick Locks
+36,Prc,Pierce
+37,Rip,Riposte
+38,RnK,Round Kick
+39,SFl,Safe Fall
+40,SHd,Sense Heading
+41,Sng,Singing
+42,Snk,Sneak
+43,SAb,Specialize Abjuration
+44,SAl,Specialize Alteration
+45,SCo,Specialize Conjuration
+46,SDi,Specialize Divination
+47,SEv,Specialize Evocation
+48,PPk,Pick Pockets
+49,Str,Strings
+50,Swm,Swimming
+51,Thr,Throwing
+52,TCl,Tiger Claw
+53,Trk,Tracking
+54,Wnd,Winds
+55,Fsh,Fishing
+56,MPn,Make Poison
+57,Tnk,Tinkering
+58,Rsr,Research
+59,Alc,Alchemy
+60,Bak,Baking
+61,Tal,Tailoring
+62,STr,Sense Traps
+63,Smt,Blacksmithing
+64,Flt,Fletching
+65,Brw,Brewing
+66,Alc,Alchemy
+67,Beg,Begging
+68,Jwl,Jewelcrafting
+69,Pot,Pottery
+70,Per,Percussion
+71,Int,Intimidate
+72,Ber,Berzerk
+73,Tnt,Taunt
+74,Frn,Frenzy
+98,NPC,NPC Innate

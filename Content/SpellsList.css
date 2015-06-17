@@ -1,0 +1,56 @@
+﻿table#SpellsList
+{
+    border:0;
+    margin-bottom:20px;
+}
+
+table#SpellsList th
+{
+    text-align:center;
+    padding:2px 8px;
+}
+
+table#SpellsList td
+{
+    text-align:left;
+    padding:2px 14px;
+    font-weight:bold;
+}
+
+table#SpellsList thead th, table#SpellsList thead td
+{
+    border-top:1px solid navy;
+    border-bottom:1px solid navy;
+    background-color:#f4f4f8;
+    color:navy;
+    font-weight:bold;
+}
+
+table#SpellsList tbody td a
+{
+    text-decoration:none;
+}
+
+table#SpellsList tbody td img
+{
+    margin-right:4px;
+}
+
+table#ClassList
+{
+    margin-right:20px;
+    margin-bottom:20px;
+    padding:4px;
+}
+
+table#ClassList a
+{
+    font-weight:bold;
+    width:60px;
+    line-height:1.31;
+}
+
+#ListHeader
+{
+    margin-top:0;
+}

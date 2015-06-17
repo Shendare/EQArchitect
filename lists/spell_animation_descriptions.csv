@@ -1,0 +1,313 @@
+;ID,Type,Name
+-1,-,None
+0,-,None
+2,D,Black smoke at hands and feet
+3,B,Ice Dragon Breath
+5,N,Stormcloud and falling rain
+10,I,Yellow runes and sparkles
+11,P,Cloud of bacterial spores
+12,I,Spikes protrude from body
+14,N,Delayed bubble of insects
+15,S,Blue and white vertical pillars
+16,D,Ghost faces rise from ground
+17,F,Cascade of ice crystals
+18,N,Molten metal drops penetrate
+19,F,Cascade of snowballs
+20,I,Shield and yellow sparkles
+21,N,"Yellow sparkle tornados rise, leaves fall"
+22,X,Abjuration Sound Effect 1
+23,O,Green eyes hovering over
+24,D,Disc of choking black spots
+25,D,"Black smoke bubble, blue skulls"
+26,D,"Black spots flow out in area, green skulls flow in"
+27,X,Alteration Sound Effect 1
+28,B,Fire dragon breath
+29,F,Bonfire with black smoke
+30,F,"Bonfire, ice storm, rocks shoot up"
+32,X,Alteration Sound Effect 1
+33,U,"Light blue pillar, blue face/hands from head"
+34,O,One green eye hovers
+35,B,Poison dragon breath
+36,P,"Molten drops fall, poison cloud rises"
+37,D,"Green fire and ghosts, with blue pillar on caster"
+38,B,Delayed fire dragon breath with sound
+39,N,"Leaves, rocks, and cloud of dirt"
+40,D,"Pink/purple sparkles, red skull laughs"
+41,F,Exploding ice crystal
+42,P,Rising molten metal bubbles and green/black smoke
+43,C,Big pink ball of light on caster
+44,S,"Blue/pink sparkles, purple eye hovers"
+45,M,Cyan musical notes rise
+46,D,"Blue skulls around head, ghosts, ground green cloud"
+47,I,"Armor, shield, pink sparkles"
+48,X,Evocation Sound Effect 1
+49,X,Evocation Sound Effect 1
+50,X,Evocation Sound Effect 1
+51,S,"Pinks flow in, blues swirl, yellow pillar rises"
+52,P,"Falling disease, rising poison, purple skulls"
+53,D,Red/black smoke and sparkle bubble
+54,C,Steam and yellow sparkle explosion at caster
+55,D,"Pink cloud at feet, purple/green skulls"
+58,D,"Purple fire, pink bubble, zombie head"
+59,D,"Sparkle blast, red/green smoke"
+60,S,"Blues/yellows rise, big pink ball"
+61,D,"Ground aflame, red/black smoke/sparkles"
+62,N,"Leafy tornado, blue sparkle explosion"
+64,D,"Red/black fire/smoke, red arches flow in"
+65,O,"Steam cloud, werewolf head"
+67,B,Ice dragon breath from target
+68,F,Huge pillar of flame
+69,S,Subtle blue/pink swirling (15s)
+71,F,Crashing ice meteor
+72,L,Choking fiery flares
+73,U,Blue ground and pillar
+74,S,Golden sparkles from eyes
+75,D,Large green skulls
+76,D,Red static field flows in
+77,X,Evocation Sound Effect 2
+78,T,Blue/cyan portal
+79,X,Conjuration Sound Effect 1
+80,F,Embers explode outward
+81,C,Golden flash at caster
+82,E,Electric bubble
+83,X,Conjuration Sound Effect 1
+84,F,"Big fire sparkle, flames flicker at feet"
+85,F,"Pillar of fire sparkles, flames at feet"
+86,S,Blue-green sparkles flow inward
+87,L,Purple light bubble cascades
+88,S,"Blues flow in, purples flow out"
+89,P,Delayed bubble and cone of disease
+90,F,Flame aurora cascades
+91,L,Purple ring of light at ground and throat
+92,X,Evocation Sound Effect 1
+93,G,Cyan sparkles flow into ground
+94,F,Embers surround caster and target
+95,N,Blue/white bubbles flow inward
+96,P,Disease cloud permeates ground
+98,L,Small purple ball at waist
+100,L,"Large flare, yellow flares from ground"
+101,D,Green skulls permeate ground
+102,L,"Purple ring, purples around the ground"
+103,L,"Red-orange arch, central burst"
+104,U,Blues blow around caster and target
+105,P,Green acid bursts
+106,U,"Blue smoke pillar, star sparklies"
+107,U,"Blue bubble, smoke emanation"
+108,P,Green sparkles flow into feet
+109,P,Green ripples flow outward
+110,S,"Purple ball, blue sparkle bubble"
+111,N,Cyan air puffs flow inward and on ground
+112,L,Flickering balls of light at waist level
+113,U,Delayed rising blues in area
+114,L,Purple ball at target and ground at caster
+115,S,Red sparkle bubble
+116,P,Disease bubble
+117,F,"Blinding white/red flare-up, fireball"
+118,X,Evocation Sound Effect 1
+119,L,"Green arch, blue pillar, white lights"
+120,F,Embers completely fill area
+121,L,"Blue/purple steam, white lights surround head"
+122,F,Fire consumes torso
+123,O,Tenth Anniversary Fireworks
+124,X,Evocation Sound Effect 1
+125,X,Evocation Sound Effect 1
+126,X,Evocation Sound Effect 1
+127,X,Evocation Sound Effect 1
+128,X,Evocation Sound Effect 1
+129,X,Evocation Sound Effect 1
+130,X,Evocation Sound Effect 1
+131,X,Evocation Sound Effect 1
+132,S,Blue/green pillars rise and fall
+133,H,Black smoke emanates from hands
+134,U,Blue/green pillar and long blue light ring (32s)
+135,U,"Blue light, cyan cloud/puffs"
+136,U,Delayed blue light at head potion
+137,U,Blue glow flows from target's head to caster's
+139,M,"Blue/green musical notes, ghosts, black smoke"
+140,M,"Cyan musical notes, disease, virus"
+141,U,"Huge blue pillar, blue/yellow sparkles (21s)"
+142,U,"Blue pillar waterfall, white steam, blue sparkles"
+144,D,Red/black smoke blows into face
+145,N,Black/yellow insect bubble rises
+146,D,Red aura and swirling sparkles (30s)
+147,F,"Flames at head and feet, rising steam/smoke"
+148,F,Ice bubble explosion and floating crystals
+149,N,Dirt and smoke choke and rise from ground
+150,F,Blue/yellow bonfire rises
+151,D,"Smoke at feet, rising skulls"
+152,D,"Red/black smoke, ember bubble around head"
+153,F,Falling ice crystal shatters and explodes
+154,H,Hands glow with flame
+155,U,"Blue glow, blue sparkle bubble"
+156,X,Conjuration Sound Effect 2
+157,L,Yellow stars pour down
+158,N,"Yellow aura, then butterflies and sparkles"
+159,L,"Green/Purple aura, red steam swirls"
+160,E,Lightning bolts assault torso
+161,G,Bones and flames at feet
+162,F,Pillar of falling snowflakes
+163,E,Long lightning storm (12s)
+164,E,Focused neural lightning storm
+165,P,"Pink/yellow lights around head, yellow acid, black bubbles"
+166,D,Bone ring around torso
+167,X,Alteration Sound Effect 2
+168,O,Eleventh Anniversary Fireworks
+169,N,"Rock tornado, pink light, purple smoke"
+170,G,Pink/green smoke and black insects at feet
+171,T,Dark portal
+172,G,"Green smoke, black insects on ground"
+173,O,"Orc head appears, blows bad breath"
+174,N,Falling summoned large stones
+175,N,Falling summoned small rocks
+176,D,Ghostly chains prevent dark portal
+177,F,Fire blasts and spinning swords
+178,S,"Blue/pink ground, rising yellow-green pillar"
+179,F,"Cold torso, snowflake ring"
+180,F,"Wall of ice, pillar of snowflakes (15s)"
+181,U,"Blue bubble, spinning ghostly swords"
+182,D,"Red/black smoke, grasping sickly claws"
+183,D,"Black smoke, red pillar, grasping black claws"
+184,O,"Laughing orc faces, yellow-green aura, red smoke"
+185,D,Red pumping heart/veins and blood cloud
+186,F,Flames rise and light up steam/smoke orange
+187,N,"Black wings/smoke materialize, blue lights from waist"
+188,D,"Red pumping heart/veins, dark blood cloud"
+189,D,"Black pumping heart/veins, dark blood cloud"
+190,D,"Bright red pumping heart/veins, blood cloud"
+191,P,"Dark green cloud on ground, black snakes attack"
+192,P,"Green cloud on ground, green snakes attack"
+193,N,"Black insects, black smoke"
+194,P,"Black insects, poisonous cloud"
+195,F,Solar flare storm
+196,F,Solar flare explosion
+197,F,Blue/yellow flames rise
+198,F,"Flare out, swirling flare embers"
+199,P,"Acid drops, acid steam, poison cloud"
+200,P,Poison clouds and debris
+201,D,Rising cone of red sparks and black smoke
+202,E,Large lightning bolt strikes
+203,U,"Blue glow and aura, white sparkles (15s)"
+204,F,"Flames/smoke flow out from caster, consume target"
+205,F,"Snowflakes flow out from caster, surround target"
+206,E,Short focused lightning storm
+207,P,"Acid sputters and falls, green smoke rises"
+208,U,Rising balls of blue light
+209,U,"Balls of blue light, ribbon, and sparkles"
+210,G,Purple/cyan flames rise from feet
+211,H,Blue-green sparkles emanate from hands
+212,L,"Blue light rings, purple bubble"
+213,H,Acid/smoke spurts from hands
+214,N,Brown roots rise from ground and grab hold
+215,N,Green-orange roots rise from ground and grab hold
+216,N,"Pink/green sparkles, rising pillar of leaves"
+217,N,"Pink/green butterflies, green/yellow ribbon"
+218,T,Yellow rippling teleport
+219,E,Electric field covers torso
+220,L,"Yellow-green aura, orange-pink ribbons"
+221,O,"World and moons hover, purple rains down"
+222,S,"Green sparkles, red field"
+223,M,"White sparkles, black notes"
+224,D,"Red/black smoke cone, rising skulls"
+225,L,Rising purple light/sparkles
+226,D,"Blood cloud, black cloud, black insects"
+227,T,Green field teleport
+228,L,"Purple aura around ground and head, like porting in"
+229,U,Blue pillar of auras and sparkles
+230,G,Ember glow on ground
+231,F,Lava erupts from ground beneath
+232,I,Spike coat and bubble
+233,L,Rising purple steam pillar
+234,N,Green roots rise from ground and grab hold
+235,L,White/purple starry glows flow outward
+236,S,Cyan sparkles around throat and forms a pillar
+237,D,Rising black/grey smoke and skulls
+238,S,Green bubble and aura on ground
+239,L,"Green aura, ember ring, ember bubble"
+240,H,"Subtle red bubble and green ring, purple from hands"
+241,F,"Flames inside, ice outside"
+242,F,"Ice inside, flames outside"
+243,F,Flames emanating from waist
+244,D,"Black clouds, red glow, rising pillar of bones"
+245,D,"Black ribbon, grey smoke"
+246,D,Pillars of black smoke
+247,P,"Acid smoke, darts fly all over area"
+248,P,"Acid spurts up, sprays onto ground"
+249,D,"Red glow and smoke, bones"
+250,U,"Blue ribbon, glow at waist, sparkles"
+251,U,"Blue glow rises, sparkles fall"
+252,T,Orange-red flame teleport
+253,L,"Blue aura/lights, black smoke (Mana Burn?)"
+254,L,Ribbon of rising stars
+255,L,"Subtle ring, large glowing white star"
+256,B,"Blue ring/sparkles around head, then white bubble (13s)"
+257,H,"Hands and arms aflame, then black smoke"
+258,L,"Blue glow, green stars and ribbons"
+259,L,Orange flare-bubbles emanate
+260,F,Spouts of flame swirl and surround
+261,F,"Ice formations permeate, snowflakes rise"
+262,F,"Ice formations on ground, rising cyan sparkles"
+263,P,Acid smoke rains down
+264,T,"Blue bubbles permeate, star glow envelopes"
+265,L,"Star falls and hits head, shower of stars and sparkles shoots out"
+266,L,"Blue field, sparkles permeate, green sparkles leave"
+267,H,"Flame aura at hands, black smoke at feet"
+268,D,"Red smoke on ground, black smoke on body"
+269,D,"Black smoke falls, green-orange-red smoke rises"
+270,H,Green-purple viruses swarm from hands
+271,P,"Orange flares and viruses, black smoke swirls"
+272,D,Ring of black smoke rises
+273,S,"Pink lights, cyan stars emanate, long sound (9s)"
+274,F,"Cold envelopes, stars shine"
+275,F,Fast fire envelopes and rages
+276,F,Bonfire with black smoke
+277,C,"Blue lights flow out, then pink/white glow"
+278,U,Rising blue stars and aura
+279,F,Three thin pillars of flame
+280,F,Dozens of fireballs land and burn
+281,L,"Pink glow falls, white-blue stars spiral up"
+283,F,"Ice formations flow in, envelope, and explode"
+284,F,Ice crystals rain down from above
+285,C,Triple green star glow flows out from caster
+286,L,Blue-green glow circles ground and head
+287,S,"Yellow-green sparkles envelope, then pillar rises"
+288,U,"White-blue ribbon, then blue flows out along ground"
+289,U,Blue ground and full bubble
+290,D,Red star and rising swirling bones
+291,L,"White starglow around neck, ribbon above head"
+292,L,White-blue ribbon
+293,P,Acid clouds fall and rise
+294,P,"Poison clouds rise, skulls fall"
+295,L,"Starglow and emanating blue, then black smoke"
+296,B,"Blue lights flow in, black smoke envelopes"
+297,L,Blue bubble fades up to green
+298,L,"Ring of blue-white stars circles, then white bubble"
+299,O,"Rune tablet appears, then shatters with blue sparkles"
+300,H,"Disease cloud emanates, black smoke rises from hands"
+301,H,Hands and feet glow blue-green
+302,L,Blue aura gets consumed by fire
+303,O,"Green ribbon, jumping man, sparkles"
+304,O,"Smoke, embers, blue glow, ox skull"
+305,X,Abjuration Sound Effect 1
+307,O,Silhouette of floating man in burning sun
+309,B,Poison dragon breath that envelopes targets
+310,N,"Cone of smoke, then green pillar, then falling leaves"
+311,N,Cone of insects and black dust rises
+312,L,"Starglow turns to sun, ghost heads rise"
+313,I,"Golden starglow, breastplate, sparkles"
+314,D,"Red lights flow in, black smoke rises"
+315,F,Balls of flame surround
+316,F,"Flame envelopes, pillars, and blows out with bubble"
+317,L,Swirling orange aura ring and bubble
+318,U,Swirling blue aura ring and bubble
+319,C,Silent yellow teleport out for caster
+320,U,"Blue glow, ribbon, and sparkles rise"
+321,H,Pink glow on hands
+322,L,Orange smoke lights rise
+323,L,Pink-blue smoke lights rise
+324,M,Blue notes and sparkles around caster's and target's heads
+332,M,Red notes swirling (12s)
+333,M,White notes swirling (12s)
+334,M,Blue notes swirling (12s)
+335,M,Green notes and skulls swirling
+336,M,"Red and white notes, blue stars"
+337,M,Red/green notes and white skulls rise

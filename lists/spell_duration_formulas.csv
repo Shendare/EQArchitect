@@ -1,0 +1,20 @@
+;ID,Name
+0,Instant
+1,"Level / 2 Ticks, Up to Max"
+2,"Level * 3/5 Ticks, Up to Max"
+3,"Level * 3 Minutes, Up to Max Ticks"
+4,"Max Ticks, or 5min if Max <= 0"
+5,Max Ticks (enforced to 1-3)
+6,"Level / 2 Ticks, Up to Max (Unused in Live)"
+7,"If Max == 0, Level Ticks, otherwise Max Ticks"
+8,"Level + 10 Ticks, Up to Max"
+9,"Level * 2 + 10 Ticks, Up to Max"
+10,"Level * 3 + 10 Ticks, Up to Max"
+11,"(Level + 3) * 3 Minutes, Up to Max Ticks"
+12,Max Ticks
+13,Max Ticks
+14,Max Ticks
+15,Max Ticks
+50,Permanent until Effect Is Otherwise Canceled
+51,Permanent as Long as Target within Range of Aura
+3600,"If Max == 0, 6 hours, otherwise Max Ticks"

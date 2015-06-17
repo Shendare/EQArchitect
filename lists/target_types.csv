@@ -1,0 +1,38 @@
+;ID,Name
+0,Special
+1,Line of Sight
+2,Old PBAE (Unused)
+3,Own Group
+4,PBAE
+5,Single
+6,Self Only
+8,Targeted AE
+9,Animals Only
+10,Undead Only
+11,Summoned
+13,Life Tap
+14,Own Pet
+15,Corpse
+16,Plants
+17,Special Velious Giants
+18,Special Velious Dragons
+20,Targeted AE Life Tap
+24,AE Undead Only
+25,AE Summoned Only
+32,AE HateList/Casters Only
+33,NPC's Hate List
+34,Lost Dungeon Object
+35,Muramite
+36,AE PCs Only
+37,AE NPCs Only
+38,Any Summoned Pet
+39,Group (No Pets)
+40,Raid AE
+41,Group (Targetable)
+42,Directional Cone
+43,Group With Pets
+44,Beam
+45,Ring
+46,Target's Target
+47,Targeted Pet's Master
+50,Targeted AE (No Pets)

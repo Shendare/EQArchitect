@@ -1,0 +1,732 @@
+;ID,Name,ModelM,ModelF,ModelN
+1,Human,HUM,HUF,
+2,Barbarian,BAM,BAF,
+3,Erudite,ERM,ERF,
+4,Wood Elf,ELM,ELF,
+5,High Elf,HIM,HIF,
+6,Dark Elf,DAM,DAF,
+7,Half Elf,HAM,HAF,
+8,Dwarf,DWM,DWF,
+9,Troll,TRM,TRF,
+10,Ogre,OGM,OGF,
+11,Halfling,HOM,HOF
+12,Gnome,GNM,GNF,
+13,Aviak,,,AVI
+14,Werewolf,,,WER
+15,Brownie,BRM,BRF,
+16,Centaur,CEM,CEF,CEN
+17,Golem,GOM,GOF,GOL
+18,Giant,,,GIA
+19,Trakanon,,,TRK
+20,Venril Sathir,,,VST
+21,Evil Eye,,,BEH
+22,Beetle,,,BET
+23,Kerran,CPM,CPF,
+24,Fish,,,FIS
+25,Fairy,FAM,FAF,
+26,Froglok,,,FRO
+27,Froglok,,,FRG
+28,Fungusman,,,FUN
+29,Gargoyle,GAM,,GAR
+30,Gasbag,,,BEH
+31,Gelatinous Cube,,,CUB
+32,Ghost,GHM,GHF,
+33,Ghoul,,,GHU
+34,Bat,,,BAT
+36,Rat,,,RAT
+37,Snake,,,SNA
+38,Spider,,,SPI
+39,Gnoll,,,GNN
+40,Goblin,,,GOB
+41,Gorilla,,,GOR
+42,Wolf,WOM,WOF,WOL
+43,Bear,,,BEA
+44,Guard,FPM,FPF,
+45,Demi Lich,,,DML
+46,Imp,,,IMP
+47,Griffin,,,GRI
+48,Kobold,,,KOB
+49,Dragon,,,DRA
+50,Lion,LIM,LIF,
+51,Lizard Man,,,LIZ
+52,Mimic,MIM,MIF,
+53,Minotaur,,,MIN
+54,Orc,,,ORC
+55,Beggar,BGM,BGF,
+56,Pixie,PIM,PIF,
+57,Drachnid,DRM,DRF,
+58,Solusek Ro,,,SOL
+59,Goblin,,,BGG
+60,Skeleton,,,SKE
+61,Shark,,,SHA
+62,Tunare,,,TUN
+63,Tiger,,,TIG
+64,Treant,,,TRE
+65,Vampire,DVM,DVF,
+66,Rallos Zek,,,RAL
+67,Human,HHM,HHF,
+68,Tentacle Terror,TEM,TEF,TEN
+69,Will-O-Wisp,,,WIL
+70,Zombie,ZOM,ZOF,
+71,Human,QCM,QCF,
+72,Ship,SHIP,PRE,PRE
+73,Launch,LAUNCHM,,LAUNCH
+74,Piranha,,,PIR
+75,Elemental,,,ELE
+76,Puma,,,PUM
+77,Dark Elf,NGM,NGF,
+78,Erudite,EGM,EGF,
+79,Bixie,,,BIX
+80,Reanimated Hand,,,REA
+81,Halfling,RIM,RIF,
+82,Scarecrow,,,SCA
+83,Skunk,,,SKU
+84,Snake Elemental,,,SNE
+85,Spectre,,,SPE
+86,Sphinx,,,SPH
+87,Armadillo,,,ARM
+88,Clockwork Gnome,CLM,CLF,CLN
+89,Drake,,,DRK
+90,Barbarian,HLM,HLF,
+91,Alligator,,,ALL
+92,Troll,GRM,GRF,
+93,Ogre,OKM,OKF,
+94,Dwarf,KAM,KAF,KAN
+95,Cazic Thule,,,CAZ
+96,Cockatrice,,,COC
+97,Daisy Man,,,DIA
+98,Vampire,VSM,VSF,
+99,Amygdalan,,,DEN
+100,Dervish,,,DER
+101,Efreeti,,,EFR
+102,Tadpole,,,FRT
+103,Kedge,,,KED
+104,Leech,,,LEE
+105,Swordfish,,,SWO
+106,Guard,FEM,FEF,
+107,Mammoth,,,MAM
+108,Eye,,,EYE
+109,Wasp,,,WAS
+110,Mermaid,,,MER
+111,Harpy,,,HAR
+112,Guard,GFM,GFF,
+113,Drixie,,,DRI
+114,Ghost Ship,,,GSP
+115,Clam,,,CLA
+116,Seahorse,,,SEA
+117,Ghost,GDM,GDF,
+118,Ghost,GEM,GEF,
+119,Saber-toothed Cat,,,STC
+120,Wolf,,,WOE
+121,Gorgon,,,GRG
+122,Dragon,,,DRU
+123,Innoruuk,,,INN
+124,Unicorn,,,UNI
+125,Pegasus,,,PEG
+126,Djinn,,,DJI
+127,Invisible Man,IVM,IVF,
+128,Iksar,IKM,IKF,
+129,Scorpion,,,SCR
+130,Vah Shir,KEM,KEF,
+131,Sarnak,,,SRW
+132,Draglock,,,DLK
+133,Drolvarg,,,LYC
+134,Mosquito,,,MOS
+135,Rhinoceros,,,RHI
+136,Xalgoz,,,XAL
+137,Goblin,,,KGO
+138,Yeti,,,YET
+139,Iksar,ICM,ICF,ICN
+140,Giant,,,FGI
+141,Boat,BOAT,BOAT,BOAT
+144,Burynai,,,BRN
+145,Goo,,,GOO
+146,Sarnak Spirit,,,SSN
+147,Iksar Spirit,SIM,SIF,
+148,Fish,,,BAC
+149,Scorpion,,,ISC
+150,Erollisi,,,ERO
+151,Tribunal,,,TRI
+152,Bertoxxulous,,,BER
+153,Bristlebane,,,BRI
+154,Fay Drake,,,FDR
+155,Undead Sarnak,,,SSK
+156,Ratman,,,VRM
+157,Wyvern,,,WYV
+158,Wurm,,,WUR
+159,Devourer,,,DEV
+160,Iksar Golem,,,IKG
+161,Undead Iksar,,,IKS
+162,Man-Eating Plant,,,MEP
+163,Raptor,,,RAP
+164,Sarnak Golem,,,SGO
+165,Dragon,,,SED
+166,Animated Hand,,,IKH
+167,Succulent,,,SUC
+168,Holgresh,,,FMO
+169,Brontotherium,,,BTM
+170,Snow Dervish,,,SDE
+171,Dire Wolf,,,DIW
+172,Manticore,,,MTC
+173,Totem,,,TOT
+174,Ice Spectre,,,SPC
+175,Enchanted Armor,,,ENA
+176,Snow Rabbit,,,SBU
+177,Walrus,,,WAL
+178,Geonid,,,RGM
+181,Yakkar,,,YAK
+182,Faun,,,FAN
+183,Coldain,COM,COF,COK
+184,Dragon,,,DR2
+185,Hag,,,HAG
+186,Hippogriff,,,HIP
+187,Siren,,,SIR
+188,Giant,,,FSG
+189,Giant,STM,,STG
+190,Othmir,,,OTM
+191,Ulthork,,,WLM
+192,Dragon,,,CCD
+193,Abhorrent,,,ABH
+194,Sea Turtle,,,STU
+195,Dragon,,,BWD
+196,Dragon,,,GDR
+197,Ronnie Test,,,RON
+198,Dragon,,,PRI
+199,Shik'Nar,,,SKN
+200,Rockhopper,,,RHP
+201,Underbulk,,,UNB
+202,Grimling,GMM,GMF,GMN
+203,Worm,,,VAC
+204,Evan Test,,,ECS
+205,Shadel,,,KHA
+206,Owlbear,,,OWB
+207,Rhino Beetle,,,RNB
+208,Vampire,VPM,VPF,
+209,Earth Elemental,,,EEL
+210,Air Elemental,,,AEL
+211,Water Elemental,,,WEL
+212,Fire Elemental,,,FEL
+213,Wetfang Minnow,,,WET
+214,Thought Horror,,,THO
+215,Tegi,,,TEG
+216,Horse,HSM,HSF,HSN
+217,Shissar,SHM,SHF,SHN
+218,Fungal Fiend,,,FUG
+219,Vampire,,,VOL
+220,Stonegrabber,,,SGR
+221,Scarlet Cheetah,,,SCH
+222,Zelniak,,,ZEL
+223,Lightcrawler,,,LCR
+224,Shade,SDM,SDF,
+225,Sunflower,,,SNN
+226,Sun Revenant,,,SRV
+227,Shrieker,,,SHR
+228,Galorian,,,GAL
+229,Netherbian,,,NET
+230,Akheva,AKM,AKF,AKN
+231,Grieg Veneficus,,,SPR
+232,Sonic Wolf,,,SOW
+233,Ground Shaker,GSM,GSF,GSN
+234,Vah Shir Skeleton,,,KES
+235,Wretch,,,MUH
+236,Seru,,,SER
+237,Recuso,REM,REF,REN
+238,Vah Shir,,,VSK
+239,Guard,,,VSG
+240,Teleport Man,TPM,TPF,TPN
+241,Werewolf,,,LUJ
+242,Nymph,,,NYD
+243,Dryad,,,NYM
+244,Treant,,,TRN
+245,Fly,,,WRF
+246,Tarew Marr,,,TMR
+247,Solusek Ro,,,SRO
+248,Clockwork Golem,,,CLG
+249,Clockwork Brain,,,CLB
+250,Banshee,,,SKB
+251,Guard of Justice,,,GOJ
+252,Mini POM,MINIPOM200,MINIPOM200,MINIPOM200
+253,Diseased Fiend,,,DSB
+254,Solusek Ro Guard,,,SRG
+255,Bertoxxulous,,,BTX
+256,The Tribunal,,,TBU
+257,Terris Thule,,,TRT
+258,Vegerog,,,VEG
+259,Crocodile,,,CRO
+260,Bat,,,NBT
+261,Hraquis,,,SLG
+262,Tranquilion,,,TRQ
+263,Tin Soldier,,,TIN
+264,Nightmare Wraith,,,NMW
+265,Malarian,,,MAL
+266,Knight of Pestilence,,,KOP
+267,Lepertoloth,,,LEP
+268,Bubonian,,,BUB
+269,Bubonian Underling,,,BUU
+270,Pusling,,,PUS
+271,Water Mephit,,,WMP
+272,Stormrider,,,STR
+273,Junk Beast,,,JUB
+274,Broken Clockwork,,,BRC
+275,Giant Clockwork,,,GLC
+276,Clockwork Beetle,,,CWB
+277,Nightmare Goblin,,,NMG
+278,Karana,,,KAR
+279,Blood Raven,,,BRV
+280,Nightmare Gargoyle,,,GGL
+281,Mouth of Insanity,,,MOI
+282,Skeletal Horse,,,HSS
+283,Saryrn,,,SAR
+284,Fennin Ro,,,FEN
+285,Tormentor,,,TRW
+286,Soul Devourer,,,NPT
+287,Nightmare,,,NMH
+288,Rallos Zek,,,RAZ
+289,Vallon Zek,,,VAZ
+290,Tallon Zek,,,TAZ
+291,Air Mephit,,,AMP
+292,Earth Mephit,,,EMP
+293,Fire Mephit,,,FMP
+294,Nightmare Mephit,,,NMP
+295,Zebuxoruk,,,ZEB
+296,Mithaniel Marr,,,MAR
+297,Undead Knight,,,UDK
+298,The Rathe,,,RTH
+299,Xegony,,,XEG
+300,Fiend,,,GTD
+301,Test Object,,,ONT
+302,Crab,,,CRB
+303,Phoenix,,,PHX
+304,Dragon,,,TMT
+305,Bear,,,PBR
+306,Giant,,,STA
+307,Giant,,,SSA
+308,Giant,,,SKR
+309,Giant,,,SVO
+310,Giant,,,SMA
+311,Giant,,,STF
+312,Giant,,,SCE
+313,War Wraith,,,WRW
+314,Wrulon,,,WRU
+315,Kraken,,,KRK
+316,Poison Frog,,,PAF
+317,Nilborien,,,QZT
+318,Valorian,,,VAL
+319,War Boar,,,WRB
+320,Efreeti,,,EFE
+321,War Boar,,,WBU
+322,Valorian,,,BKN
+323,Animated Armor,,,AAM
+324,Undead Footman,,,UDF
+325,Rallos Zek Minion,,,RZM
+326,Arachnid,,,SPD
+327,Crystal Spider,,,SPL
+328,Zebuxoruk's Cage,,,ZBC
+329,BoT Portal,,,BTP
+330,Froglok,FRM,FRF,
+331,Troll,TBM,TBF,
+332,Troll,FBM,FBF,
+333,Troll,TSM,TSF,
+334,Ghost,,,SPB
+335,Pirate,,,TPB
+336,Pirate,,,TVP
+337,Pirate,,,TPO
+338,Pirate,GPM,GPF,
+339,Pirate,DPM,DPF,
+340,Pirate,OPM,OPF,
+341,Pirate,HPM,HPF,
+342,Pirate,EPM,EPF,
+343,Frog,,,RPF
+344,Troll Zombie,TZM,TZF,
+345,Luggald,,,LUG
+346,Luggald,,,LGA
+347,Luggalds,,,LGR
+348,Drogmore,,,FMT
+349,Froglok Skeleton,,,FSK
+350,Undead Froglok,,,FUD
+351,Knight of Hate,IWM,IWF,
+352,Arcanist of Hate,IZM,IZF,
+353,Veksar,,,VEK
+354,Veksar,,,GVK
+355,Veksar,,,BVK
+356,Chokidai,,,WOF
+357,Undead Chokidai,,,WUF
+358,Undead Veksar,,,UVK
+359,Vampire,LMM,LMF,
+360,Vampire,MMM,MMF,
+361,Rujarkian Orc,,,ROM
+362,Bone Golem,,,BGB
+363,Synarcana,,,SYN
+364,Sand Elf,SEM,SEF,
+365,Vampire,,,MMV
+366,Rujarkian Orc,,,ROE
+367,Skeleton,,,SKT
+368,Mummy,,,MMY
+369,Goblin,,,GBL
+370,Insect,,,NIN
+371,Froglok Ghost,,,FGH
+372,Dervish,,,DRV
+373,Shade,,,SDC
+374,Golem,,,GLM
+375,Evil Eye,,,EEY
+376,Box,,,BOX
+377,Barrel,,,BRL
+378,Chest,,,CST
+379,Vase,,,VAS
+380,Table,,,TBL
+381,Weapon Rack,,,RAK
+382,Coffin,,,CPT
+383,Bones,,,BON
+384,Jokester,,,JKR
+385,Nihil,TNM,TNF,
+386,Trusik,TEM,TEF,
+387,Stone Worker,,,TGL
+388,Hynid,,,TWF
+389,Turepta,,,TAC
+390,Cragbeast,,,TMB
+391,Stonemite,,,TTB
+392,Ukun,,,IWH
+393,Ixt,,,IEC
+394,Ikaav,,,ILA
+395,Aneuk,,,ICY
+396,Kyv,,,IHU
+397,Noc,,,ISB
+398,Ra`tuk,,,IBR
+399,Taneth,,,IFC
+400,Huvul,,,ILB
+401,Mutna,,,IWB
+402,Mastruq,,,ISE
+403,Taelosian,,,TLN
+404,Discord Ship,,,SHP
+405,Stone Worker,,,TGO
+406,Mata Muram,,,CLV
+407,Lightning Warrior,,,MUR
+408,Succubus,,,SCU
+409,Bazu,,,DSG
+410,Feran,,,FRA
+411,Pyrilen,,,SCU
+412,Chimera,,,CHM
+413,Dragorn,,,DDM
+414,Murkglider,,,DMA
+415,Rat,,,RTN
+416,Bat,,,BTN
+417,Gelidran,,,FRD
+418,Discordling,,,DSF
+419,Girplan,,,DDV
+420,Minotaur,,,MNT
+421,Dragorn Box,,,DBX
+422,Runed Orb,,,ROB
+423,Dragon Bones,,,DBP
+424,Muramite Armor Pile,,,MAP
+425,Crystal Shard,,,CRS
+426,Portal,,,PRT
+427,Coin Purse,,,CNP
+428,Rock Pile,,,RKP
+429,Murkglider Egg Sac,,,MES
+430,Drake,,,CDR
+431,Dervish,,,DVS
+432,Drake,,,DKE
+433,Goblin,,,GBN
+434,Kirin,,,KRN
+435,Dragon,,,LDR
+436,Basilisk,,,BAS
+437,Dragon,,,MDR
+438,Dragon,,,SDR
+439,Puma,,,PMA
+440,Spider,,,TAR
+441,Spider Queen,,,SPQ
+442,Animated Statue,,,ANS
+445,Dragon Egg,,,DRE
+446,Dragon Statue,,,DRS
+447,Lava Rock,,,LVR
+448,Animated Statue,,,ASM
+449,Spider Egg Sack,,,SEG
+450,Lava Spider,,,LSP
+451,Lava Spider Queen,,,LSQ
+452,Dragon,,,SHD
+453,Giant,,,FGT
+454,Werewolf,,,WWF
+455,Kobold,,,KBD
+456,Sporali,,,FNG
+457,Gnomework,,,CWG
+458,Orc,,,ORK
+459,Corathus,,,CRH
+460,Coral,,,CRL
+461,Drachnid,DCM,DCF,
+462,Drachnid Cocoon,,,DRC
+463,Fungus Patch,,,FGP
+464,Gargoyle,,,GGY
+465,Witheran,,,KOR
+466,Dark Lord,,,MYG
+467,Shiliskin,,,SHL
+468,Snake,,,SNK
+469,Evil Eye,,,EVE
+470,Minotaur,,,MNR
+471,Zombie,ZMM,ZMF,
+472,Clockwork Boar,,,CWR
+473,Fairy,,,FRY
+474,Witheran,,,KRB
+475,Air Elemental,,,AIE
+476,Earth Elemental,,,EAE
+477,Fire Elemental,,,FIE
+478,Water Elemental,,,WAE
+479,Alligator,,,ALR
+480,Bear,,,BAR
+481,Scaled Wolf,,,SCW
+482,Wolf,,,WLF
+483,Spirit Wolf,,,SPW
+484,Skeleton,,,SKL
+485,Spectre,,,SPT
+486,Bolvirk,,,BLV
+487,Banshee,,BSE,
+488,Banshee,,BSG,
+489,Elddar,EEM,EEF,
+490,Forest Giant,,,GFO
+491,Bone Golem,,,GLB
+492,Horse,,,HRS
+493,Pegasus,,,PGS
+494,Shambling Mound,,,SMD
+495,Scrykin,,,SRN
+496,Treant,,,TRA
+497,Vampire,VAM,VAF,
+498,Ayonae Ro,,ARO,
+499,Sullon Zek,,SZK,
+500,Banner,,,BNR
+501,Flag,,,FLG
+502,Rowboat,,,ROW
+503,Bear Trap,,,T00
+504,Clockwork Bomb,,,T01
+505,Dynamite Keg,,,T02
+506,Pressure Plate,,,T03
+507,Puffer Spore,,,T04
+508,Stone Ring,,,T05
+509,Root Tentacle,,,T06
+510,Runic Symbol,,,T07
+511,Saltpetter Bomb,,,T08
+512,Floating Skull,,,T09
+513,Spike Trap,,,T10
+514,Totem,,,T11
+515,Web,,,T12
+516,Wicker Basket,,,T13
+517,Nightmare/Unicorn,,,UNM
+518,Horse,,,HRS
+519,Nightmare/Unicorn,,,UNM
+520,Bixie,,,BXI
+521,Centaur,,,CNT
+522,Drakkin,DKM,DKF,
+523,Giant,,,GFR
+524,Gnoll,,,GNL
+525,Griffin,,,GRN
+526,Giant Shade,,,GFS
+527,Harpy,,,HRP
+528,Mammoth,,,MTH
+529,Satyr,,,SAT
+530,Dragon,,,DRG
+531,Dragon,,,DRN
+532,Dyn'Leth,,,DYN
+533,Boat,,,SHI
+534,Weapon Rack,,,I00
+535,Armor Rack,,,I01
+536,Honey Pot,,,I02
+537,Jum Jum Bucket,,,I03
+538,Toolbox,,,I04
+539,Stone Jug,,,I05
+540,Small Plant,,,I06
+541,Medium Plant,,,I07
+542,Tall Plant,,,I08
+543,Wine Cask,,,I09
+544,Elven Boat,,,B01
+545,Gnomish Boat,,,B02
+546,Barrel Barge Ship,,,B03
+547,Goo,,,GUL
+548,Goo,,,GUM
+549,Goo,,,GUS
+550,Merchant Ship,,,B04
+551,Pirate Ship,,,B05
+552,Ghost Ship,,,B06
+553,Banner,,,G00
+554,Banner,,,G01
+555,Banner,,,G02
+556,Banner,,,G03
+557,Banner,,,G04
+558,Aviak,,,AVK
+559,Beetle,,,BTL
+560,Gorilla,,,GRL
+561,Kedge,,,KDG
+562,Kerran,KRM,KRF,
+563,Shissar,,,SHS
+564,Siren,,,SIN
+565,Sphinx,,,SPX
+566,Human,HNM,HNF,
+567,Campfire,,,I10
+568,Brownie,BNM,BNF,
+569,Dragon,,,DRP
+570,Exoskeleton,,,EXO
+571,Ghoul,,,GHO
+572,Clockwork Guardian,,,GUA
+573,Mantrap,,,MTP
+574,Minotaur,,,MTR
+575,Scarecrow,,,SCC
+576,Shade,,,SHE
+577,Rotocopter,,,SWC
+578,Tentacle Terror,,,TNT
+579,Wereorc,,,WOK
+580,Worg,,,WOR
+581,Wyvern,,,WYR
+582,Chimera,,,MCH
+583,Kirin,,,MKI
+584,Puma,,,MPU
+585,Boulder,,,I11
+586,Banner,,,G05
+587,Elven Ghost,XEM,XEF,
+588,Human Ghost,XHM,XHF,
+589,Chest,,,I12
+590,Chest,,,I13
+591,Crystal,,,I14
+592,Coffin,,,I15
+593,Guardian CPU,,,I16
+594,Worg,,,MWO
+595,Mansion,,,OBJ_BLIMP
+596,Floating Island,,,OBP_MELDRATH
+597,Cragslither,,,MCS
+598,Wrulon,,,MWR
+599,Spell Particle 1,,,S01
+600,Invisible Man of Zomm,IVM,IVF,
+601,Robocopter of Zomm,,,SWC
+602,Burynai,,,BUR
+603,Frog,,,FGG
+604,Dracolich,,,DRL
+605,Iksar Ghost,,,XIM
+606,Iksar Skeleton,,,SKI
+607,Mephit,,,MPH
+608,Muddite,,,MUD
+609,Raptor,,,RPT
+610,Sarnak,,,SRK
+611,Scorpion,,,SCO
+612,Tsetsian,,,TSE
+613,Wurm,,,WRM
+614,Nekhon,,,BAL
+615,Hydra Crystal,,,HYC
+616,Crystal Sphere,,,CRY
+617,Gnoll,,,GND
+618,Sokokar,,,SOK
+619,Stone Pylon,,,PYS
+620,Demon Vulture,,,DVL
+621,Wagon,,,I17
+622,God of Discord,,,GOD
+623,Feran Mount,,,MFR
+624,Ogre NPC - Male,ONM,ONF,
+625,Sokokar Mount,,,MSO
+626,Giant (Rallosian mats),,,GRA
+627,Sokokar (w saddle),,,MSO
+628,10th Anniversary Banner,,,BNX
+629,10th Anniversary Cake,,,CAK
+630,Wine Cask,,,I18
+631,Hydra Mount,,,MHY
+632,Hydra NPC,,,HYD
+633,Wedding Flowers,,,I19
+634,Wedding Arbor,,,I20
+635,Wedding Altar,,,I21
+636,Powder Keg,,,I22
+637,Apexus,,,APX
+638,Bellikos,,,BEL
+639,Brell's First Creation,,,BFC
+640,Brell,,,BRE
+641,Crystalskin Ambuloid,,,CAM
+642,Cliknar Queen,,,CLQ
+643,Cliknar Soldier,,,CLS
+644,Cliknar Worker,,,CLW
+645,Coldain,CDM,CDF,
+647,Crystalskin Sessiloid,,,CSE
+648,Genari,,,GEN
+649,Gigyn,,,GIG
+650,Greken - Young Adult,,,GYA
+651,Greken - Young,,,GYO
+652,Cliknar Mount,,,MCL
+653,Telmira,,,TEL
+654,Spider Mount,,,MTA
+655,Bear Mount,,,MBR
+656,Rat Mount,,,MCR
+657,Sessiloid Mount,,,MSD
+658,Morell Thule,,,LTH
+659,Marionette,,,MRT
+660,Book Dervish,,,BKD
+661,Topiary Lion,,,TPL
+662,Rotdog,,,RDG
+663,Amygdalan,,,AMY
+664,Sandman,,,SND
+665,Grandfather Clock,,,GFC
+666,Gingerbread Man,,,GBM
+667,Royal Guard,BFR,BFF,
+668,Rabbit,,,BNY
+669,Blind Dreamer,,,BDR
+670,Cazic Thule,,,CTH
+671,Topiary Lion Mount,,,MTL
+672,Rot Dog Mount,,,MRD
+673,Goral Mount,,,MGL
+674,Selyrah Mount,,,MSL
+675,Sclera Mount,,,MSC
+676,Braxi Mount,,,MBX
+677,Kangon Mount,,,MKG
+678,Erudite,ERU,,
+679,Wurm Mount,,,MWM
+680,Raptor Mount,,,MRP
+681,Invisible Man,,,INV
+682,Whirligig,,,MWI
+683,Gnomish Balloon,,,MBL
+684,Gnomish Rocket Pack,,,MRK
+685,Gnomish Hovering Transport,,,MHB
+686,Selyrah,,,SEY
+687,Goral,,,GR1
+688,Braxi,,,BRX
+689,Kangon,,,KNG
+690,Invisible Man,,,I23
+691,Floating Tower,,,B07
+692,Explosive Cart,,,B08
+693,Blimp Ship,,,B09
+694,Tumbleweed,,,I24
+695,Alaran,,,ALA
+696,Swinetor,,,SWI
+697,Triumvirate,,,TRG
+698,Hadal,,,HDL
+699,Hovering Platform,,,B10
+700,Parasitic Scavenger,,,PSC
+701,Grendlaen,,,GRD
+702,Ship in a Bottle,,,I25
+703,Alaran Sentry Stone,,,I26
+704,Dervish,,,SDV
+705,Regeneration Pool,,,I27
+706,Teleportation Stand,,,I28
+707,Relic Case,,,I29
+708,Alaran Ghost,,,ALG
+709,Skystrider,,,MPG
+710,Water Spout,,,I30
+711,Aviak Pull Along,,,I31
+712,Gelatinous Cube,,,GCB
+713,Cat,,,CAT
+714,Elk Head,,,I32
+715,Holgresh,,,HLG
+716,Beetle,,,BTS
+717,Vine Maw,,,VNM
+718,Ratman,,,CHT
+719,Fallen Knight,,,FKN
+720,Flying Carpet,,,MCP
+721,Carrier Hand,,,MRH
+722,Akheva,AHM,AHF,
+723,Servant of Shadow,SOS,,
+724,Luclin,,LUC,
+725,Xaric the Unspoken,,,AXA
+726,Dervish (Ver. 5),,,HDV
+727,Dervish (Ver. 6),,,DV6
+728,God - Luclin (Ver. 2),,LU2,
+729,God - Luclin (Ver. 3),,LU3,
+730,Orb,,,ORB
+731,God - Luclin (Ver. 4),,LU4,
+732,Pegasus,,,PG3
+2253,(null),PPOINT,PPOINT,PPOINT
+2254,(null),PPOINT,PPOINT,PPOINT
+2255,(null),PPOINT,PPOINT,PPOINT
+2256,(null),PPOINT,PPOINT,PPOINT
+2257,(null),PPOINT,PPOINT,PPOINT
+2258,(null),PPOINT,PPOINT,PPOINT
+2259,(null),ARROW,ARROW,ARROW

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    EQArchitect.Models.Spells.SpellsParameters List = (EQArchitect.Models.Spells.SpellsParameters)Model;
+    
+    ViewBag.Title = (List.ClassName + " Spells").TrimStart();
+    ViewBag.Icon = "";
+
+    List.Items.BasePage = VirtualPathUtility.ToAbsolute("~/Spells" + ((List.ClassID == 0) ? "" : ("/" + List.ClassNick)));
+}
+
+@section Styles {
+    <link href="~/Content/SpellsList.css" rel="stylesheet" type="text/css" />
+}
+
+<table>
+    <tr>
+        <td></td>
+        <td class="text-center"><h2 id="ListHeader">@(List.ClassID == 0 ? "All " : "")@ViewBag.Title (@List.Items.Count)</h2></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <table id="ClassList">
+                <tbody>
+                    @for (int _i = EQInfo.PlayerClasses.FirstID; _i <= EQInfo.PlayerClasses.LastID; _i++)
+                    {
+                        string _nick = EQInfo.PlayerClasses.Nick(_i);
+                        <tr>
+                            <td><a class="btn btn-block btn-default@(_nick.Equals(List.ClassNick) ? " active" : "")" href="~/Spells@(_nick.Equals(List.ClassNick) ? "" : "/" + _nick)">@(_nick)</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+        <td valign="top">
+            <table id="SpellsList">
+                <thead>
+                    <tr>@* <th>#</th> *@
+                        <th>@List.LevelHeading</th>
+                        <td>Spell</td>
+                        <th>Mana</th>
+                        <th>Skill</th>
+                    </tr>
+                </thead>
+                <tbody>@* @{ int _curitem = List.Items.Start; } *@
+                    @foreach (System.Data.DataRow row in List.SpellsList.Rows)
+                    {
+                        <tr>@* <th style="border-right:1px solid black;">@(_curitem++)</th> *@
+                            <th>@row["level"]</th>
+                            <td><a href="~/Spells/@(row["id"])@(List.ClassID != 0 ? "/" + List.ClassNick : "")" class="@((int)row["goodEffect"] == 0 ? "DetSpell" : "BenSpell")"><img src="~/icons/@(row["new_icon"]).gif" width="24" height="24" />@row["name"]</a></td>
+                            <th>@((int)row["mana"] == 0 ? "-" : row["mana"])</th>
+                            <th>@EQInfo.Skills.Name((int)row["skill"])</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.Partial("_ListNav", List.Items)
+        </td>
+    </tr>
+</table>
+
+@*
+<div class="clearfix">
+
+    <p>@List.DebugString</p>
+
+</div>
+*@

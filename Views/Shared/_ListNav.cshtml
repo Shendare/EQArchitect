@@ -1,0 +1,53 @@
+﻿@{
+    PageNav List = (PageNav)Model;
+    int _firstpage;
+}
+<div id="ListNav">
+    <span style="float:left">
+        @if (List.Page == 1)
+        {
+            <span class="disabled">&lt;&lt;</span>
+            <span class="disabled">&lt;</span>
+        }
+        else if (List.Page == 2)
+        {
+            <a href="@(List.BasePage)">&lt;&lt;</a>
+            <a href="@(List.BasePage)">&lt;</a>
+        }
+        else
+        {
+            <a href="@(List.BasePage)">&lt;&lt;</a>
+            <a href="@(List.BasePage)/page@(List.Page - 1)">&lt;</a>
+        }
+
+        @for (int _page = _firstpage = Math.Max((List.Pages - List.Page < 5) ? (List.Pages - 10) : (List.Page - 5), 1); _page <= Math.Min(_firstpage + 10, List.Pages); _page++)
+        {
+            if (_page == List.Page)
+            {
+                <span class="disabled">@_page</span>
+            }
+            else if (_page == 1)
+            {
+                <a href="@(List.BasePage)">@_page</a>
+            }
+            else
+            {
+                <a href="@(List.BasePage)/page@(_page)">@_page</a>
+            }
+        }
+
+        @if (List.Page == List.Pages)
+        {
+            <span class="disabled">&gt;</span>
+            <span class="disabled">&gt;&gt;</span>
+        }
+        else
+        {
+            <a href="@(List.BasePage)/page@(List.Page + 1)">&gt;</a>
+            <a href="@(List.BasePage)/page@(List.Pages)">&gt;&gt;</a>
+        }
+    </span>
+    <span style="float:right; margin-left:16px;">
+        @List.Page / @List.Pages
+    </span>
+</div>

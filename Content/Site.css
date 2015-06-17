@@ -1,0 +1,307 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-top:25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor:default;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.navbar
+{
+    background-color:navy;
+}
+
+ul.navbar-nav li a, a.navbar-brand
+{
+    color:#eeeeee!important;
+    font-weight:bold;
+}
+
+ul.navbar-nav li a:hover, a.navbar-brand:hover
+{
+    color: #ffffff !important;
+}
+
+.Header, div.Header
+{
+    background:navy;
+    color:#ffffff;
+    border:2px solid navy;
+    font-size:24px;
+    margin-bottom:4px;
+}
+
+a.BenSpell
+{
+    color:blue;
+}
+
+a.BenSpell:visited
+{
+    color:navy;
+}
+
+a.DetSpell
+{
+    color:red;
+}
+
+a.DetSpell:visited
+{
+    color:darkred;
+}
+
+img.BenSpell, a.BenSpell img
+{
+    border:2px outset blue;
+}
+
+img.DetSpell, a.DetSpell img
+{
+    border:2px outset red;
+}
+
+#ListNav
+{
+    clear:both;
+    border-top:1px solid black;
+    font-family:Tahoma,sans-serif;
+    font-weight:bold;
+    color:black;
+    text-align:center;
+}
+
+#ListNav a
+{
+    color:navy;
+}
+
+#ListNav a:hover, #ListNav a:visited
+{
+    color:black;
+}
+
+#ListNav span.disabled
+{
+    color:#cccccc;
+}
+
+select.form-control
+{
+    width:200px;
+    height:24px;    
+    margin:0;
+    padding:0 0 0 2px;
+}
+
+input[type=text].form-control
+{
+    width:200px;
+    height:24px;
+    padding:2px 6px;
+    background-color:#fffff8;
+}
+
+input[type=checkbox].form-control
+{
+    width:30px;
+    height:26px;
+    margin:0;
+    padding:0;
+}
+
+input[type=text].NumberField, span.NumberField
+{
+    font-family:Verdana,Consolas,'Lucida Console',monospace!important;
+    background-color:#f8ffff;
+    width:130px;
+}
+
+input[type=text].LongField, select.LongField, span.LongField
+{
+    width:400px;
+}
+
+input[type=text].HugeField, select.HugeField, span.HugeField
+{
+    width:600px;
+}
+
+input[type=text].ShortField, select.ShortField, span.ShortField
+{
+    width:130px;
+}
+
+input[type=text].TinyField, select.TinyField, span.TinyField
+{
+    width:39px;
+    text-align:center;
+}
+
+span.TextField
+{
+    border:1px solid #999999;
+    background-color:white;
+    padding:1px 6px;
+    height:24px;
+}
+
+input[type=text].ReadOnly
+{
+    cursor:default;
+    background:white;
+}
+
+input[title], select[title], span[title], label[title], span[title] input, span[title] select
+{
+    cursor:help;
+}
+
+img#AppIcon
+{
+    float:left;
+    margin-top:6px;
+    margin-right:8px;
+}
+
+/*Example for a Menu Style*/
+.tabs {background-color:navy; color:#ffffff; border-bottom:1px solid #7b7b7b; height:23px;width:900px }
+.tabs ul {margin:0px; padding:0px; list-style:none; text-align:center;}
+.tabs li {display:inline; line-height:23px;}
+.tabs li a {color:#ffffff; text-decoration:none; padding:4px 5px 6px 5px; background-color:#8888cc; font-weight:bold; border-left:1px solid #6666aa; border-right:1px solid #6666aa;}
+.tabs li a.tabactive {border-left:1px solid #333399; border-right:1px solid #333399; background-color:#bbbbee; color:#ffffff; font-weight:bold;}
+.tabcontents {border:1px solid #cccccc; width:898px; padding:6px 0px; margin-bottom:5px;position:relative; background:#f4f4f4; color:#222244; overflow:auto; }
+
+.tabcontents label
+{
+    display:inline-block;
+    text-align:right;
+    margin-top:3px;
+}
+
+.HiddenField
+{
+    position:absolute;
+    visibility:hidden;
+}
+
+#DBConnError
+{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:400px;
+    height:400px;
+    border-width:2px;
+    border-style:solid;
+    padding:4px 16px;
+    font-weight:bold;
+    cursor:default;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+}
+
+#DBError
+{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:400px;
+    height:200px;
+    border-width:2px;
+    border-style:solid;
+    padding:4px 16px;
+    font-weight:bold;
+    cursor:default;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+}
+
+#DBConnError p
+{
+    text-align:center;
+    font-weight:bold;
+}
+
+#DBConnError table
+{
+    margin:12px 0;
+    width:100%;
+}
+
+#DBConnError table th
+{
+    font-weight:bold;
+    text-align:left;
+    padding:4px 8px;
+}
+
+#DBConnError table td
+{
+    font-weight:normal;
+    text-align:right;
+    padding:4px 8px;
+    padding:4px 8px;
+}
+
+p#DBErrorMessage
+{
+    width:366px;
+    height:140px;
+    overflow:auto;
+    padding:4px;
+    font-weight:normal;
+    text-align:left;
+}
+
+#DBConnection
+{
+    position:fixed;
+    right:0;
+    bottom:0;
+    border-width:1px;
+    border-style:solid;
+    padding:4px 8px;
+    font-weight:bold;
+    cursor:default;
+}
+
+.StatusOK
+{
+    border-color:#009900;
+    background-color:#eeffee;
+    color:#006600;
+}
+
+.StatusOK a
+{
+    color:#006600;
+}
+
+.StatusBad
+{
+    border-color:#990000;
+    background-color:#ffeeee;
+    color:#990000;
+}
+
+.StatusBad a
+{
+    color:#990000;
+}

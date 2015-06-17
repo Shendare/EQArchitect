@@ -1,0 +1,466 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    EQArchitect.Models.Spells.SpellsParameters Spell = (EQArchitect.Models.Spells.SpellsParameters)Model;
+
+    int CurIcon = Spell.IntField("new_icon");
+
+    ViewBag.Title = "[" + Spell.TextField("id") + "] " + Spell.TextField("name") + " - " + (Spell.ClassName + " Spells").TrimStart();
+    ViewBag.Icon = "icons/" + CurIcon + ".gif";
+
+    ViewBag.HtmlAttrib = "onclick=\"Windows_CloseAll(event);\"";
+
+    string RootPath = Server.MapPath("~/");
+    
+    // TODO: Fix broken spellanim video 116
+    
+    // TODO: Add spell reagents/focus items
+    
+    // TODO: Add character animation videos
+    
+    // TODO: Finish adding spell particle/animation videos
+    
+    // TODO: Change Spell Icons to Sprite Tiles from latest Live game files
+    
+    // TODO: Implement remaining fields
+    
+    // TODO: Add item rendering to EQInfo.js
+
+    /* Spell.Base2 used for:  
+    
+        - SkillProc (427)
+        - SkillProcSuccess (429)
+        - SpellTrigger (340)
+        - TriggerOnReqTarget (442)
+        - TriggerOnReqCaster (443)
+        - ProcOnSpellKillShot (365)
+        - SE_WeaponProc (85)
+        - Mob::GetDecayEffectValue() - Base = CritChance, Base2 = Decay, Max = LvlDiff
+      
+    */
+
+}
+@section Scripts
+{
+    <script src="~/Scripts/SpellFunctions.js" type="text/javascript"></script>
+    <script src="~/Get/EQInfoJS" type="text/javascript"></script>
+    <script src="~/Scripts/SpellEdit.js" type="text/javascript"></script>
+    <script src="~/Scripts/tabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var rootPath = "/EQArchitect/";
+        var pageLoaded = false;
+        var selectedIcon = null;
+        var saveStatus = "@Html.Raw(Spell.SaveStatus.Replace('"', '\'').Replace("\r", "").Replace("\n","\\n"))";
+
+        if (saveStatus != "")
+        {
+            var isGood = (saveStatus[0] == 'Y') ? "Success! " : "Error: ";
+            
+            setTimeout("alert('" + isGood + "' + saveStatus.substring(1));", 1);
+        }
+
+        function initialSetup()
+        {
+            if (pageLoaded && EQInfoLoaded)
+            {
+                MaxLevel = @(EQInfo.MaxLevel);
+                SpellRootPath = rootPath;
+
+                DDL("SkillList", Skills, el("Skill").value);
+                DDL("CategoryList", SpellCategories, el("Category").value);
+                DDL("TargetTypeList", TargetTypes, el("TargetType").value);
+                DDL("ResistTypeList", ResistanceTypes, el("ResistType").value);
+                DDL("IsBenList", SpellBeneficialDetrimental, el("IsBen").value);
+                DDL("RacesList", Races);
+                DDL("ZonesList", Zones);
+                DDL("EffectIDsList", SpellEffects);
+                DDL("EffectFormulasList", SpellEffectFormulas);
+                DDL("DurFormulasList", SpellDurationFormulas);
+
+                DDL("AnimCategoriesList", SpellAnimationCategories, el("AnimIDCategory").value);
+    @for (int _i = EQInfo.SpellAnimCategories.FirstID; _i <= EQInfo.SpellAnimCategories.LastID; _i++)
+                { 
+            @Html.Raw("                DDL(\"AnimList" + _i.ToString() + "\", SpellAnimationDescriptions, null, null, null, \"" + EQInfo.SpellAnimCategories.Field(_i, "Nick") + "\", \": \");\r\n");
+                }
+                matchListToField("AnimList" + el("AnimIDCategory").value, "AnimID");
+
+                SpellAnimCat_Changed(false);
+                Duration_Apply();
+
+                loadtabs = new Array("1");
+                loadeasytabs();
+
+                window.setInterval(SpellIcon_Flash, 500);
+            }
+            else
+            {
+                setTimeout(initialSetup, 1);
+            }
+        }
+
+        function ResetSpell()
+        {
+            el("ButtonResetSpell").blur();
+        
+            location.reload(true);
+
+            return false;
+        }
+        
+        window.onload = initialSetup();
+
+    </script>
+}
+@section Styles
+{
+    <link rel="stylesheet" href="~/Content/SpellEdit.css" type="text/css" />
+}
+<table>
+    <tr>
+        <td align="center">
+            <h2 id="HeaderBlock" class="jumbotron"><img id="HeaderSpellIcon" src="~/icons/@(CurIcon).gif" width="44" height="44" class="@(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" /> [ @Spell.TextField("id") ] <span id="HeaderSpellName">@Spell.TextField("name")</span></h2>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "SpellForm", role = "form", action = "/EQArchitect/Spells/" + Spell.TextField("id") + ((Spell.ClassNick == "") ? "" : "/" + Spell.ClassNick) }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.TextBox("SpellID", Spell.TextField("id"), new { @class = "HiddenField" })
+                @Html.TextBox("IconID", CurIcon.ToString(), new { @class = "HiddenField" })
+                @Html.TextBox("SpellMinLevel", null, new { @class = "HiddenField" })
+
+                <div class="tabs">
+                    <ul>
+                        <li><a href="#" onclick="easytabs('1', '1'); return false;" onfocus="easytabs('1', '1');" title="Basic Spell Information" id="tablink1">Basic</a></li>
+                        <li><a href="#" onclick="easytabs('1', '2'); return false;" onfocus="easytabs('1', '2');" title="The Primary Spell Effects (12 Slots)" id="tablink2">Main Effects</a></li>
+                        <li><a href="#" onclick="easytabs('1', '3'); return false;" onfocus="easytabs('1', '3');" title="Any Secondary Spell Effects" id="tablink3">Sub-Effects</a></li>
+                        <li><a href="#" onclick="easytabs('1', '4'); return false;" onfocus="easytabs('1', '4');" title="Spell Limitations (Class, Level, Duration, etc.)" id="tablink4">Limitations</a></li>
+                        <li><a href="#" onclick="easytabs('1', '5'); return false;" onfocus="easytabs('1', '5');" title="Fields Not In Use By EQEmu At All" id="tablink5">Unused</a></li>
+                    </ul>
+                </div>
+
+                <div id="tabcontent1" class="tabcontents">
+                    <!-- Basic -->
+                    @Html.Label("Name", "Name:", new { @class = "Xa1 Ya1" }) @Html.TextBox("Name", Spell.TextField("name"), new { @class = "form-control Xa2 Ya1", onkeyup = "Name_Changed();", onchange = "Name_Changed();" })
+                    @Html.Label("CategoryList", "Category:", new { @class = "Xa3 Ya1" }) @Html.TextBox("Category", Spell.TextField("spell_category"), new { @class = "HiddenField" }) <select id="CategoryList" class="form-control Xa4 Ya1" onchange="matchFieldToList('Category', this.id);"></select>
+
+                    @Html.Label("TargetTypeList", "Target:", new { @class = "Xa1 Ya2" }) @Html.TextBox("TargetType", Spell.TextField("targettype"), new { @class = "HiddenField" }) <select id="TargetTypeList" class="form-control Xa2 Ya2" onchange="matchFieldToList('TargetType', this.id);"></select>
+                    @Html.Label("SkillList", "Skill:", new { @class = "Xa3 Ya2" }) @Html.TextBox("Skill", Spell.TextField("skill"), new { @class = "HiddenField" }) <select id="SkillList" class="form-control Xa4 Ya2" onchange="matchFieldToList('Skill', this.id);"></select>
+                    @Html.Label("SpellIcon", "Icon:", new { @class = "Xa5 Ya2" }) <img id="SpellIcon" src="~/icons/@(CurIcon).gif" class="Xa6 Ya1 @(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" width="44" height="44" onclick="SpellIcon_Choose();" />
+
+                    @Html.Label("IsBenList", "Beneficial:", new { @class = "Xa1 Ya3" }) @Html.TextBox("IsBen", Spell.RawField("goodEffect"), new { @class = "HiddenField" }) <select id="IsBenList" class="form-control Xa2 Ya3" onchange="Beneficial_Changed();" onkeyup="Beneficial_Changed();"></select>
+
+                    @Html.Label("ShortBuff", "Short Buff Box:", new { @class = "Xa5 Ya3" }) @Html.CheckBox("ShortBuff", Spell.IntField("short_buff_box") != 0, new { @class="form-control Xa6 Ya3" })
+
+                    @Html.Label("Mana", "Mana Cost:", new { @class = "Xa1 Ya4" }) @Html.TextBox("Mana", Spell.TextField("mana"), new { @class = "form-control NumberField Xa2 Ya4" })
+                    @Html.Label("Endur", "Endur Cost:", new { @class = "Xa3 Ya4" }) @Html.TextBox("Endur", Spell.TextField("EndurCost"), new { @class = "form-control NumberField Xa4 Ya4" })
+                    @Html.Label("IsDisc", "Is Discipline:", new { @class = "Xa5 Ya4" }) @Html.CheckBox("IsDisc", Spell.IntField("IsDiscipline") != 0, new { @class="form-control Xa6 Ya4" })
+
+                    @Html.Label("EndurRate", "Endur Rate:", new { @class = "Xa1 Ya5" }) @Html.TextBox("EndurRate", Spell.TextField("EndurTimerIndex"), new { @class = "form-control NumberField Xa2 Ya5" })
+                    @Html.Label("EndurUpkeep", "Endur Upkeep:", new { @class = "Xa3 Ya5" }) @Html.TextBox("EndurUpkeep", Spell.TextField("EndurUpkeep"), new { @class = "form-control NumberField Xa4 Ya5" })
+                    @Html.Label("Unint", "Uninterruptable:", new { @class = "Xa5 Ya5" }) @Html.CheckBox("Unint", Spell.IntField("uninterruptable") != 0, new { @class="form-control Xa6 Ya5" })
+
+                    @Html.Label("Range", "Range:", new { @class = "Xa1 Ya6" }) @Html.TextBox("Range", Spell.TextField("range"), new { @class = "form-control NumberField Xa2 Ya6" })
+                    @Html.Label("AERange", "AE Range:", new { @class = "Xa3 Ya6" }) @Html.TextBox("AERange", Spell.TextField("aoerange"), new { @class = "form-control NumberField Xa4 Ya6" })
+                    @Html.Label("DotStackEx", "DoT Stack All:", new { @class = "Xa5 Ya6" }) @Html.CheckBox("DotStackEx", Spell.IntField("dot_stacking_exempt") != 0, new { @class = "form-control Xa6 Ya6", title = "Is this spell exempt from DoT stacking balance checks?" })
+
+                    @Html.Label("CastTime", "Cast Time:", new { @class = "Xa1 Ya7" }) @Html.TextBox("CastTime", Spell.TextField("cast_time"), new { @class="NumberField form-control Xa2 Ya7", Title="Milliseconds" })
+                    @Html.Label("RecastTime", "Recast Time:", new { @class = "Xa3 Ya7" }) @Html.TextBox("RecastTime", Spell.TextField("recast_time"), new { @class="NumberField form-control Xa4 Ya7", Title="Milliseconds" })
+                    @Html.Label("NPCNoLoS", "NPC No LoS:", new { @class = "Xa5 Ya7" }) @Html.CheckBox("NPCNoLoS", Spell.IntField("npc_no_los") != 0, new { @class = "form-control Xa6 Ya7", title = "NPCs do not have to see you to cast this spell on you." })
+
+                    @Html.Label("GlobalCooldown", "Global Cooldwn:", new { @class = "Xa1 Ya8" }) @Html.TextBox("GlobalCooldown", Spell.TextField("recovery_time"), new { @class="NumberField form-control Xa2 Ya8", Title="Milliseconds" })
+                    @Html.Label("FizzleAdjust", "Difficulty Mod:", new { @class = "Xa3 Ya8" }) @Html.TextBox("FizzleAdjust", Spell.TextField("basediff"), new { @class="NumberField form-control Xa4 Ya8", Title="Applied to skill check. 7% base + 1% fizzle chance for every 5 diff points. Always 0-25 up to level 70. Hardest L90 spells are +120 = fizzle +120/5 = +24% = 31%. Ouch." })
+
+                    @Html.Label("ResistTypeList", "Resist:", new { @class = "Xa1 Ya9" }) @Html.TextBox("ResistType", Spell.TextField("resisttype"), new { @class = "HiddenField" }) <select id="ResistTypeList" class="form-control Xa2 Ya9" onchange="matchFieldToList('ResistType', this.id);"></select>
+                    @Html.Label("ResistMod", "Resist Mod:", new { @class = "Xa3 Ya9" }) @Html.TextBox("ResistMod", Spell.TextField("resistdiff"), new { @class="NumberField form-control Xa4 Ya9", Title="Applied to target's resist when hit. Negative numbers lower resistance." })
+
+                    @Html.Label("CastAnim", "Cast Anim:", new { @class = "Xa1 Ya10" }) @Html.TextBox("CastAnim", Spell.TextField("CastingAnim"), new { @class = "form-control NumberField Xa2 Ya10" })<button id="ButtonCastAnim" class="btn btn-default Xa2b Ya10" onclick="Animation_Choose('Cast'); return false;">...</button>
+                    @Html.Label("TargetAnim", "Target Anim:", new { @class = "Xa3 Ya10" }) @Html.TextBox("TargetAnim", Spell.TextField("TargetAnim"), new { @class = "form-control NumberField Xa4 Ya10" })<button id="ButtonTargetAnim" class="btn btn-default Xa4b Ya10" onclick="Animation_Choose('Target'); return false;">...</button>
+
+                    @{
+                        int SpellAnimCat = Spell.GetAnimationCategory();
+                        int SpellAnimID = Spell.IntField("spellanim");
+                        bool SpellAnimKnown = EQInfo.SpellAnimations.IsInList(SpellAnimID);
+                    }
+                    @Html.TextBox("AnimID", Spell.TextField("spellanim"), new { @class = "HiddenField" })
+                    @Html.Hidden("AnimIDCategory", SpellAnimCat)
+                    @Html.Label("AnimCategoriesList", "Particles:", new { @class = "Xa1 Ya11" })
+                    <select id="AnimCategoriesList" class="form-control ShortField Xa2 Ya11" onchange="SpellAnimCat_Changed(true);"></select>
+                    @for (int _i = EQInfo.SpellAnimCategories.FirstID; _i <= EQInfo.SpellAnimCategories.LastID; _i++)
+                    {
+                        string _thiscat = EQInfo.SpellAnimCategories.Field(_i, "Nick");
+                        <select id="AnimList@(_i)" class="LongField form-control Xa2b Ya11 HiddenField" onchange="SpellAnim_Changed();"></select>
+                    }
+                    <button id="ButtonSpellAnim" class="btn btn-default Xa5b Ya11" onclick="SpellAnim_Preview(); return false;">View</button>
+                </div>
+
+                <div id="tabcontent2" class="tabcontents">
+                    <!-- Main Effects -->
+                    @Html.TextBox("TeleportZone", Spell.TextField("teleport_zone"), new { @class = "HiddenField" })
+
+                    @for (int _i = 1; _i <= 12; _i++)
+                    {
+                        string _s = _i.ToString();
+                        <input type="text" id="EffectID@(_s)" class="HiddenField" value="@(Spell.TextField("effectid" + _s))" />
+                        <label for="EffectBase@(_s)" id="EffectBaseLabel@(_s)" class="HiddenField"></label>
+                        <input type="text" id="EffectBase@(_s)" class="HiddenField" value="@(Spell.TextField("effect_base_value" + _s))" />
+                        <input type="text" id="EffectLimit@(_s)" class="HiddenField" value="@(Spell.TextField("effect_limit_value" + _s))" />
+                        <input type="text" id="EffectMax@(_s)" class="HiddenField" value="@(Spell.TextField("max" + _s))" />
+                        <input type="text" id="EffectFormula@(_s)" class="HiddenField" value="@(Spell.TextField("formula" + _s))" />
+                        <input type="text" id="EffectData@(_s)" class="HiddenField" value="@(Spell.GetEffectData(_i))" />
+                        <label for="buttonspelleffect@(_s)" class="Xa1 Ya@(_s)">Effect Slot @(_i.ToString("00")): </label><span id="TextEffect@(_s)" class="form-control HugeField Xa2 Ya@(_s) TextField"></span><button id="ButtonEffect@(_s)" class="btn btn-default Xb2b Ya@(_s)" onclick="Effect_ChooseForSlot(@(_s)); return false;">...</button>
+                    }
+                </div>
+
+                <div id="tabcontent3" class="tabcontents">
+                    <!-- Sub-Effects -->
+                    @Html.Label("CastByYou", "You Cast:", new { @class = "Xa1 Ya1" }) @Html.TextBox("CastByYou", Spell.TextField("you_cast"), new { @class = "form-control Xa2 Ya1" })
+                    @Html.Label("CastByOther", "Other Casts:", new { @class = "Xa3 Ya1" }) @Html.TextBox("CastByOther", Spell.TextField("other_casts"), new { @class = "form-control Xa4 Ya1" })
+                    @Html.Label("CastOnYou", "Cast On You:", new { @class = "Xa1 Ya2" }) @Html.TextBox("CastOnYou", Spell.TextField("cast_on_you"), new { @class = "form-control Xa2 Ya2" })
+                    @Html.Label("CastOnOther", "Cast On Other:", new { @class = "Xa3 Ya2" }) @Html.TextBox("CastOnOther", Spell.TextField("cast_on_other"), new { @class = "form-control Xa4 Ya2" })
+                    @Html.Label("Fades", "Fades:", new { @class = "Xa1 Ya3" }) @Html.TextBox("Fades", Spell.TextField("spell_fades"), new { @class = "form-control Xa2 Ya3" })
+
+                    @Html.Label("EffectIndex", "SPE Index:", new { @class = "Xa3 Ya3" }) @Html.TextBox("EffectIndex", Spell.TextField("SpellAffectIndex"), new { @class="NumberField form-control Xa4 Ya3", Title="Looks Beneficial but treated as Detrimental if resisted: 12-Calm/14-DispellBindSight/27-MemBlur/43-CalmSong and Resist=Magic, or 14-BindSight and Skill=Divination and no VoiceGraft effects. All other values/combos ignored." })
+
+                    @Html.Label("Pushback", "Push Back:", new { @class = "Xa1 Ya4" }) @Html.TextBox("Pushback", Spell.TextField("pushback"), new { @class="NumberField form-control Xa2 Ya4", Title="Distance target is pushed back by spell" })
+                    @Html.Label("Pushup", "Toss Up:", new { @class = "Xa3 Ya4" }) @Html.TextBox("Pushup", Spell.TextField("pushup"), new { @class="NumberField form-control Xa4 Ya4", Title="Height target is tossed upwards by spell" })
+                </div>
+
+                <div id="tabcontent4" class="tabcontents">
+                    <!-- Limitations -->
+                    @Html.Label("Classes1", "Class Levels:", new { @class = "Xa1 Ya1" })
+                    <table id="TableClassLevelList" class="Xa2 Ya1" border="0" cellspacing="0">
+                        <tr>
+                            <td>WAR</td>
+                            <td>CLR</td>
+                            <td>PAL</td>
+                            <td>RNG</td>
+                            <td>SHD</td>
+                            <td>DRU</td>
+                            <td>MNK</td>
+                            <td>BRD</td>
+                            <td>ROG</td>
+                            <td>SHM</td>
+                            <td>NEC</td>
+                            <td>WIZ</td>
+                            <td>MAG</td>
+                            <td>ENC</td>
+                            <td>BST</td>
+                            <td>BER</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.TextBox("Classes1", Spell.TextField("classes1"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes2", Spell.TextField("classes2"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes3", Spell.TextField("classes3"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes4", Spell.TextField("classes4"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes5", Spell.TextField("classes5"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes6", Spell.TextField("classes6"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes7", Spell.TextField("classes7"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes8", Spell.TextField("classes8"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes9", Spell.TextField("classes9"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes10", Spell.TextField("classes10"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes11", Spell.TextField("classes11"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes12", Spell.TextField("classes12"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes13", Spell.TextField("classes13"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes14", Spell.TextField("classes14"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes15", Spell.TextField("classes15"), new { @class = "form-control NumberField TinyField" })</td>
+                            <td>@Html.TextBox("Classes16", Spell.TextField("classes16"), new { @class = "form-control NumberField TinyField" })</td>
+                        </tr>
+                    </table>
+
+                    @Html.Label("ButtonSpellDuration", "Duration:", new { @class = "Xa1 Ya3" }) <span id="TextSpellDuration" class="form-control LongField Xa2 Ya3 TextField"></span><button id="ButtonSpellDuration" class="btn btn-default Xd2b Ya3" onclick="Duration_Choose(); return false;">...</button>
+
+                    @Html.Label("AEDuration", "AE Duration:", new { @class = "Xa1 Ya4" }) @Html.TextBox("AEDuration", Spell.TextField("AEDuration"), new { @class="NumberField form-control Xa2 Ya4", Title="Number of ticks an AE Rain spell lasts, or Milliseconds for other spells." })
+
+                    @Html.Label("ZoneType", "Zone Type:", new { @class = "Xa3 Ya4" }) <select id="ZoneType" class="form-control Xa4 Ya4">
+                        <option value="-1"@(Spell.IntField("zonetype") == -1 ? " selected" : "")>Any</option>
+                        <option value="0"@(Spell.IntField("zonetype") == 0 ? " selected" : "")>Indoors</option>
+                        <option value="1"@(Spell.IntField("zonetype") == 1 ? " selected" : "")>Outdoors</option>
+                        <option value="2"@(Spell.IntField("zonetype") == 2 ? " selected" : "")>Dungeons</option>
+                        <option value="255"@(Spell.IntField("zonetype") == 255 ? " selected" : "")>Any (255)</option>
+                    </select>
+                    @Html.Label("DisallowSit", "Prevent Sitting:", new { @class = "Xa5 Ya4" }) @Html.CheckBox("DisallowSit", Spell.IntField("DisallowSit") != 0, new { @class = "form-control Xa6 Ya4" })
+
+                    @Html.Label("TimeOfDay", "Time of Day:", new { @class = "Xa1 Ya5" }) <select id="TimeOfDay" class="form-control Xa2 Ya5" title="NOTE: This field is not used by the server, but is made available via GetTimeOfDay() for Lua scripting.">
+                        <option value="0"@(Spell.IntField("TimeOfDay") == 0 ? " selected" : "")>Any</option>
+                        <option value="1"@(Spell.IntField("TimeOfDay") == 1 ? " selected" : "")>Daytime Only</option>
+                        <option value="2"@(Spell.IntField("TimeOfDay") == 2 ? " selected" : "")>Nighttime Only</option>
+                    </select>
+                    @Html.Label("EnvType", "Environment:", new { @class = "Xa3 Ya5" }) <select id="EnvType" class="form-control Xa4 Ya5" title="NOTE: The server presently uses hard-coded checks for environment-limited effects such as Bind Affinity instead. However, this field is made available via GetEnvironmentType() for Lua scripting.">
+                        <option value="-1"@(Spell.IntField("environmenttype") == -1 ? " selected" : "")>Unspecified (Anywhere)</option>
+                        <option value="0"@(Spell.IntField("environmenttype") == 0 ? " selected" : "")>Anywhere</option>
+                        <option value="8"@(Spell.IntField("environmenttype") == 8 ? " selected" : "")>Where Pets Allowed</option>
+                        <option value="12"@(Spell.IntField("environmenttype") == 12 ? " selected" : "")>Teleportation Allowed (12)</option>
+                        <option value="13"@(Spell.IntField("environmenttype") == 13 ? " selected" : "")>Levitation Allowed</option>
+                        <option value="14"@(Spell.IntField("environmenttype") == 14 ? " selected" : "")>Evacuation Allowed</option>
+                        <option value="16"@(Spell.IntField("environmenttype") == 16 ? " selected" : "")>Teleportation Allowed (16)</option>
+                        <option value="24"@(Spell.IntField("environmenttype") == 24 ? " selected" : "")>Teleportation Allowed (24)</option>
+                    </select>
+                    @Html.Label("Deleteable", "Deleteable:", new { @class = "Xa5 Ya5" }) @Html.CheckBox("Deleteable", Spell.IntField("Deleteable") != 0, new { @class="form-control Xa6 Ya5" })
+
+                    @Html.Label("NoPartRes", "No Part Resist:", new { @class = "Xa5 Ya6" }) @Html.CheckBox("NoPartRes", Spell.IntField("NoPartRes") != 0, new { @class = "form-control Xa6 Ya6", title = "Do not allow this spell to be partially resisted. All or nothing." })
+                </div>
+
+                <div id="tabcontent5" class="tabcontents">
+                    <!-- Unused -->
+                    @Html.Label("Deity0", "Deity Rstn:", new { @class = "Xa1 Ya1" })
+                    <table id="TableDeityList" class="Xa2 Ya1" border="0" cellspacing="0" title="NOTE: Spell deity restrictions are enforced via the scribing of the spell scroll item and its deity restrictions, if any. These spell fields are ignored.">
+                        <tr>
+                            <td>Agnos</td>
+                            <td>Bertx</td>
+                            <td>Brell</td>
+                            <td>Cazic</td>
+                            <td>ErolM</td>
+                            <td>Brstl</td>
+                            <td>Innor</td>
+                            <td>Karna</td>
+                            <td>MithM</td>
+                            <td>Prexs</td>
+                            <td>Quell</td>
+                            <td>RalZk</td>
+                            <td>RodNf</td>
+                            <td>SolRo</td>
+                            <td>Tribl</td>
+                            <td>Tunar</td>
+                            <td>Veesh</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.CheckBox("Deity0", Spell.IntField("deities0") != 0)</td>
+                            <td>@Html.CheckBox("Deity1", Spell.IntField("deities1") != 0)</td>
+                            <td>@Html.CheckBox("Deity2", Spell.IntField("deities2") != 0)</td>
+                            <td>@Html.CheckBox("Deity3", Spell.IntField("deities3") != 0)</td>
+                            <td>@Html.CheckBox("Deity4", Spell.IntField("deities4") != 0)</td>
+                            <td>@Html.CheckBox("Deity5", Spell.IntField("deities5") != 0)</td>
+                            <td>@Html.CheckBox("Deity6", Spell.IntField("deities6") != 0)</td>
+                            <td>@Html.CheckBox("Deity7", Spell.IntField("deities7") != 0)</td>
+                            <td>@Html.CheckBox("Deity8", Spell.IntField("deities8") != 0)</td>
+                            <td>@Html.CheckBox("Deity9", Spell.IntField("deities9") != 0)</td>
+                            <td>@Html.CheckBox("Deity10", Spell.IntField("deities10") != 0)</td>
+                            <td>@Html.CheckBox("Deity11", Spell.IntField("deities11") != 0)</td>
+                            <td>@Html.CheckBox("Deity12", Spell.IntField("deities12") != 0)</td>
+                            <td>@Html.CheckBox("Deity13", Spell.IntField("deities13") != 0)</td>
+                            <td>@Html.CheckBox("Deity14", Spell.IntField("deities14") != 0)</td>
+                            <td>@Html.CheckBox("Deity15", Spell.IntField("deities15") != 0)</td>
+                            <td>@Html.CheckBox("Deity16", Spell.IntField("deities16") != 0)</td>
+                        </tr>
+                    </table>
+
+                    @Html.Label("OldIcon", "Old Icon ID:", new { @class = "Xa1 Ya3" }) @Html.TextBox("OldIcon", Spell.TextField("icon"), new { @class = "form-control NumberField Xa2 Ya3" })
+                    @Html.Label("OldMemIcon", "Old MemIcon:", new { @class = "Xa3 Ya3" }) @Html.TextBox("OldMemIcon", Spell.TextField("memicon"), new { @class = "form-control NumberField Xa4 Ya3" })
+                    @Html.Label("IsActivated", "Activated:", new { @class = "Xa5 Ya3" }) @Html.CheckBox("IsActivated", Spell.IntField("IsActivated") != 0, new { @class="form-control Xa6 Ya3" })
+
+                    @Html.Label("LightType", "Light Type:", new { @class = "Xa1 Ya4" }) @Html.TextBox("LightType", Spell.TextField("LightType"), new { @class = "form-control NumberField Xa2 Ya4" })
+                    @Html.Label("TravelType", "Travel Type:", new { @class = "Xa3 Ya4" }) @Html.TextBox("TravelType", Spell.TextField("traveltype"), new { @class = "form-control NumberField Xa4 Ya4" })
+
+                    @Html.TextBox("Player1Actual", Spell.TextField("player_1"), new { @class = "HiddenField" })
+                    @Html.Label("Player1", "UF+ Projectile:", new { @class = "Xa1 Ya5" }) @Html.TextBox("Player1", (Spell.TextField("player_1").StartsWith("IT") ? Spell.TextField("player_1") : ""), new { @class = "form-control Xa2 Ya5", title = "Rarely-Used New Spell Projectile Effect for Underfoot and later." })
+                </div>
+
+                <div id="SpellIcons">
+                    <div class="Header">Spell Icon Chooser</div>
+                    @for (int _i = -1; _i < 299; _i++)
+                    {
+                        if (System.IO.File.Exists(RootPath + "icons/" + _i.ToString() + ".gif"))
+                        {
+                            <img id="SpellIcon_@(_i)" src="~/icons/@(_i).gif" onclick="SpellIcon_Apply(@(_i));" title="@(_i)" />
+                        }
+                    }
+                </div>
+
+                <video id="SpellAnimPreview" width="640" height="360" controls="controls" src="~/spell_anims/0.mp4"></video>
+
+                <div id="SpellEffects" class="tabcontents">
+                    <div class="Header">Spell Effect Slot&nbsp;<span id="EffectSlotHeader">X</span></div>
+                    @Html.TextBox("EffectSlotBeingEdited", null, new { @class = "HiddenField" })
+                    @Html.TextBox("EffectDataPrevious", null, new { @class = "HiddenField" })
+
+                    <label for="EffectID">EffectID:</label>
+                    @Html.TextBox("EffectID", null, new { @class = "form-control NumberField", onkeyup = "EffectID_Changed(false);", onchange = "EffectID_Changed(false);" })
+
+                    <label for="EffectFormula">Formula:</label>
+                    @Html.TextBox("EffectFormula", null, new { @class = "NumberField form-control", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectIDsList">Effects:</label>
+                    <select id="EffectIDsList" class="form-control" onchange="EffectID_Changed(true);" onkeyup="EffectID_Changed(true);"></select>
+
+                    <label for="EffectFormulasList">Formulas:</label>
+                    <select id="EffectFormulasList" class="form-control" onchange="matchFieldToList('EffectFormula',this.id);Effect_Changed();" onkeyup="    matchFieldToList('EffectFormula',this.id);Effect_Changed();"></select>
+
+                    <label for="EffectBase" id="EffectBaseLabel">Base:</label>
+                    @Html.TextBox("EffectBase", null, new { @class = "form-control NumberField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectLimit" id="EffectLimitLabel">Limit:</label>
+                    @Html.TextBox("EffectLimit", null, new { @class = "form-control NumberField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectMax" id="EffectMaxLabel">Max:</label>
+                    @Html.TextBox("EffectMax", null, new { @class = "form-control NumberField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectData" id="EffectDataLabel">Data:</label>
+                    @Html.TextBox("EffectData", null, new { @class = "form-control TextField ShortField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectDataB1" id="EffectDataLabelB1">Y:</label>
+                    @Html.TextBox("EffectDataB1", null, new { @class = "form-control NumberField ShortField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectDataB2" id="EffectDataLabelB2">Z:</label>
+                    @Html.TextBox("EffectDataB2", null, new { @class = "form-control NumberField ShortField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectDataB3" id="EffectDataLabelB3">Heading:</label>
+                    @Html.TextBox("EffectDataB3", null, new { @class = "form-control NumberField ShortField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="EffectDataB4" id="EffectDataLabelB4">Heading:</label>
+                    @Html.TextBox("EffectDataB4", null, new { @class = "form-control NumberField ShortField", onkeyup = "Effect_Changed();", onchange = "Effect_Changed();" })
+
+                    <label for="ZonesList" id="ZonesListLabel">Zone:</label>
+                    <select id="ZonesList" class="form-control" onchange="ZonesList_Changed(true);" onkeyup="ZonesList_Changed(true);"></select>
+
+                    <label for="RacesList" id="RacesListLabel">Race:</label>
+                    <select id="RacesList" class="form-control" onchange="RacesList_Changed(true);" onkeyup="RacesList_Changed(true);"></select>
+
+                    @Html.Label("EffectPreview", "Effect:") <span id="EffectPreview" class="form-control TextField"></span>
+
+                    <label for="EffectPreviewLevel" id="EffectPreviewLevelLabel">Show at Level:</label>
+                    <select id="EffectPreviewLevel" class="form-control" onchange="Effect_Changed();" onkeyup="Effect_Changed();"><option value="-1" selected>Default Range</option>
+                    @for (int _i = 1; _i <= EQInfo.MaxLevel; _i++)
+                    {
+                        <option value="@(_i)">Level @(_i)</option>
+                    }</select>
+
+                    <button id="ButtonApplyEffect" class="btn btn-default" onclick="Effect_Apply(); return false;">Apply</button>
+                    <button id="ButtonCancelEffect" class="btn btn-default" onclick="Effect_Cancel(); return false;">Cancel</button>
+                </div>
+
+                <div id="SpellDuration" class="tabcontents">
+                    <div class="Header">Spell Duration</div>
+                    @Html.TextBox("DurFormulaActual", Spell.TextField("buffdurationformula"), new { @class = "HiddenField" })
+                    @Html.TextBox("DurationActual", Spell.TextField("buffduration"), new { @class = "HiddenField" })
+
+                    <label for="DurFormula">Formula:</label>
+                    @Html.TextBox("DurFormula", Spell.TextField("buffdurationformula"), new { @class = "form-control NumberField", onkeyup = "Duration_Changed(false);", onchange = "Duration_Changed(false);" })
+                    <select id="DurFormulasList" class="form-control" onchange="Duration_Changed(true);" onkeyup="Duration_Changed(true);"></select>
+
+                    <label for="Duration">Max:</label>
+                    @Html.TextBox("Duration", Spell.TextField("buffduration"), new { @class = "NumberField form-control", onchange = "Duration_Changed(false);", onkeyup = "Duration_Changed(false);" })
+
+                    @Html.Label("DurationPreview", "Duration:") <span id="DurationPreview" class="form-control TextField"></span>
+
+                    <button id="ButtonApplyDuration" class="btn btn-default" onclick="Duration_Apply(); return false;">Apply</button>
+                    <button id="ButtonCancelDuration" class="btn btn-default" onclick="Duration_Cancel(); return false;">Cancel</button>
+                </div>
+                
+                <button id="ButtonSaveSpell" class="btn btn-default">Save Changes</button>
+                <button id="ButtonResetSpell" class="btn btn-default" onclick="ResetSpell(); return false;">Reset Changes</button>
+            }
+@*
+    <p>@Spell.DebugString</p>
+*@
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+
+    pageLoaded = true;
+
+</script>

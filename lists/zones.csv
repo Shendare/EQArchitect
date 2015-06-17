@@ -1,0 +1,521 @@
+;ID,Nick,Name,StringID,Expansion,Flags,MinLevel,Unknown7,Unknown8
+2,qeynos2,North Qeynos,2244,0,7,0,0,0
+3,qrg,Surefall Glade,2245,0,65543,0,0,0
+4,qeytoqrg,Qeynos Hills,2246,0,4194310,0,0,0
+6,highkeep,HighKeep,2248,0,7,0,0,0
+8,freportn,North Freeport,2249,0,8388615,0,0,0
+9,freportw,West Freeport,2250,0,8388615,0,0,0
+10,freporte,East Freeport,2251,0,8388615,0,0,0
+11,runnyeye,Clan RunnyEye,2252,0,4,0,0,0
+12,qey2hh1,West Karana,2253,0,4227076,0,0,0
+13,northkarana,North Karana,2254,0,4292612,0,0,0
+14,southkarana,South Karana,2255,0,4227076,0,0,0
+15,eastkarana,East Karana,2256,0,4227076,0,0,0
+16,beholder,Gorge of King Xorbb,2257,0,4194308,0,0,0
+17,blackburrow,BlackBurrow,2258,0,4,0,0,0
+18,paw,Infected Paw,2259,0,4,0,0,0
+19,rivervale,Rivervale,2260,0,7,0,0,0
+20,kithicor,Kithicor Forest,2261,0,4227076,0,0,0
+21,commons,West Commonlands,2262,0,12681220,0,0,0
+22,ecommons,East Commonlands,2263,0,12615686,0,0,0
+23,erudnint,Erudin Palace,2264,0,7,0,0,0
+24,erudnext,Erudin,2265,0,7,0,0,0
+25,nektulos,Nektulos Forest,2266,0,4227078,0,0,0
+26,cshome,Sunset Home,2267,0,4,0,0,0
+27,lavastorm,Lavastorm Mountains,2268,0,4292612,0,0,0
+28,nektropos,Nektropos,2269,0,8388612,0,0,0
+29,halas,Halas,2270,0,7,0,0,0
+30,everfrost,Everfrost Peaks,2271,0,4227078,0,0,0
+31,soldunga,Solusek's Eye,2276,0,0,0,0,0
+32,soldungb,Nagafen's Lair,2277,0,0,0,0,0
+33,misty,Misty Thicket,2274,0,12681222,0,0,0
+34,nro,North Ro,2275,0,12582916,0,0,0
+35,sro,South Ro,2276,0,12681220,0,0,0
+36,befallen,Befallen,2277,0,4,0,0,0
+37,oasis,Oasis of Marr,2278,0,12615684,0,0,0
+38,tox,Toxxulia Forest,2279,0,12648454,0,0,0
+39,hole,The Ruins of Old Paineel,2280,0,2060,0,0,0
+40,neriaka,Neriak Foreign Quarter,2281,0,7,0,0,0
+41,neriakb,Neriak Commons,2282,0,7,0,0,0
+42,neriakc,Neriak Third Gate,2283,0,7,0,0,0
+43,neriakd,Neriak Palace,2284,0,8388615,0,0,0
+44,najena,Najena,2285,0,4,0,0,0
+45,qcat,Qeynos Catacombs,2286,0,4,0,0,0
+46,innothule,Innothule Swamp,2287,0,12582918,0,0,0
+47,feerrott,The Feerrott,2288,0,4292614,0,0,0
+48,cazicthule,Cazic-Thule,2289,0,2052,0,0,0
+49,oggok,Oggok,2290,0,7,0,0,0
+50,rathemtn,Mountains of Rathe,2291,0,4227076,0,0,0
+51,lakerathe,Lake Rathetear,2292,0,4227076,0,0,0
+52,grobb,Grobb,2293,0,7,0,0,0
+53,aviak,Aviak Village,2294,0,8388612,0,0,0
+54,gfaydark,Greater Faydark,2295,0,4259847,0,0,0
+55,akanon,Ak'Anon,2296,0,7,0,0,0
+56,steamfont,Steamfont Mountains,2297,0,12681222,0,0,0
+57,lfaydark,Lesser Faydark,2298,0,4194308,0,0,0
+58,crushbone,Clan Crushbone,2299,0,4,0,0,0
+59,mistmoore,Castle Mistmoore,2300,0,0,0,0,0
+60,kaladima,Kaladim,2308,0,7,0,0,0
+61,felwithea,Felwithe,2303,0,7,0,0,0
+62,felwitheb,Felwithe,2303,0,7,0,0,0
+63,unrest,Estate of Unrest,2304,0,4,0,0,0
+64,kedge,Kedge Keep,2305,0,32772,0,0,0
+65,guktop,Upper Guk,2306,0,4,0,0,0
+66,gukbottom,Lower Guk,2307,0,4,0,0,0
+67,kaladimb,Kaladim,2308,0,7,0,0,0
+68,butcher,Butcherblock Mountains,2309,0,4227078,0,0,0
+69,oot,Ocean of Tears,2310,0,12615684,0,0,0
+70,cauldron,Dagnor's Cauldron,2311,0,4227076,0,0,0
+71,airplane,Plane of Sky,2312,0,5244940,0,2,0
+72,fearplane,Plane of Fear,2313,0,5242884,0,0,0
+73,permafrost,Permafrost Keep,2314,0,4,0,0,0
+74,kerraridge,Kerra Isle,2315,0,8421380,0,0,0
+75,paineel,Paineel,2316,0,7,0,0,0
+76,hateplane,The Plane of Hate,2317,0,13633540,0,0,0
+77,arena,The Arena,2401,6,4,0,0,0
+78,fieldofbone,The Field of Bone,2319,1,4227078,0,0,0
+79,warslikswood,Warsliks Wood,2320,1,4227078,0,0,0
+80,soltemple,Temple of Solusek Ro,2321,0,4,0,0,0
+81,droga,Temple of Droga,2322,1,4,0,0,0
+82,cabwest,West Cabilis,2323,1,7,0,0,0
+83,swampofnohope,Swamp of No Hope,2324,1,4227078,0,0,0
+84,firiona,Firiona Vie,2325,1,4227076,0,0,0
+85,lakeofillomen,Lake of Ill Omen,2326,1,4227078,0,0,0
+86,dreadlands,Dreadlands,2327,1,4292612,0,0,0
+87,burningwood,Burning Woods,2328,1,4227076,0,0,0
+88,kaesora,Kaesora,2329,1,4,0,0,0
+89,sebilis,Old Sebilis,2330,1,4,0,0,0
+90,citymist,City of Mist,2331,1,4,0,0,0
+91,skyfire,Skyfire Mountains,2332,1,4292612,0,0,0
+92,frontiermtns,Frontier Mountains,2333,1,4227076,0,0,0
+93,overthere,The Overthere,2334,1,4227076,0,0,0
+94,emeraldjungle,The Emerald Jungle,2335,1,4292612,0,0,0
+95,trakanon,Trakanon's Teeth,2336,1,4227076,0,0,0
+96,timorous,Timorous Deep,2337,1,4227076,0,0,0
+97,kurn,Kurn's Tower,2338,1,4,0,0,0
+98,erudsxing,Erud's Crossing,2339,0,4227076,0,0,0
+100,stonebrunt,Stonebrunt Mountains,2340,0,4194308,0,0,0
+101,warrens,The Warrens,2341,0,4,0,0,0
+102,karnor,Karnor's Castle,2342,1,4,0,0,0
+103,chardok,Chardok,2343,1,4,0,0,0
+104,dalnir,Dalnir,2344,1,4,0,0,0
+105,charasis,Howling Stones,2345,1,4,0,0,0
+106,cabeast,East Cabilis,2346,1,7,0,0,0
+107,nurga,Mines of Nurga,2347,1,4,0,0,0
+108,veeshan,Veeshan's Peak,2348,1,516,0,0,0
+109,veksar,Veksar,2349,1,8,0,0,0
+110,iceclad,Iceclad Ocean,2350,2,4292612,0,0,0
+111,frozenshadow,Tower of Frozen Shadow,2351,2,4,0,0,0
+112,velketor,Velketor's Labyrinth,2352,2,12,0,0,0
+113,kael,Kael Drakkel,2353,2,8213,0,0,0
+114,skyshrine,Skyshrine,2354,2,8213,0,0,0
+115,thurgadina,Thurgadin,2355,2,5,0,0,0
+116,eastwastes,Eastern Wastes,2356,2,4227076,0,0,0
+117,cobaltscar,Cobalt Scar,2357,2,4292612,0,0,0
+118,greatdivide,Great Divide,2358,2,4292612,0,0,0
+119,wakening,The Wakening Land,2359,2,4292612,0,0,0
+120,westwastes,Western Wastes,2360,2,4227076,0,0,0
+121,crystal,Crystal Caverns,2361,2,4,0,0,0
+123,necropolis,Dragon Necropolis,2362,2,4,0,0,0
+124,templeveeshan,Temple of Veeshan,2363,2,8220,0,0,0
+125,sirens,Siren's Grotto,2364,2,12,0,0,0
+126,mischiefplane,Plane of Mischief,2365,2,8196,0,0,0
+127,growthplane,Plane of Growth,2366,2,5283844,0,0,0
+128,sleeper,Sleeper's Tomb,2367,2,20,0,0,0
+129,thurgadinb,Icewell Keep,2368,2,8197,0,0,0
+130,erudsxing2,Marauder's Mire,2369,0,12582916,0,0,0
+150,shadowhaven,Shadow Haven,2370,3,7,0,0,0
+151,bazaar,The Bazaar,2371,0,301989895,0,0,0
+152,nexus,The Nexus,2372,3,66055,0,0,0
+153,echo,Echo Caverns,2373,3,4,0,0,0
+154,acrylia,Acrylia Caverns,2374,3,28,0,0,0
+155,sharvahl,Shar Vahl,2375,3,4,0,0,0
+156,paludal,Paludal Caverns,2376,3,4,0,0,0
+157,fungusgrove,Fungus Grove,2377,3,4,0,0,0
+158,vexthal,Vex Thal,2378,3,12,0,0,0
+159,sseru,Sanctus Seru,2379,3,33292,0,0,0
+160,katta,Katta Castellum,2380,3,12,0,0,0
+161,netherbian,Netherbian Lair,2381,3,4,0,0,0
+162,ssratemple,Ssraeshza Temple,2382,3,4,0,0,0
+163,griegsend,Grieg's End,2383,3,12,0,0,0
+164,thedeep,The Deep,2384,3,12,0,0,0
+165,shadeweaver,Shadeweaver's Thicket,2385,3,4194308,0,0,0
+166,hollowshade,Hollowshade Moor,2386,3,4194308,0,0,0
+167,grimling,Grimling Forest,2387,3,4194308,0,0,0
+168,mseru,Marus Seru,2388,3,4194308,0,0,0
+169,letalis,Mons Letalis,2389,3,4194308,0,0,0
+170,twilight,The Twilight Sea,2390,3,4194308,0,0,0
+171,thegrey,The Grey,2391,3,4210692,0,0,0
+172,tenebrous,The Tenebrous Mountains,2392,3,4194308,0,0,0
+173,maiden,The Maiden's Eye,2393,3,4227076,0,0,0
+174,dawnshroud,Dawnshroud Peaks,2394,3,4194308,0,0,0
+175,scarlet,The Scarlet Desert,2395,3,4194308,0,0,0
+176,umbral,The Umbral Plains,2396,3,4194308,0,0,0
+179,akheva,Akheva Ruins,2397,3,12,0,0,0
+180,arena2,The Arena,2401,0,4194308,0,0,0
+181,jaggedpine,The Jaggedpine Forest,2398,0,2052,0,0,0
+182,nedaria,Nedaria's Landing,5803,0,2052,0,0,0
+183,tutorial,Tutorial Zone,2399,0,8388612,0,0,0
+184,load,Loading,2301,0,8388612,0,0,0
+185,load2,Loading,2301,0,8388612,0,0,0
+186,hateplaneb,The Plane of Hate,2317,0,1050628,0,0,0
+187,shadowrest,Shadowrest,5827,0,4,0,0,0
+188,tutoriala,The Mines of Gloomingdeep,5856,0,25165830,0,0,0
+190,clz,Loading,2301,0,8388612,0,0,0
+200,codecay,Ruins of Lxanvom,9006,4,1441796,0,0,3
+201,pojustice,Plane of Justice,9007,4,1441796,0,0,3
+202,poknowledge,Plane of Knowledge,9004,0,6,0,0,0
+203,potranquility,Plane of Tranquility,9005,4,1048580,0,0,0
+204,ponightmare,Plane of Nightmare,9008,4,1441812,0,0,3
+205,podisease,Plane of Disease,9010,4,1441796,0,0,3
+206,poinnovation,Plane of Innovation,9011,4,1441812,0,0,3
+207,potorment,Plane of Torment,9012,4,1441820,0,0,3
+208,povalor,Plane of Valor,9013,4,1474564,0,0,3
+209,bothunder,"Torden, The Bastion of Thunder",9014,4,1441796,0,0,3
+210,postorms,Plane of Storms,9015,4,1441796,0,0,3
+211,hohonora,Halls of Honor,9016,4,1441796,0,0,3
+212,solrotower,Solusek Ro's Tower,9018,4,1441812,0,0,3
+213,powar,Plane of War,9019,4,9863172,0,0,3
+214,potactics,"Drunder, Fortress of Zek",9020,4,1441796,0,0,3
+215,poair,"Eryslai, the Kingdom of Wind",9021,4,1441804,0,0,3
+216,powater,Reef of Coirnav,9022,4,1441796,0,0,3
+217,pofire,"Doomfire, The Burning Lands",9023,4,1441796,0,0,3
+218,poeartha,"Vegarlson, The Earthen Badlands",9024,4,1441796,0,0,3
+219,potimea,Plane of Time,9026,4,1998860,0,0,3
+220,hohonorb,Temple of Marr,9017,4,1441796,0,0,3
+221,nightmareb,Lair of Terris Thule,9009,4,1474564,0,0,3
+222,poearthb,Stronghold of the Twelve,9025,4,1441796,0,0,3
+223,potimeb,Plane of Time,9026,4,10387484,0,0,3
+224,gunthak,Gulf of Gunthak,4048,5,4,0,0,0
+225,dulak,Dulak's Harbor,4049,5,12,0,0,0
+226,torgiran,Torgiran Mines,4046,5,4,0,0,0
+227,nadox,Crypt of Nadox,4047,5,12,0,0,0
+228,hatesfury,"Hate's Fury, The Scorned Maiden",4050,5,1179652,0,0,0
+229,guka,The Cauldron of Lost Souls,9086,6,8388612,0,0,0
+230,ruja,The Bloodied Quarries,9114,6,8388612,0,0,0
+231,taka,The Sunken Library,9124,6,8388612,0,0,0
+232,mira,The Silent Gallery,9094,6,8388612,0,0,0
+233,mmca,The Forlorn Caverns,9104,6,8388612,0,0,0
+234,gukb,The Drowning Crypt,9087,6,8388612,0,0,0
+235,rujb,The Halls of War,9115,6,8388612,0,0,0
+236,takb,The Shifting Tower,9125,6,8388612,0,0,0
+237,mirb,The Maw of the Menagerie,9095,6,8388612,0,0,0
+238,mmcb,The Dreary Grotto,9105,6,8388612,0,0,0
+239,gukc,The Ancient Aqueducts,9088,6,8388612,0,0,0
+240,rujc,The Wind Bridges,9116,6,8388612,0,0,0
+241,takc,The Fading Temple,9126,6,8388612,0,0,0
+242,mirc,The Spider Den,9096,6,8388612,0,0,0
+243,mmcc,The Asylum of Invoked Stone,9106,6,8388612,0,0,0
+244,gukd,The Mushroom Grove,9089,6,8388612,0,0,0
+245,rujd,The Gladiator Pits,9117,6,8388612,0,0,0
+246,takd,The Royal Observatory,9127,6,8388612,0,0,0
+247,mird,The Hushed Banquet,9097,6,8388612,0,0,0
+248,mmcd,The Chambers of Eternal Affliction,9107,6,8388612,0,0,0
+249,guke,The Foreboding Prison,9090,6,8388612,0,0,0
+250,ruje,The Drudge Hollows,9118,6,8388612,0,0,0
+251,take,The River of Recollection,9128,6,8388612,0,0,0
+252,mire,The Frosted Halls,9098,6,8388612,0,0,0
+253,mmce,The Sepulcher of the Damned,9108,6,8388612,0,0,0
+254,gukf,The Chapel of the Witnesses,9091,6,8388612,0,0,0
+255,rujf,The Fortified Lair of the Taskmasters,9119,6,8388612,0,0,0
+256,takf,The Sandfall Corridors,9129,6,8388612,0,0,0
+257,mirf,The Forgotten Wastes,9099,6,8388612,0,0,0
+258,mmcf,The Ritualistic Summoning Grounds,9109,6,8388612,0,0,0
+259,gukg,The Root Garden,9092,6,8388612,0,0,0
+260,rujg,The Hidden Vale,9120,6,8388612,0,0,0
+261,takg,The Balancing Chamber,9130,6,8388612,0,0,0
+262,mirg,The Heart of the Menagerie,9100,6,8388612,0,0,0
+263,mmcg,The Cesspits of Putrescence,9110,6,8388612,0,0,0
+264,gukh,The Accursed Sanctuary,9093,6,8388612,0,0,0
+265,rujh,The Blazing Forge,9121,6,8388612,0,0,0
+266,takh,The Sweeping Tides,9131,6,8388612,0,0,0
+267,mirh,The Morbid Laboratory,9101,6,8388612,0,0,0
+268,mmch,The Aisles of Blood,9111,6,8388612,0,0,0
+269,ruji,The Arena of Chance,9122,6,8388612,0,0,0
+270,taki,The Antiquated Palace,9132,6,8388612,0,0,0
+271,miri,The Theater of Imprisoned Horrors,9102,6,8388612,0,0,0
+272,mmci,The Halls of Sanguinary Rites,9112,6,8388612,0,0,0
+273,rujj,The Barracks of War,9123,6,8388612,0,0,0
+274,takj,The Prismatic Corridors,9133,6,8388612,0,0,0
+275,mirj,The Grand Library,9103,6,8388612,0,0,0
+276,mmcj,The Infernal Sanctuary,9113,6,8388612,0,0,0
+277,chardokb,The Halls of Betrayal,598,1,4,0,0,0
+278,soldungc,The Caverns of Exile,600,0,2052,0,0,0
+279,abysmal,Abysmal Sea,3385,7,4194308,0,0,0
+280,natimbi,"Natimbi, The Broken Shores",3386,7,4194308,0,0,0
+281,qinimi,"Qinimi, Court of Nihilia",3387,7,1048604,0,0,0
+282,riwwi,"Riwwi, Coliseum of Games",3388,7,1048580,0,0,0
+283,barindu,"Barindu, Hanging Gardens",3389,7,1048580,0,0,0
+284,ferubi,"Ferubi, Forgotten Temple of Taelosia",3390,7,1049092,0,0,0
+285,snpool,"Sewers of Nihilia, Pool of Sludge",3391,7,9437700,0,0,0
+286,snlair,"Sewers of Nihilia, Lair of Trapped Ones",3392,7,9437700,0,0,0
+287,snplant,"Sewers of Nihilia, Purifying Plant",3393,7,9437700,0,0,0
+288,sncrematory,"Sewers of Nihilia, the Crematory",3394,7,9437700,0,0,0
+289,tipt,"Tipt, Treacherous Crags",3395,7,9437188,0,0,0
+290,vxed,"Vxed, The Crumbling Caverns",3396,7,9437188,0,0,0
+291,yxtta,"Yxtta, Pulpit of Exiles",3397,7,1048580,0,0,0
+292,uqua,"Uqua, The Ocean God Chantry",3398,7,9437708,0,0,0
+293,kodtaz,"Kod'Taz, Broken Trial Grounds",3399,7,1048580,0,0,0
+294,ikkinz,"Ikkinz, Chambers of Destruction",3447,7,9437188,0,0,0
+295,qvic,"Qvic, Prayer Grounds of Calling",3451,7,1048580,0,0,0
+296,inktuta,"Inktu`Ta, The Unmasked Chapel",3448,7,9437700,0,0,0
+297,txevu,"Txevu, Lair of the Elite",3449,7,1048580,0,0,0
+298,tacvi,"Tacvi, Seat of the Slaver",3450,7,9437700,0,0,0
+299,qvicb,"Qvic, the Hidden Vault",5826,7,9437188,0,0,0
+300,wallofslaughter,Wall of Slaughter,5889,8,1048580,0,0,0
+301,bloodfields,The Bloodfields,5890,8,4,0,0,0
+302,draniksscar,Dranik's Scar,5891,8,4,0,0,0
+303,causeway,Nobles' Causeway,5892,8,4,0,0,0
+304,chambersa,Muramite Proving Grounds,5898,8,8389124,0,0,0
+305,chambersb,Muramite Proving Grounds,5898,8,8389124,0,0,0
+306,chambersc,Muramite Proving Grounds,5898,8,8389124,0,0,0
+307,chambersd,Muramite Proving Grounds,5898,8,8389124,0,0,0
+308,chamberse,Muramite Proving Grounds,5898,8,8389124,0,0,0
+309,chambersf,Muramite Proving Grounds,5898,8,8389124,0,0,0
+316,provinggrounds,Muramite Proving Grounds,5893,8,524,0,0,0
+317,anguish,Asylum of Anguish,5894,8,9437700,0,0,0
+318,dranikhollowsa,Dranik's Hollows,5899,8,8389124,0,0,0
+319,dranikhollowsb,Dranik's Hollows,5899,8,8389124,0,0,0
+320,dranikhollowsc,Dranik's Hollows,5899,8,8389124,0,0,0
+321,dranikhollowsd,Dranik's Hollows,5899,8,8389124,0,0,0
+322,dranikhollowse,Dranik's Hollows,5899,8,8389124,0,0,0
+323,dranikhollowsf,Dranik's Hollows,5899,8,8389124,0,0,0
+324,dranikhollowsg,Dranik's Hollows,5899,8,8389124,0,0,0
+325,dranikhollowsh,Dranik's Hollows,5899,8,8389124,0,0,0
+326,dranikhollowsi,Dranik's Hollows,5899,8,8389124,0,0,0
+327,dranikhollowsj,Dranik's Hollows,5899,8,8389124,0,0,0
+328,dranikcatacombsa,Catacombs of Dranik,5900,8,8389124,0,0,0
+329,dranikcatacombsb,Catacombs of Dranik,5900,8,8389124,0,0,0
+330,dranikcatacombsc,Catacombs of Dranik,5900,8,8389124,0,0,0
+331,draniksewersa,Sewers of Dranik,5901,8,8389124,0,0,0
+332,draniksewersb,Sewers of Dranik,5901,8,8389124,0,0,0
+333,draniksewersc,Sewers of Dranik,5901,8,8389124,0,0,0
+334,riftseekers,Riftseekers' Sanctum,5895,8,1049092,0,0,0
+335,harbingers,Harbingers' Spire,5896,8,512,0,0,0
+336,dranik,The Ruined City of Dranik,5897,8,1048580,0,0,0
+337,broodlands,The Broodlands,5160,9,4,0,0,0
+338,stillmoona,Stillmoon Temple,5161,9,516,0,0,0
+339,stillmoonb,The Ascent,5162,9,4,0,0,0
+340,thundercrest,Thundercrest Isles,5163,9,1048580,0,0,0
+341,delvea,Lavaspinner's Lair,5164,9,516,0,0,0
+342,delveb,Tirranun's Delve,5165,9,516,0,0,0
+343,thenest,The Accursed Nest,5166,9,1049092,0,0,0
+344,guildlobby,The Guild Lobby,6112,0,536870948,0,0,0
+345,guildhall,Guild Hall,6111,9,-2139095036,0,0,0
+346,barter,The Barter Hall,6116,0,41943047,0,0,0
+347,illsalin,Ruins of Illsalin,5170,10,4,0,0,0
+348,illsalina,Imperial Bazaar,5171,10,8388612,0,0,0
+349,illsalinb,Temple of the Korlach,5172,10,8388612,0,0,0
+350,illsalinc,The Nargilor Pits,5173,10,8388612,0,0,0
+351,dreadspire,Dreadspire Keep,5174,10,12,0,0,0
+354,drachnidhive,The Hive,5175,10,4,0,0,0
+355,drachnidhivea,Living Larder,5176,10,8388612,0,0,0
+356,drachnidhiveb,Coven of the Skinwalkers,5177,10,8388612,0,0,0
+357,drachnidhivec,Queen Sendaii's Lair,5178,10,8388612,0,0,0
+358,westkorlach,Stoneroot Falls,5179,10,4,0,0,0
+359,westkorlacha,Chambers of Xill,5180,10,8388612,0,0,0
+360,westkorlachb,Caverns of the Lost,5181,10,8388612,0,0,0
+361,westkorlachc,Lair of the Korlach,5182,10,8388612,0,0,0
+362,eastkorlach,Undershore,5183,10,4,0,0,0
+363,eastkorlacha,Snarlstone Dens,5184,10,8388612,0,0,0
+364,shadowspine,Shadowspine,5185,10,8388612,0,0,0
+365,corathus,Corathus Creep,5186,10,4,0,0,0
+366,corathusa,Sporali Caverns,5187,10,8388612,0,0,0
+367,corathusb,Corathus Lair,5188,10,8388612,0,0,0
+368,nektulosa,Shadowed Grove,5189,10,8388612,0,0,0
+369,arcstone,Arcstone,3630,11,0,0,0,0
+370,relic,Relic,3631,11,0,0,0,0
+371,skylance,Skylance,3632,11,8388616,0,0,0
+372,devastation,The Devastation,3633,11,0,0,0,0
+373,devastationa,The Seething Wall,3634,11,8388608,0,0,0
+374,rage,"Sverag, Stronghold of Rage",3635,11,0,0,0,0
+375,ragea,"Razorthorn, Tower of Sullon Zek",3636,11,8388608,0,0,0
+376,takishruins,Ruins of Takish-Hiz,3637,0,0,0,0,0
+377,takishruinsa,The Root of Ro,3638,11,8388608,0,0,0
+378,elddar,The Elddar Forest,3639,11,0,0,0,0
+379,elddara,Tunare's Shrine,3640,11,8388608,0,0,0
+380,theater,Theater of Blood,3641,11,0,0,0,0
+381,theatera,"Deathknell, Tower of Dissonance",3642,11,8388616,0,0,0
+382,freeporteast,East Freeport,3643,0,0,0,0,0
+383,freeportwest,West Freeport,3644,0,0,0,0,0
+384,freeportsewers,Freeport Sewers,3645,0,0,0,0,0
+385,freeportacademy,Academy of Arcane Sciences,3646,11,8388608,0,0,0
+386,freeporttemple,Temple of Marr,3647,11,8388608,0,0,0
+387,freeportmilitia,Freeport Militia House,3648,11,8388608,0,0,0
+388,freeportarena,Arena,3649,11,8388608,0,0,0
+389,freeportcityhall,City Hall,3650,11,8388608,0,0,0
+390,freeporttheater,Theater,3651,11,8388608,0,0,0
+391,freeporthall,Hall of Truth,3652,11,8388608,0,0,0
+392,northro,North Ro,2275,0,0,0,0,0
+393,southro,South Ro,2276,0,0,0,0,0
+394,crescent,Crescent Reach,3675,12,0,0,0,0
+395,moors,Blightfire Moors,3676,12,0,0,0,0
+396,stonehive,Stone Hive,3677,12,0,0,0,0
+397,mesa,Goru`kar Mesa,3678,12,0,0,0,0
+398,roost,Blackfeather Roost,3679,12,0,0,0,0
+399,steppes,The Steppes,3680,12,0,0,0,0
+400,icefall,Icefall Glacier,3681,12,0,0,0,0
+401,valdeholm,Valdeholm,3682,12,0,0,0,0
+402,frostcrypt,"Frostcrypt, Throne of the Shade King",3683,12,0,0,0,0
+403,sunderock,Sunderock Springs,3684,12,0,0,0,0
+404,vergalid,Vergalid Mines,3685,12,0,0,0,0
+405,direwind,Direwind Cliffs,3686,12,0,0,0,0
+406,ashengate,"Ashengate, Reliquary of the Scale",3687,12,0,0,0,0
+407,highpasshold,Highpass Hold,2247,0,4,0,0,0
+408,commonlands,Commonlands,616,0,32774,0,0,0
+409,oceanoftears,Ocean Of Tears,2310,0,32772,0,0,0
+410,kithforest,Kithicor Forest,2261,0,8421380,0,0,0
+411,befallenb,Befallen,2277,0,8388612,0,0,0
+412,highpasskeep,HighKeep,2248,0,12615686,0,0,0
+413,innothuleb,Innothule Swamp,2287,0,6,0,0,0
+414,toxxulia,Toxxulia Forest,2279,0,65574,0,0,0
+415,mistythicket,Misty Thicket,2274,0,98306,0,0,0
+416,kattacastrum,Katta Castrum,617,13,0,0,0,0
+417,thalassius,"Thalassius, the Coral Keep",618,13,0,0,0,0
+418,atiiki,Jewel of Atiiki,619,13,32,0,0,0
+419,zhisza,"Zhisza, the Shissar Sanctuary",620,13,0,0,0,0
+420,silyssar,"Silyssar, New Chelsith",621,13,0,0,0,0
+421,solteris,"Solteris, the Throne of Ro",622,13,8388616,0,0,0
+422,barren,Barren Coast,623,13,0,0,0,0
+423,buriedsea,The Buried Sea,624,13,0,0,0,0
+424,jardelshook,Jardel's Hook,625,13,8388608,0,0,0
+425,monkeyrock,Monkey Rock,626,13,8388608,0,0,0
+426,suncrest,Suncrest Isle,627,13,8388608,0,0,0
+427,deadbone,Deadbone Reef,628,13,8388608,0,0,0
+428,blacksail,Blacksail Folly,629,13,8388608,0,0,0
+429,maidensgrave,Maiden's Grave,630,13,8388608,0,0,0
+430,redfeather,Redfeather Isle,631,13,8388608,0,0,0
+431,shipmvp,The Open Sea,8057,13,8388608,0,0,0
+432,shipmvu,The Open Sea,8057,13,8388608,0,0,0
+433,shippvu,The Open Sea,8057,13,8388608,0,0,0
+434,shipuvu,The Open Sea,8057,13,8388608,0,0,0
+435,shipmvm,The Open Sea,8057,13,8388608,0,0,0
+436,mechanotus,Fortress Mechanotus,652,14,32,0,0,0
+437,mansion,Meldrath's Majestic Mansion,653,14,0,0,0,0
+438,steamfactory,The Steam Factory,654,14,0,0,0,0
+439,shipworkshop,S.H.I.P. Workshop,655,14,0,0,0,0
+440,gyrospireb,Gyrospire Beza,656,14,0,0,0,0
+441,gyrospirez,Gyrospire Zeka,657,14,0,0,0,0
+442,dragonscale,Dragonscale Hills,658,14,32,0,0,0
+443,lopingplains,Loping Plains,659,14,0,0,0,0
+444,hillsofshade,Hills of Shade,660,14,0,0,0,0
+445,bloodmoon,Bloodmoon Keep,661,14,0,0,0,0
+446,crystallos,"Crystallos, Lair of the Awakened",662,14,0,0,0,0
+447,guardian,The Mechamatic Guardian,663,14,8388608,0,0,0
+448,steamfontmts,Steamfont Mountains,2297,0,98306,0,0,0
+449,cryptofshade,Crypt of Shade,665,14,8388608,0,0,0
+450,dragonscalea,Tinmizer's Wunderwerks,671,0,8519680,0,0,0
+451,dragonscaleb,Deepscar's Den,672,14,8388608,0,0,0
+452,oldfieldofbone,Field of Scale,1216,15,0,0,0,0
+453,oldkaesoraa,Kaesora Library,1216,15,0,0,0,0
+454,oldkaesorab,Hatchery Wing,1216,15,0,0,0,0
+455,oldkurn,Kurn's Tower,1216,15,0,0,0,0
+456,oldkithicor,Bloody Kithicor,1216,15,0,0,0,0
+457,oldcommons,Old Commonlands,1216,15,0,0,0,0
+458,oldhighpass,Highpass Hold,1216,15,8388608,0,0,0
+459,thevoida,The Void,1216,15,8,0,0,0
+460,thevoidb,The Void,1216,15,8,0,0,0
+461,thevoidc,The Void,1216,15,8,0,0,0
+462,thevoidd,The Void,1216,15,8,0,0,0
+463,thevoide,The Void,1216,15,8,0,0,0
+464,thevoidf,The Void,1216,15,8,0,0,0
+465,thevoidg,The Void,1216,15,8,0,0,0
+466,oceangreenhills,Oceangreen Hills,1216,15,0,0,0,0
+467,oceangreenvillage,Oceangreen Village,1216,15,0,0,0,0
+468,oldblackburrow,Blackburrow,1216,15,0,0,0,0
+469,bertoxtemple,Temple of Bertoxxulous,1216,15,0,0,0,0
+470,discord,"Korafax, Home of the Riders",1216,15,0,0,2,0
+471,discordtower,Citadel of the Worldslayer,1216,15,8388608,0,0,0
+472,oldbloodfield,Old Bloodfields,1216,15,0,0,0,0
+473,precipiceofwar,The Precipice of War,1216,15,0,0,0,0
+474,olddranik,City of Dranik,1216,15,0,0,0,0
+475,toskirakk,Toskirakk,1216,15,0,0,0,0
+476,korascian,Korascian Warrens,1216,15,0,0,0,0
+477,rathechamber,Rathe Council Chambers,1216,15,0,0,0,0
+478,oldfieldofboneb,Field of Scale,1216,15,8388608,0,0,0
+479,crafthalls,Ngreth's Den,1216,0,8388608,0,0,0
+480,brellsrest,Brell's Rest,1216,16,0,0,0,0
+481,fungalforest,Fungal Forest,1216,16,0,0,0,0
+482,underquarry,The Underquarry,1216,16,32,0,0,0
+483,coolingchamber,The Cooling Chamber,1216,16,0,0,0,0
+484,shiningcity,"Kernagir, The Shining City",1216,16,0,0,0,0
+485,arthicrex,Arthicrex,1216,16,0,0,0,0
+486,foundation,The Foundation,1216,16,0,0,0,0
+487,lichencreep,Lichen Creep,1216,16,0,0,0,0
+488,pellucid,Pellucid Grotto,1216,16,0,0,0,0
+489,stonesnake,Volska's Husk,1216,16,0,0,0,0
+490,brellstemple,Brell's Temple,1216,16,0,0,0,0
+491,convorteum,The Convorteum,1216,16,0,0,0,0
+492,brellsarena,Brell's Arena,1216,16,8388608,0,0,0
+493,weddingchapel,Wedding Chapel,1216,0,8388608,0,0,0
+494,weddingchapeldark,Wedding Chapel,1216,0,8388608,0,0,0
+495,dragoncrypt,Lair of the Fallen,1216,0,8388608,0,0,0
+700,feerrott2,The Feerrott,1216,17,32,0,0,0
+701,thulehouse1,House of Thule,1216,17,0,0,0,0
+702,thulehouse2,"House of Thule, Upper Floors",1216,17,0,0,0,0
+703,housegarden,The Grounds,1216,17,0,0,0,0
+704,thulelibrary,The Library,1216,17,0,0,0,0
+705,well,The Well,1216,17,0,0,0,0
+706,fallen,Erudin Burning,1216,17,0,0,0,0
+707,morellcastle,Morell's Castle,1216,17,0,0,0,0
+708,somnium,Sanctum Somnium,1216,17,0,0,0,0
+709,alkabormare,Al'Kabor's Nightmare,1216,17,0,0,0,0
+710,miragulmare,Miragul's Nightmare,1216,17,0,0,0,0
+711,thuledream,Fear Itself,1216,17,0,0,0,0
+712,neighborhood,Sunrise Hills,1216,0,8388608,0,0,0
+713,phylactery,Miragul's Phylactery,1216,17,8388608,0,0,0
+714,phinterior3a1,House Interior,1216,0,8388608,0,0,0
+715,phinterior1a1,House Interior,1216,0,8388608,0,0,0
+716,phinterior3a2,House Interior,1216,0,8388608,0,0,0
+717,phinterior3a3,House Interior,1216,0,8388608,0,0,0
+718,phinterior1a2,House Interior,1216,0,8388608,0,0,0
+719,phinterior1a3,House Interior,1216,0,8388608,0,0,0
+720,phinterior1b1,Dragon House Interior,1216,0,8388608,0,0,0
+723,phinterior1d1,Dragon House Interior,1216,0,8388608,0,0,0
+724,argath,"Argath, Bastion of Illdaera",1216,18,0,0,0,0
+725,arelis,Valley of Lunanyn,1216,18,0,0,0,0
+726,sarithcity,"Sarith, City of Tides",1216,18,0,0,0,0
+727,rubak,"Rubak Oseka, Temple of the Sea",1216,18,0,0,0,0
+728,beastdomain,Beasts' Domain,1216,18,0,0,0,0
+729,resplendent,The Resplendent Temple,1216,18,0,0,0,0
+730,pillarsalra,Pillars of Alra,1216,18,0,0,0,0
+731,windsong,Windsong Sanctuary,1216,18,0,0,0,0
+732,cityofbronze,"Erillion, City of Bronze",1216,18,0,0,0,0
+733,sepulcher,Sepulcher of Order,1216,18,0,0,0,0
+734,eastsepulcher,Sepulcher East,1216,18,0,0,0,0
+735,westsepulcher,Sepulcher West,1216,18,0,0,0,0
+736,shadowedmount,Shadowed Mount,1216,0,8388608,0,0,0
+737,guildhalllrg,Grand Guild Hall,1216,0,-2139095040,0,0,0
+738,guildhallsml,Greater Guild Hall,1216,0,-2139095040,0,0,0
+739,plhogrinteriors1a1,One Bedroom House Interior,1216,0,8388608,0,0,0
+740,plhogrinteriors1a2,One Bedroom House Interior,1216,0,8388608,0,0,0
+741,plhogrinteriors3a1,Three Bedroom House Interior,1216,0,8388608,0,0,0
+742,plhogrinteriors3a2,Three Bedroom House Interior,1216,0,8388608,0,0,0
+743,plhogrinteriors3b1,Three Bedroom House Interior,1216,0,8388608,0,0,0
+744,plhogrinteriors3b2,Three Bedroom House Interior,1216,0,8388608,0,0,0
+745,plhdkeinteriors1a1,One Bedroom House Interior,1216,0,8388608,0,0,0
+746,plhdkeinteriors1a2,One Bedroom House Interior,1216,0,8388608,0,0,0
+747,plhdkeinteriors1a3,One Bedroom House Interior,1216,0,8388608,0,0,0
+748,plhdkeinteriors3a1,Three Bedroom House Interior,1216,0,8388608,0,0,0
+749,plhdkeinteriors3a2,Three Bedroom House Interior,1216,0,8388608,0,0,0
+750,plhdkeinteriors3a3,Three Bedroom House Interior,1216,0,8388608,0,0,0
+751,guildhall3,Modest Guild Hall,1216,0,-2139095040,0,0,0
+752,shardslanding,Shard's Landing,1216,19,0,0,0,0
+753,xorbb,Valley of King Xorbb,1216,19,0,0,0,0
+754,kaelshard,Kael Drakkel: The King's Madness,1216,19,8213,0,0,0
+755,eastwastesshard,East Wastes: Zeixshi-Kar's Awakening,1216,19,4227076,0,0,0
+756,crystalshard,The Crystal Caverns: Fragment of Fear,1216,19,4,0,0,0
+757,breedinggrounds,The Breeding Grounds,1216,19,0,0,0,0
+758,eviltree,"Evantil, the Vile Oak",1216,19,0,0,0,0
+759,grelleth,"Grelleth's Palace, the Chateau of Filth",1216,19,0,0,0,0
+760,chapterhouse,Chapterhouse of the Fallen,1216,19,0,0,0,0
+761,pomischief,The Plane of Mischief,1216,2,8396804,0,0,0
+762,burnedwoods,The Burned Woods,1216,1,12615684,0,0,0
+763,chelsithreborn,Chelsith Reborn,1216,19,0,0,0,0
+764,poshadow,Plane of Shadow,1216,19,0,0,0,0
+765,heartoffear,Heart of Fear,1216,19,8388608,0,0,0
+766,phinteriortree,Evantil's Abode,1216,0,8388608,0,0,0
+767,interiorwalltest,Wall Wall Wall,1216,0,8388608,0,0,0
+996,arttest,Art Testing Domain,0,0,8388612,0,0,0
+998,fhalls,The Forgotten Halls,5158,0,8388612,0,0,0
+999,apprentice,Designer Apprentice,0,0,8388612,0,0,0

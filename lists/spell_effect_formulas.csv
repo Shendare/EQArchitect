@@ -1,0 +1,48 @@
+;ID,Name
+0,Base
+1,(1-99) Base + Level * Formula
+60,Base / 100
+70,Base / 100
+100,Base
+101,(Level + Base) / 2
+102,(Level + Base)
+103,(Level + Base) * 2
+104,(Level + Base) * 3
+105,(Level + Base) * 4
+106,(Level + Base) * 106
+107,(Level / 2) + Base
+108,(Level / 3) + Base
+109,(Level / 4) + Base
+110,(Level / 6) + Base
+111,[(Level - 16) * 6] + Base
+112,[(Level - 24) * 8] + Base
+113,[(Level - 34) * 10] + Base
+114,[(Level - 44) * 15] + Base
+115,[(Level - 15) * 7] + Base
+116,[(Level - 24) * 10] + Base
+117,[(Level - 34) * 13] + Base
+118,[(Level - 44) * 20] + Base
+119,(Level / 8) + Base
+121,(Level / 3) + Base
+122,"Base, counting down 12 per tick"
+123,Random from Base - Max
+124,[(Level - 50) * 1] + Base
+125,[(Level - 50) * 2] + Base
+126,[(Level - 50) * 3] + Base
+127,[(Level - 50) * 4] + Base
+128,[(Level - 50) * 5] + Base
+129,[(Level - 50) * 10] + Base
+130,[(Level - 50) * 15] + Base
+131,[(Level - 50) * 20] + Base
+132,[(Level - 50) * 25] + Base
+137,Base
+138,Random from 0 - Base
+139,[(Level - 30) / 2) + Base
+140,(Level - 30) + Base
+141,[(Level - 30) * 3/2) + Base
+142,(Level - 30) + Base
+143,(Level * 3/4) + Base
+201,Max
+203,Max
+1001,(1001-1999) Base - 12 * (Formula - 1000) Per Tick
+2001,(2001-2650) Base * Level * (Formula - 2000) Per Tick

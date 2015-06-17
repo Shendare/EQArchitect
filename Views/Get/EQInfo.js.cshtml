@@ -1,0 +1,133 @@
+﻿@model string
+@{
+    Layout = null;
+    Response.ContentType = "application/javascript";
+    Response.AddHeader("Last-Modified", EQInfo.ListsLastUpdated.ToUniversalTime().ToString("R"));
+}
+
+var EQInfoLoaded = false;
+
+    var EffectType1List = "@(EQInfo.Type1SpellEffects)";
+    var EffectType2List = "@(EQInfo.Type2SpellEffects)";
+    
+    @foreach (EQList _list in EQInfo.EQLists)
+    {
+<text>var @(_list.ListName) = { };</text>
+        
+        foreach (KeyValuePair<int, string[]> _item in _list.Items)
+        {
+            @(Html.Raw(_list.ListName + "[" + _item.Key + "]={"))
+        
+            bool _first = true;
+            int _fieldnum = 0;
+
+            foreach (string _field in _item.Value)
+            {
+                if (_first)
+                {
+                    _first = false;
+                }
+                else
+                {
+                    @Html.Encode(',');
+                }
+                @Html.Raw('"');
+                @Html.Encode(_fieldnum < _list.ColumnNames.Length ? _list.ColumnNames[_fieldnum++] : "Field" + _fieldnum.ToString());
+                @Html.Raw("\":\"");
+                @Html.Raw(_field.Replace("\"", "\\\"").Replace("\\", "\\\\").Replace("\r", "").Replace("\n", ""));
+                @Html.Raw('"');
+            }
+
+            @Html.Raw("};\r\n");
+        }
+    }
+
+function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, TextField, TypeFilter, PrependSeparator)
+{
+    var _list = document.getElementById(DropdownListName);
+    var _found = (SelectedValue == null);
+
+    if ((!_list) || (!EQList) || (!_list.options))
+    {
+        return;
+    }
+
+    _list.options.length = 0;
+
+    if (!IDField)
+    {
+        // If not specified, determine ID field.
+
+        // First, pick a field that ends with "ID"
+        Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
+        {
+            if (!IDField && (_fieldName.length > 1) && (_fieldName.substr(_fieldName.length - 2).toUpperCase() == "ID"))
+            {
+                IDField = _fieldName;
+            }
+        })
+
+        // If we didn't find one, use the index as the ID.
+    }
+
+    if (!TextField)
+    {
+        // If not specified, determine Text field.
+
+        // First, pick a field that ends with "Name"
+
+        Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
+        {
+            if (!TextField && (_fieldName.length > 3) && (_fieldName.substr(_fieldName.length - 4).toLowerCase() == "name"))
+            {
+                TextField = _fieldName;
+            }
+        })
+
+        // If we didn't find one, best we can do is choose the second field
+        if (!TextField)
+        {
+            TextField = Object.keys(EQList[Object.keys(EQList)[0]])[1];
+        }
+
+        if (!TextField)
+        {
+            TextField = "Name";
+        }
+    }
+
+    //alert(DropdownListName + "[" + IDField + "] == \"" + TextField + "\"");
+
+    var _curIndex = 0;
+
+    Object.keys(EQList).forEach(function (_id)
+    {
+        if ((TypeFilter == null) || (EQList[_id]["Type"] == TypeFilter))
+        {
+            var _value = EQList[_id][TextField];
+            
+            var _option = document.createElement("option");
+            _option.value = IDField ? EQList[_id][IDField] : _curIndex++;
+            _option.text = (PrependSeparator > "") ? (_id + PrependSeparator + _value) : _value;
+            if (_id == SelectedValue)
+            {
+                _found = true;
+                _option.selected = true;
+            }
+
+            _list.appendChild(_option);
+        }
+    })
+
+    if (!_found)
+    {
+        var _option = document.createElement("option");
+        _option.value = SelectedValue;
+        _option.text = (PrependSeparator > "") ? (SelectedValue + PrependSeparator + "Unknown") : ("Unknown (" + SelectedValue + ")");
+        _option.selected = true;
+
+        _list.appendChild(_option);
+    }
+}
+
+EQInfoLoaded = true;

@@ -1,0 +1,461 @@
+;ID,Type,Name
+0,1,Current HP
+1,1,Armor Class
+2,1,Attack Rating
+3,1,Movement Speed
+4,1,Strength
+5,1,Dexterity
+6,1,Agility
+7,1,Stamina
+8,1,Intelligence
+9,1,Wisdom
+10,1,Charisma
+11,1,Attack Speed
+12,0,Invisibility for a Random Duration
+13,0,See Invisible
+14,0,Water Breathing
+15,1,Current Mana
+16,0,NPC Frenzy Radius (Not Used)
+17,0,NPC Awareness (Not Used)
+18,2,Pacify
+19,1,Temporary Standing with Target NPC's Faction
+20,0,Blindness
+21,0,Stun Targets up to Level 
+22,0,Charm Targets up to Level 
+23,0,Fear Targets up to Level 
+24,1,Stamina (No Longer Used)
+25,0,Bind Respawn Point
+26,0,Return to Respawn Point
+27,0,Attempt to Remove Magical Effect
+28,2,Invisibility to the Undead for a Random Duration
+29,2,Invisibility to Animals for a Random Duration
+30,0,NPC Frenzy Radius
+31,0,Mesmerize
+32,0,Summon Item: 
+33,0,Summon Pet: 
+34,0,Confuse (Not Used)
+35,1,Disease Counter
+36,1,Poison Counter
+37,2,Detect Hostile (Not Used)
+38,2,Detect Magic (Not Used)
+39,2,Detect Poison (Not Used)
+40,2,Temporary Invulnerability
+41,2,Destroy Target (With No Credit)
+42,2,Random Teleport within Spell's Range
+43,1,Crippling Blow Chance
+44,2,Lycanthropy
+45,2,Vampirism (Not Used)
+46,1,Resistance to Fire
+47,1,Resistance to Cold
+48,1,Resistance to Poison
+49,1,Resistance to Disease
+50,1,Resistance to Magic
+51,2,Detect Traps (Not Used)
+52,2,Locate Nearest Undead
+53,2,Locate Nearest Summoned
+54,2,Locate Nearest Animal
+55,1,Damage Absorption
+56,2,Spin to Face North
+57,0,Levitation
+58,0,Illusion: 
+59,1,Damage Shield
+60,2,Transfer Item (Not Used)
+61,2,Identify Item
+62,2,ItemID (Not Used)
+63,0,Attempt to Wipe Hate List
+64,2,Spinning Stun
+65,0,Infravision (Heat Vision)
+66,0,Ultravision (Night Vision)
+67,0,Summon and Take Control of Seeing Eye
+68,2,Destroy Pet and Reclaim Some Mana
+69,1,Maximum HP
+70,2,Corpse Bomb (Not Used)
+71,0,Summon Necromancer Pet: 
+72,2,Preserve Corpse (Not Used)
+73,2,Bind Sight to Target
+74,0,Feign Death
+75,2,Voice Transfer to Target
+76,2,Add Hostile Proximity Alarm
+77,2,Locate Nearest Corpse (Optionally of Target)
+78,1,Chance to Absorb Magical Attack
+79,1,Current HP
+80,2,Enchant Light (Not Used)
+81,0,Revive with Experience Gain
+82,2,Summon Player to Self
+83,0,Teleport To: 
+84,0,Toss Up
+85,0,Add Melee Proc: 
+86,0,NPC Reaction Radius
+87,1,Vision Magnification (Adjust Field of View)
+88,0,Evacuate To: 
+89,1,Physical Size
+90,2,Cloak (Not Used)
+91,0,Summon Corpse
+92,1,Hate with Target
+93,0,Cancel Adverse Weather
+94,2,Limitation: Drop Spell In Combat
+95,2,Sacrifice Target Character with Confirmation
+96,0,Silence All Spellcasting
+97,1,Maximum Mana
+98,1,Attack Speed (V2)
+99,1,Movement Speed
+100,1,Current HP Over Time
+101,0,Complete Heal
+102,0,Immunity to Fear
+103,2,Summon Current Pet to Self
+104,0,Translocate
+105,0,Prevent Gating to Respawn Point
+106,0,Summon Beastlord Pet: 
+107,1,NPC Level
+108,0,Summon Familiar: 
+109,0,Summon Item Into Bag: 
+110,1,Archery (Not Used)
+111,1,All Magical Resistances
+112,1,Effective Spellcasting Level
+113,0,Summon Mount: 
+114,1,Hate Generation Modifier
+115,0,Satisfy Hunger and Thirst
+116,1,Curse Counter
+117,2,Allow Weapons to Hit Magical Targets
+118,1,Performance Amplification
+119,1,Attack Speed V3
+120,1,Healing Modifier
+121,1,Reverse (Healing) Damage Shield
+122,1,Skill Reduction (Not Used)
+123,0,Screech
+124,1,Damage Modifier (Focus)
+125,1,Healing Modifier (Focus)
+126,1,Spell Resistance (Focus)
+127,1,Spellcasting Speed (Focus)
+128,1,Spell Durations (Focus)
+129,1,Spellcasting Range (Focus)
+130,1,Spellcasting Hate Modifier (Focus)
+131,1,Chance to Conserve Reagents (Focus)
+132,1,Spellcasting Mana Cost (Focus)
+133,1,Stun Time Modifier (Focus)
+134,0,Limit to Maximum Spell Level: 
+135,0,Limit to Resistance Type: 
+136,0,Limit to Target Type: 
+137,0,Limit to Effect: 
+138,0,Limit to Spell Type: 
+139,0,Limit to Spell: 
+140,0,Limit to Minimum Spell Duration: 
+141,0,Limit to Instant Spells
+142,0,Limit to Minimum Spell Level: 
+143,0,Limit to Minimum Casting Time: 
+144,0,Limit to Maximum Casting Time: 
+145,0,Teleport (V2): 
+146,1,Resistance to Electricity (Not Used)
+147,1,Current HP by Percentage of Maximum: 
+148,0,Stacking - Block
+149,0,Stacking - Overwrite
+150,1,Chance to Save from Death
+151,0,Suspend Pet
+152,0,Summon Temporary Pets:
+153,0,Balance HP Across Group
+154,0,Attempt to Remove Detrimental Effect
+155,1,Spell Critical Damage
+156,2,Illusion: Target
+157,1,Spell Damage Shield
+158,1,Chance to Reflect Spells
+159,1,All Stats
+160,1,Drunkenness (Not Used)
+161,1,Spell Damage Mitigation
+162,1,Melee Damage Mitigation
+163,0,Block All Attacks
+164,0,Examine LDoN Chest for Traps
+165,0,Disarm LDoN Trap
+166,0,Unlock LDoN Chest
+167,1,Pet Power
+168,1,Melee Damage Mitigation V2
+169,1,Critical Hit Chance
+170,1,Spell Critical Chance
+171,1,Crippling Blow Chance
+172,1,Melee Avoidance
+173,1,Chance to Riposte
+174,1,Chance to Dodge
+175,1,Chance to Parry
+176,1,Offhand Attack Chance
+177,1,Double Attack Chance
+178,0,Lifetap from Melee Attacks
+179,1,All Instrument Effectiveness
+180,1,Chance to Resist Spells
+181,1,Chance to Resist Fear
+182,1,Attack Speed V4
+183,1,Skill Checks
+184,1,Hit Chance
+185,1,Damage Modifier
+186,1,Minimum Damage Modifier
+187,0,Balance Mana Across Group
+188,1,Chance to Block
+189,1,Current Endurance
+190,1,Maximum Endurance
+191,0,Prevent Melee Attacks
+192,1,Hate with Target
+193,0,Skill Attack: 
+194,0,Remove Self from Hate List
+195,1,Resistance to Stun
+196,1,Chance to Strike Through
+197,1,Skill Damage Taken: 
+198,1,Current Endurance
+199,0,Attempt to Taunt the Target
+200,1,Chance of Melee Attack Procs
+201,1,Chance of Ranged Attack Procs
+202,0,Illusion: 
+203,0,Mass Group Next Buff
+204,0,Group Immunity to Fear
+205,0,Rampage (Attack Nearby Targets on Hate Lists)
+206,0,Area Attempt to Taunt
+207,0,Extract Bone Chips from Meat
+208,0,Purge Poison (Not Used)
+209,0,Attempt to Remove Beneficial Effect
+210,0,Pet Shield (Not Used)
+211,0,Area Melee Attack
+212,1,Spell Critical Chance and Mana Cost
+213,1,Pet's Maximum HP
+214,1,Maximum HP by Percentage
+215,1,Pet Melee Avoidance
+216,1,Melee Accuracy
+217,0,Chance to Headshot for 32K Damage
+218,1,Pet's Chance to Critical Hit
+219,0,Critical Spell Hit vs Undead
+220,1,Skill Damage Modifier
+221,1,Weight Encumbrance
+222,1,Chance to Block Attacks from Behind
+223,1,Chance to Double Riposte
+224,0,Perform Double Riposte
+225,0,Perform Double Attack
+226,0,Perform Two Handed Bash
+227,1,Skill Timer
+228,1,Falling Damage (Not Used)
+229,1,Chance to Cast Through Interruptions
+230,0,Extended Shielding (Not Used)
+231,1,Chance for Bashes to Stun
+232,1,Chance to Save from Death
+233,1,Metabolism
+234,1,Apply Poison Time (Not Used)
+235,1,Chance to Channel Spells through Interruptions
+236,0,Free Pet (Not Used)
+237,0,Give Pets Group Buffs
+238,0,Make Illusions Persist Across Zones
+239,0,Feigned Cast On Chance (Not Used)
+240,0,String Unbreakable (Not Used)
+241,1,Pet Energy Reclaiming Efficiency
+242,1,Chance to Wipe Hate Lists
+243,1,Chance to Prevent Charm from Breaking
+244,1,Chance to Prevent Root from Breaking
+245,0,Trap Circumvention (Not Used)
+246,0,Set Breathing Air Supply Level
+247,1,Skill Cap: 
+248,0,Secondary Forte (Not Used)
+249,1,Damage Modifier (V3?)
+250,1,Chance of Spell Attack Procs
+251,0,Consume Projectile: 
+252,1,Chance to Backstab from the Front
+253,1,Front Backstab Minimum Damage
+254,0,-
+255,1,Shield Duration (Not Used)
+256,0,Shroud of Stealth (Not Used)
+257,0,Pet Discipline (Not Used)
+258,1,Chance for Triple Backstab Damage
+259,1,Direct Damage Mitigation
+260,1,Singing Effectiveness
+261,1,Cap on Singing Effectiveness
+262,1,Stat Caps
+263,1,Tradeskill Mastery (Not Used)
+264,0,Hastened AA Skill (Not Used)
+265,0,Immunity to Fizzling Spells
+266,1,Chance of Two-Handed Triple Attack
+267,0,Pet Discipline 2 (Not Used)
+268,0,Reduce Tradeskill Fail (Not Used)
+269,1,Maximum Bind Woundable Health
+270,1,Range of Bard Songs
+271,1,Minimum Movement Speed
+272,1,Effective Spellcasting Level V2
+273,1,Critical DoT Chance
+274,1,Chance to Critical Heal
+275,1,Chance to Critical Mend
+276,1,Chance of Offhand Attacks
+277,1,Chance of Saving from Death
+278,1,Chance to Inflict Finishing Blow on Fleeing Enemy
+279,1,Chance to Flurry Attacks
+280,1,Chance for Pet to Flurry Attacks
+281,0,Pet Feign Death (Not Used)
+282,1,Bind Wound Effectiveness
+283,1,Chance to Perform Double Special Attack
+284,0,Set Lay-on-Hands Heal (Not Used)
+285,0,Nimble Evasion (Not Used)
+286,1,Spell Damage (V3?)
+287,1,Song/Spell Duration by 1 Tick (6s)
+288,1,Chance to Knockback with Special Attacks
+289,0,Cast New Spell when Wearing Off: 
+290,1,Maximum Movement Speed
+291,0,Attempt to Remove Detrimental Effects
+292,1,Chance to Strike Through V2
+293,1,Resistance to Stuns from the Front
+294,1,Critical Spell Chance
+295,0,Reduce Timer Special (Not Used)
+296,1,Spell Vulnerability Focus
+297,1,Incoming Damage
+298,1,Physical Size
+299,0,Awaken Corpse as Temporary Pet
+300,0,Summon Doppelganger
+301,1,Archery Damage
+302,1,Critical Hit Damage %
+303,1,Critical Hit Damage
+304,1,Chance to Avoid Offhand Attack Ripostes
+305,1,Damage Shield Mitigation
+306,0,Army of the Dead (Not Used)
+307,0,Appraisal (Not Used)
+308,0,Suspend Pet
+309,0,Teleport to Caster's Bind Point
+310,1,Reuse Timer Reduction
+311,0,Limit - Not Applicable to Innate Weapon Procs
+312,0,Temporarily Drop to Bottom of Hate List
+313,1,Chance to Forage Additional Items
+314,0,Invisibility (Fixed Duration)
+315,0,Invisibility to Undead (Fixed Duration)
+316,0,Invisibility to Animals (Fixed Duration) (Not Used)
+317,1,Worn Item HP Regeneration Cap
+318,1,Worn Item Mana Regeneration Cap
+319,1,Chance for Heal-over-Time to Critical Tick
+320,1,Shield Block Chance
+321,1,Hate with Target
+322,0,Teleport to Home City
+323,0,Add Defensive Proc on Hit: 
+324,0,Convert HP to Mana
+325,0,Chance Invs Break to AoE (Not Used)
+326,1,Number of Spell Gem Slots
+327,1,Maximum Number of Magical Effects
+328,1,Damage Taken when Unconscious Before Death
+329,1,Damage Absorption with Mana
+330,1,Critical Hit Damage with All Skills
+331,1,Chance to Salvage Tradeskill Failures
+332,0,Summon to Corpse (Not Used)
+333,0,Cast New Spell When Rune Fades: 
+334,1,Current HP V2
+335,0,Block Next Spell Focus
+336,0,Illusionary Target (Not Used)
+337,1,Experience Gain Modifier
+338,0,Summon And Resurrect All Corpses
+339,0,Trigger Second Spell: 
+340,0,Add Chance to Trigger Spell: 
+341,1,Worn Item Attack Rating Cap
+342,0,Prevent from Fleeing
+343,0,Interrupt Casting
+344,1,Chance of Channeling Item Effect through Interruption
+345,1,Maximum Permitted Level for Assassinate
+346,1,Maximum Permitted Level for HeadShot
+347,1,Chance to Perform Double Ranged Attack
+348,0,Limit - Minimum Mana Cost: 
+349,1,Hate Modifier with Shield Equipped
+350,1,Current HP by Draining Mana
+351,0,Persistent Effect (Not Used)
+352,0,Increase Trap Count (Not Used)
+353,0,Additional Aura (Not Used)
+354,0,Deactivate All Traps (Not Used)
+355,0,Learn Trap (Not Used)
+356,0,Change Trigger Type (Not Used)
+357,0,Silence Casting of Spells Affecting: 
+358,1,Current Mana
+359,0,Passive Sense Trap (Not Used)
+360,0,Add Chance to Proc On Kill Shot: 
+361,0,Add Chance to Cast Spell on Death: 
+362,1,Potion Belt Slots (Not Used)
+363,1,Bandolier Slots (Not Used)
+364,1,Chance to Triple Attack
+365,0,Add Chance to Proc on Spellcast Kill Shot: 
+366,1,Damage Modifier with Shield Equipped
+367,0,Set Body Type: 
+368,0,Faction Mod (Not Used)
+369,1,Corruption Counter
+370,1,Resistance to Corruption
+371,1,Attack Speed V4
+372,1,Forage Skill (Not Used)
+373,0,Cast New Spell on Fade: 
+374,0,Apply Effect: 
+375,1,Critical DoT Tick Damage
+376,0,Fling (Not Used)
+377,0,NPC - Cast New Spell on Fade: 
+378,0,Add Chance to Resist Spell Effect: 
+379,0,Directional Short Range Teleport
+380,0,Knockdown
+381,0,Knock Toward Caster (Not Used)
+382,0,Negate Spell Effect: 
+383,0,Add Chance of Spellcasting to Proc: 
+384,0,Leap
+385,0,Limit - Group Spells Only
+386,0,Cast New Spell on Curer when Cured: 
+387,0,Cast New Spell when Cured: 
+388,0,Summon Corpse Zone (Not Used)
+389,0,Reactivate All Spell Gems in Cooldown
+390,0,Timer Lockout (Not Used)
+391,1,Melee Vulnerability
+392,1,Healing Amount V3
+393,1,Incoming Healing
+394,1,Incoming Healing
+395,1,Chance of Critical Incoming Heals
+396,1,Critical Healing Amount
+397,1,Pet's Melee Mitigation
+398,1,Swarm Pet Duration
+399,0,Add Chance to Double-Cast Spells
+400,1,Current HP of Group from Own Mana Pool
+401,1,Current HP from Own Mana Pool
+402,1,Current HP from Own Endurance Pool
+403,0,Limit - Spell Class: 
+404,0,Limit - Spell Subclass: 
+405,0,Add Chance to Block with Two-Handed Blunt Weapons (Staves)
+406,0,Cast New Spell when Fade from NumHits Depleted: 
+407,0,Cast New Spell when Focus Effect Is Applied: 
+408,0,Limit - Maximum Percent of HP
+409,0,Limit - Maximum Percent of Mana
+410,0,Limit - Maximum Percent of Endurance
+411,0,Limit to Class: 
+412,0,Limit to Race: 
+413,1,Base Power of Skills and Songs
+414,0,Limit - Casting Skill: 
+415,1,FF Item Class (Not Used)
+416,1,Armor Class V2
+417,1,Mana Regeneration V2
+418,1,Skill Damage V2
+419,0,Add Chance of Melee Proc: 
+420,1,NumHits for All Spells
+421,1,NumHits for Spell: 
+422,0,Limit - Minimum NumHits: 
+423,0,Limit - NumHits Type: 
+424,1,Gravitation to/from Mob
+425,0,Display (Not Used)
+426,1,Extended Targets (Not Used)
+427,0,Add Chance to Proc with Skill: 
+428,0,Limit - Skill: 
+429,0,Add Chance to Proc with Skull Success: 
+430,0,Post Effect (Not Used)
+431,0,Post Effect Data (Not Used)
+432,0,Expand Max Active Trophy Ben (Not Used)
+433,1,"Critical DoT Chance, Decay"
+434,1,"Critical Heal Chance, Decay"
+435,1,"Critical Heal over Time Chance, Decay"
+436,0,Beneficial Countdown Hold (Not Used)
+437,0,Teleport to Anchor (Not Yet Used)
+438,0,Translocate to Anchor (Not Yet Used)
+439,0,Add Chance to Assassinate Backstab for 32K Damage
+440,1,Maximum Permitted Level for Finishing Blow
+441,0,Limit - While within Distance from Buff Location
+442,0,Trigger New Spell when Target
+443,0,Trigger New Spell when Caster
+444,0,"Lock Aggro on Caster, Lowering Others' Hate by Percentage"
+445,1,Mercenary Slots (Not Used)
+446,0,Limit - Stacking Blocker A
+447,0,Limit - Stacking Blocker B
+448,0,Limit - Stacking Blocker C
+449,0,Limit - Stacking Blocker D
+450,1,DoT Damage Mitigation
+451,1,Melee Damage Mitigation for Hits Over 
+452,1,Spell Damage Mitigation for Hits Over 
+453,0,Trigger on a Melee Hit Over 
+454,0,Trigger on a Spell Hit Over 
+455,1,Total Hate Amount
+456,1,Total Hate Amount
+457,1,HP/Mana/Endurance from Spell Damage
+458,1,Faction Gain/Loss Modifier
+459,1,Damage Modifier V2 for Skill

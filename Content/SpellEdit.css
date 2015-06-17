@@ -1,0 +1,568 @@
+﻿.tabcontents { height:422px; display:none; }
+input, select  { position:absolute; width:200px; }
+.tabcontents label { position:absolute; width:120px; }
+.tabcontents span { position:absolute; }
+.tabcontents button { position:absolute; width:50px; height:26px; cursor:pointer; }
+
+.Xa1 { left:15px; }
+.Xa2 { left:140px; }
+.Xa3 { left:345px; }
+.Xa4 { left:470px; }
+.Xa5 { left:675px; }
+.Xa6 { left:800px; }
+
+.Xa2b { left:270px; }
+.Xa4b { left:600px; }
+.Xa5b { left:670px; }
+
+.Xb2b { left:740px; }
+
+.Xd2b { left:540px; }
+
+.Ya1 { top:15px; }
+.Ya2 { top:45px; }
+.Ya3 { top:75px; }
+.Ya4 { top:105px; }
+.Ya5 { top:135px; }
+.Ya6 { top:165px; }
+.Ya7 { top:195px; }
+.Ya8 { top:225px; }
+.Ya9 { top:255px; }
+.Ya10 { top:285px; }
+.Ya11 { top:315px; }
+.Ya12 { top:345px; }
+.Ya13 { top:375px; }
+
+#TableClassLevelList, #TableDeityList
+{
+    position:absolute;
+}
+
+#TableClassLevelList td, #TableDeityList td
+{
+    text-align:center;
+    vertical-align:middle;
+    width:42px;
+}
+
+#TableClassLevelList input, #TableDeityList input
+{
+    width:39px;
+    margin:0;
+    padding:2px;
+    position:static;
+}
+
+#TableDeityList, #TableDeityList input, #TableDeityList td
+{
+    cursor:help;
+}
+
+#SpellIcon
+{
+    position:absolute;
+    cursor:pointer;
+    margin-top:8px;
+    margin-left:8px;
+}
+        
+#SpellIcons
+{
+    z-index:2;
+    position:absolute;
+    width:600px;
+    height:300px;
+    margin:auto;
+    overflow:auto;
+    padding:4px;
+    border:1px solid silver;
+    background:#dddddd;
+    visibility:hidden;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+#SpellIcons img
+{
+    border-width:0;
+    box-sizing:content-box;
+    width:40px;
+    height:40px;
+    margin:6px;
+    padding:0;
+    cursor:pointer;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#SpellIcons img.IconSelected { margin:0; border:6px solid #ff0000; }
+#SpellIcons img.IconSelected2 { margin:0; border:6px solid #0066ff; opacity:0.5; }
+
+video#SpellAnimPreview
+{
+    z-index:4;
+    position:absolute;
+    display:block!important;
+    border:2px solid #333333;
+    margin:auto;
+    padding:0;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    visibility:hidden;
+    box-sizing:content-box;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+}
+
+div.Header
+{
+    margin-top:0px;
+    text-align:center;
+    padding:6px 4px;
+    font-weight:bold;
+}
+
+#HeaderBlock
+{
+    padding:8px 32px 8px 8px;
+    margin-top:0;
+    margin-bottom:8px;
+    height:68px;
+    display:inline-block;
+}
+
+div.body-content
+{
+    padding-top:8px;
+}
+
+#HeaderSpellIcon
+{
+    margin:0 16px;
+}
+
+button.btn
+{
+    padding-top:1px;
+    height:24px;
+}
+
+.form-control, .btn, #SpellIcon, .tabs, .tabcontents
+{
+    box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.jumbotron
+{
+    box-shadow:3px 3px 5px rgba(0,0,0,0.2);
+}
+
+span.form-control
+{
+    text-align:left;
+}
+
+h2.jumbotron
+{
+    background:#f4f4f4;
+}
+
+/*
+ *
+ *  Duration Editing Window Controls
+ *
+*/
+
+div#SpellDuration
+{
+    z-index:2;
+    position:absolute;
+    border:2px solid navy;
+    width:500px;
+    height:300px;
+    margin:auto;
+    padding-top:0;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display:block;
+    visibility:hidden;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+}
+
+label[for=DurFormula]
+{
+    position:absolute;
+    left:0px;
+    top:66px;
+}
+
+#DurFormula
+{
+    position:absolute;
+    left:130px;
+    top:66px;
+}
+
+#DurFormulasList
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:96px;
+}
+
+label[for=Duration]
+{
+    position:absolute;
+    left:0px;
+    top:126px;
+}
+#Duration
+{
+    position:absolute;
+    left:130px;
+    top:126px;
+}
+
+label[for=DurationPreview]
+{
+    position:absolute;
+    left:0px;
+    top:156px;
+}
+
+#DurationPreview
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:156px;
+}
+
+#ButtonApplyDuration
+{
+    position:absolute;
+    left:130px;
+    top:220px;
+    width:80px;
+    height:30px;
+    padding-top:4px;
+}
+
+#ButtonCancelDuration
+{
+    position:absolute;
+    left:280px;
+    top:220px;
+    width:80px;
+    height:30px;
+    padding-top:4px;
+}
+
+/*
+ *
+ *  Effect Slot Editing Window Controls
+ *
+*/
+
+div#SpellEffects
+{
+    z-index:2;
+    position:absolute;
+    border:2px solid navy;
+    width:500px;
+    height:340px;
+    margin:auto;
+    padding-top:0;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display:block;
+    visibility:hidden;
+    box-shadow:10px 10px 10px rgba(0,0,0,.4);
+}
+
+label[for=EffectID]
+{
+    position:absolute;
+    left:0px;
+    top:66px;
+}
+
+#EffectID
+{
+    position:absolute;
+    left:130px;
+    top:66px;
+}
+
+label[for=EffectFormula]
+{
+    position:absolute;
+    left:220px;
+    top:66px;
+}
+
+#EffectFormula
+{
+    position:absolute;
+    left:350px;
+    top:66px;
+}
+
+label[for=EffectIDsList]
+{
+    position:absolute;
+    left:0px;
+    top:96px;
+}
+
+#EffectIDsList
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:96px;
+}
+
+label[for=EffectFormulasList]
+{
+    position:absolute;
+    left:0px;
+    top:126px;
+}
+
+#EffectFormulasList
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:126px;
+}
+
+label[for=EffectBase]
+{
+    position:absolute;
+    left:0px;
+    top:156px;
+}
+#EffectBase
+{
+    position:absolute;
+    left:130px;
+    top:156px;
+}
+
+label[for=EffectLimit]
+{
+    position:absolute;
+    left:220px;
+    top:156px;
+}
+#EffectLimit
+{
+    position:absolute;
+    left:350px;
+    top:156px;
+}
+
+label[for=EffectMax]
+{
+    position:absolute;
+    left:0px;
+    top:186px;
+}
+#EffectMax
+{
+    position:absolute;
+    left:130px;
+    top:186px;
+}
+
+label[for=EffectPreview]
+{
+    position:absolute;
+    left:0px;
+    top:246px;
+    visibility:hidden;
+}
+
+#EffectPreview
+{
+    position:absolute;
+    width:450px;
+    left:30px;
+    top:246px;
+    overflow:hidden;
+}
+
+label[for=EffectPreviewLevel]
+{
+    position:absolute;
+    left:0px;
+    top:216px;
+}
+
+#EffectPreviewLevel
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:216px;
+}
+
+#ButtonApplyEffect
+{
+    position:absolute;
+    left:130px;
+    top:290px;
+    width:80px;
+    height:30px;
+    padding-top:4px;
+}
+
+#ButtonCancelEffect
+{
+    position:absolute;
+    left:280px;
+    top:290px;
+    width:80px;
+    height:30px;
+    padding-top:4px;
+}
+
+label[for=RacesList]
+{
+    visibility:hidden;
+    position:absolute;
+    left:0px;
+    top:156px;
+}
+
+#RacesList
+{
+    visibility:hidden;
+    position:absolute;
+    left:130px;
+    top:156px;
+    width:350px;
+}
+
+#ButtonSaveSpell
+{
+    position:absolute;
+    width:150px;
+    left:300px;
+    top:540px;
+}
+
+#ButtonResetSpell
+{
+    position:absolute;
+    width:150px;
+    left:600px;
+    top:540px;
+}
+
+label[for=EffectData]
+{
+    position:absolute;
+    left:220px;
+    top:186px;
+    visibility:hidden;
+}
+
+#EffectData
+{
+    position:absolute;
+    left:350px;
+    top:186px;
+    visibility:hidden;
+}
+
+#EffectDataLabelB1
+{
+    position:absolute;
+    left:0px;
+    top:156px;
+    visibility:hidden;
+}
+
+#EffectDataB1
+{
+    position:absolute;
+    left:130px;
+    top:156px;
+    visibility:hidden;
+}
+
+#EffectDataLabelB2
+{
+    position:absolute;
+    left:220px;
+    top:156px;
+    visibility:hidden;
+}
+
+#EffectDataB2
+{
+    position:absolute;
+    left:350px;
+    top:156px;
+    visibility:hidden;
+}
+
+#EffectDataLabelB3
+{
+    position:absolute;
+    left:0px;
+    top:186px;
+    visibility:hidden;
+}
+
+#EffectDataB3
+{
+    position:absolute;
+    left:130px;
+    top:186px;
+    visibility:hidden;
+}
+
+#EffectDataLabelB4
+{
+    position:absolute;
+    left:220px;
+    top:186px;
+    visibility:hidden;
+}
+
+#EffectDataB4
+{
+    position:absolute;
+    left:350px;
+    top:186px;
+    visibility:hidden;
+}
+
+#ZonesListLabel
+{
+    position:absolute;
+    left:0px;
+    top:216px;
+    visibility:hidden;
+}
+
+#ZonesList
+{
+    position:absolute;
+    width:350px;
+    left:130px;
+    top:216px;
+    visibility:hidden;
+}
