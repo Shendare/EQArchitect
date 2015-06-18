@@ -9,32 +9,37 @@
 
     <div align="center">
 
-        <table width="400" style="margin-bottom:24px;">
-            <tr><th colspan="2" class="text-center h2" style="border-bottom:1px solid black;"><p>Database Connection<br /></p></th></tr>
-            <tr><td style="text-align:right; width:30%; height:40px; padding-right:8px;"><input type="radio" id="UseDefault1" name="UseDefault" value="1"@( DB.IsDemo() ? " checked=\"checked\"" : "" ) onchange="CheckOption();" /></td><td class="text-left h3"><font color="#666666">Demo Database</font></td></tr>
-            <tr><td style="text-align:right; width:30%; height:40px; padding-right:8px;"><input type="radio" id="UseDefault0" name="UseDefault" value="0"@( DB.IsDemo() ? "" : " checked=\"checked\"" ) onchange="CheckOption();" /></td><td class="text-left h3"><font color="#666666">Your Database</font></td></tr>
-            <tr><td colspan="2" style="text-align:center; padding-top:16px;"><input type="submit" value="Connect" class="btn btn-default" /></td></tr>
-        </table>
+        <h3>EQArchitect is currently limited to interacting with the demo database.</h3>
+@*
 
-        <table id="CustomTable" width="400" style="margin-bottom:24px;">
-            <tr><th>Host/IP Address:</th><td><input type="text" id="DBServer" name="DBServer" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerName"])" /></td></tr>
-            <tr><th>Port Number:</th><td><input type="text" name="DBPort" class="form-control NumberField" value="@( DB.IsDemo() ? "3306" : Session["DBServerPort"])" /></td></tr>
-            <tr><th>Database:</th><td><input type="text" name="DBDatabase" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerDatabase"])" /></td></tr>
-            <tr><th>Username:</th><td><input type="text" name="DBUsername" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerUsername"])" /></td></tr>
-            <tr><th>Password:</th><td><input type="password" name="DBPassword" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerPassword"])" /></td></tr>
-        </table>
+    <table width="400" style="margin-bottom:24px;">
+        <tr><th colspan="2" class="text-center h2" style="border-bottom:1px solid black;"><p>Database Connection<br /></p></th></tr>
+        <tr><td style="text-align:right; width:30%; height:40px; padding-right:8px;"><input type="radio" id="UseDefault1" name="UseDefault" value="1"@( DB.IsDemo() ? " checked=\"checked\"" : "" ) onchange="CheckOption();" /></td><td class="text-left h3"><font color="#666666">Demo Database</font></td></tr>
+        <tr><td style="text-align:right; width:30%; height:40px; padding-right:8px;"><input type="radio" id="UseDefault0" name="UseDefault" value="0"@( DB.IsDemo() ? "" : " checked=\"checked\"" ) onchange="CheckOption();" /></td><td class="text-left h3"><font color="#666666">Your Database</font></td></tr>
+        <tr><td colspan="2" style="text-align:center; padding-top:16px;"><input type="submit" value="Connect" class="btn btn-default" /></td></tr>
+    </table>
 
-        <div id="CustomNote" style="border:1px solid black; background:#eeeeee; width:400px; padding:4px 24px; text-align:justify;">
-            <h2 class="text-center">Note:</h2>
+    <table id="CustomTable" width="400" style="margin-bottom:24px;">
+        <tr><th>Host/IP Address:</th><td><input type="text" id="DBServer" name="DBServer" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerName"])" /></td></tr>
+        <tr><th>Port Number:</th><td><input type="text" name="DBPort" class="form-control NumberField" value="@( DB.IsDemo() ? "3306" : Session["DBServerPort"])" /></td></tr>
+        <tr><th>Database:</th><td><input type="text" name="DBDatabase" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerDatabase"])" /></td></tr>
+        <tr><th>Username:</th><td><input type="text" name="DBUsername" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerUsername"])" /></td></tr>
+        <tr><th>Password:</th><td><input type="password" name="DBPassword" class="form-control" value="@( DB.IsDemo() ? "" : Session["DBServerPassword"])" /></td></tr>
+    </table>
 
-            <p>For safety, make sure this form is protected with SSL.</p>
-            
-            <p>MySQL passwords are never sent in the clear (as of version 4.4.1). However, it is <b><i>strongly</i></b> recommended that, for the security of your database, you <b><i>NOT</i></b> use your 'root' account on the Internet.</p>
+    <div id="CustomNote" style="border:1px solid black; background:#eeeeee; width:400px; padding:4px 24px; text-align:justify;">
+        <h2 class="text-center">Note:</h2>
 
-            <p>Create and supply a username and password that only has access to the PEQ database on your server, and only has SELECT, INSERT, DELETE, and UPDATE permissions at that.</p>
+        <p>For safety, make sure this form is protected with SSL.</p>
 
-            <p>It's the only security configuration that makes sense.</p>
-        </div>
+        <p>MySQL passwords are never sent in the clear (as of version 4.4.1). However, it is <b><i>strongly</i></b> recommended that, for the security of your database, you <b><i>NOT</i></b> use your 'root' account on the Internet.</p>
+
+        <p>Create and supply a username and password that only has access to the PEQ database on your server, and only has SELECT, INSERT, DELETE, and UPDATE permissions at that.</p>
+
+        <p>It's the only security configuration that makes sense.</p>
+    </div>
+
+*@
 
     </div>
 }
