@@ -85,6 +85,8 @@
                 }
                 matchListToField("AnimList" + el("AnimIDCategory").value, "AnimID");
 
+                CopyIDsToNames(el("SpellForm"));
+                
                 SpellAnimCat_Changed(false);
                 Duration_Apply();
 

@@ -53,6 +53,21 @@ function IsString(Variable)
     return (typeof Variable == "string" || Variable instanceof String);
 }
 
+function IsBlank(Variable)
+{
+    if (Variable == null)
+    {
+        return true;
+    }
+
+    if (Variable == "")
+    {
+        return true;
+    }
+
+    return false;
+}
+
 function StringSame(String1, String2)
 {
     if (IsString(String1) && IsString(String2))
@@ -333,4 +348,32 @@ function FillFieldWithRequest(URL, Element)
             this.value = result;
         }
     });
+}
+
+function CopyIDsToNames(FormName)
+{
+    var _form = el(FormName);
+
+    if (!_form)
+    {
+        return;
+    }
+
+    var _fields = _form.elements;
+
+    for (var _fieldNum = 0, _field; _field = _fields[_fieldNum++];)
+    {
+        switch (_field.tagName)
+        {
+            case "INPUT":
+            case "SELECT":
+            case "TEXTAREA":
+            case "BUTTON":
+                if (!IsBlank(_field.id) && IsBlank(_field.name))
+                {
+                    _field.name = _field.id;
+                }
+                break;
+        }
+    }
 }
