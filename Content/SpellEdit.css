@@ -566,3 +566,16 @@ label[for=EffectData]
     top:216px;
     visibility:hidden;
 }
+
+#SpellFileDownload
+{
+    position:absolute;
+    left:0px;
+    top:51px;
+    width:100px;
+    height:24px;
+    background:#f4f4f8;
+    border:1px solid navy;
+    text-align:center;
+    font-weight:bold;
+}

@@ -126,40 +126,41 @@ namespace EQArchitect
             return _OK;
         }
 
-        public static OdbcDataReader GetDataReader(string Query)
+        public static DataTableReader GetDataReader(string Query)
         {
-            HttpContext.Current.Session["DBError"] = "";
-            
-            if (ToText(Query) == "")
+            DataTable _data = GetData(Query);
+
+            if (_data == null)
             {
                 return null;
             }
 
-            using (OdbcConnection _db = Connect())
+            return new DataTableReader(_data);
+        }
+
+        public static OdbcDataReader OpenDataStream(string Query)
+        {
+            OdbcConnection _db = DB.Connect();
+
+            if (_db != null)
             {
-                if (_db != null)
+                OdbcCommand _cmd = new OdbcCommand();
+
+                try
                 {
-                    using (OdbcCommand _cmd = new OdbcCommand())
-                    {
-                        try
-                        {
-                            _cmd.Connection = _db;
-                            _cmd.CommandType = CommandType.Text;
-                            _cmd.CommandText = Query;
+                    _cmd.Connection = _db;
+                    _cmd.CommandType = CommandType.Text;
+                    _cmd.CommandText = Query;
 
-                            OdbcDataReader _reader = _cmd.ExecuteReader();
-
-                            if (_reader.HasRows)
-                            {
-                                return _reader;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            HttpContext.Current.Session["DBError"] = ex.Message;
-                        }
-                    }
+                    return _cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 }
+                catch (Exception ex)
+                {
+                    HttpContext.Current.Session["DBError"] = ex.Message;
+                }
+
+                _cmd.Dispose();
+                _db.Close();
             }
 
             return null;
