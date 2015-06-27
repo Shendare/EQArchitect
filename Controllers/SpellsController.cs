@@ -45,7 +45,7 @@ namespace EQArchitect.Controllers
                                 Response.Write('^');
                             }
 
-                            Response.Write(DB.ToText(_value));
+                            Response.Write(_value == null ? "" : _value.ToString());
                         }
 
                         Response.Write("\r\n");
