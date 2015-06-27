@@ -2,6 +2,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = "Connection";
+
+    bool _dbLockedToDemo = false;
+    
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ConnectForm", role = "form", action = "/EQArchitect/Connect/" }))
 {
@@ -9,8 +12,14 @@
 
     <div align="center">
 
-        <h3>EQArchitect is currently limited to interacting with the demo database.</h3>
-@*
+    @if (_dbLockedToDemo)
+    { 
+    
+    <h3>EQArchitect is currently limited to interacting with the demo database.</h3>
+    
+    }
+    else
+    {
 
     <table width="400" style="margin-bottom:24px;">
         <tr><th colspan="2" class="text-center h2" style="border-bottom:1px solid black;"><p>Database Connection<br /></p></th></tr>
@@ -39,7 +48,7 @@
         <p>It's the only security configuration that makes sense.</p>
     </div>
 
-*@
+    }
 
     </div>
 }
