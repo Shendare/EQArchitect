@@ -209,6 +209,16 @@ namespace EQArchitect.Models
             Parameters.DebugString = _query;
         }
 
+        public static string SetMessageWhitespace(string Message)
+        {
+            if ((Message.Length > 0) && (Message[0] != '\''))
+            {
+                return Message.Insert(0, " ");
+            }
+
+            return Message;
+        }
+        
         public static string Save(HttpRequest Request)
         {
             Dictionary<string, object> SpellFields = new Dictionary<string, object>();
@@ -217,9 +227,9 @@ namespace EQArchitect.Models
             SpellFields["player_1"] = DB.ToText(Request.Form["Player1Actual"]);
             SpellFields["teleport_zone"] = DB.ToText(Request.Form["TeleportZone"]);
             SpellFields["you_cast"] = DB.ToText(Request.Form["CastByYou"]);
-            SpellFields["other_casts"] = DB.ToText(Request.Form["CastByOther"]);
+            SpellFields["other_casts"] = SetMessageWhitespace(DB.ToText(Request.Form["CastByOther"]));
             SpellFields["cast_on_you"] = DB.ToText(Request.Form["CastOnYou"]);
-            SpellFields["cast_on_other"] = DB.ToText(Request.Form["CastOnOther"]);
+            SpellFields["cast_on_other"] = SetMessageWhitespace(DB.ToText(Request.Form["CastOnOther"]));
             SpellFields["spell_fades"] = DB.ToText(Request.Form["Fades"]);
             SpellFields["range"] = DB.ToInt(Request.Form["Range"]);
             SpellFields["aoerange"] = DB.ToInt(Request.Form["AERange"]);
@@ -255,8 +265,8 @@ namespace EQArchitect.Models
             }
              */
             SpellFields["LightType"] = DB.ToInt(Request.Form["LightType"]);
-            SpellFields["goodEffect"] = DB.ToInt(Request.Form["IsBen"]);
-            SpellFields["Activated"] = DB.ToInt(Request.Form["IsActivated"]);
+            SpellFields["goodEffect"] =  DB.ToInt(Request.Form["IsBen"]);
+            SpellFields["Activated"] = (Request.Form["IsActivated"] != "false") ? 1 : 0;
             SpellFields["resisttype"] = DB.ToInt(Request.Form["ResistType"]);
             SpellFields["targettype"] = DB.ToInt(Request.Form["TargetType"]);
             SpellFields["basediff"] = DB.ToInt(Request.Form["FizzleAdjust"]);
@@ -274,7 +284,7 @@ namespace EQArchitect.Models
             SpellFields["TargetAnim"] = DB.ToInt(Request.Form["TargetAnim"]);
             SpellFields["TravelType"] = DB.ToInt(Request.Form["TravelType"]);
             SpellFields["SpellAffectIndex"] = DB.ToInt(Request.Form["EffectIndex"]);
-            SpellFields["disallow_sit"] = DB.ToInt(Request.Form["DisallowSit"]);
+            SpellFields["disallow_sit"] = (Request.Form["DisallowSit"] != "false") ? 1 : 0;
             for (int _slotNum = 0; _slotNum <= 16; _slotNum++)
             {
                 string _slotStr = _slotNum.ToString();
@@ -285,20 +295,20 @@ namespace EQArchitect.Models
             //SpellFields["field143"] = DB.ToInt(Request.Form["Field143"]);
             SpellFields["new_icon"] = DB.ToInt(Request.Form["IconID"]);
             SpellFields["spellanim"] = DB.ToInt(Request.Form["AnimID"]);
-            SpellFields["uninterruptable"] = DB.ToInt(Request.Form["Unint"]);
+            SpellFields["uninterruptable"] = (Request.Form["Unint"] != "false") ? 1 : 0;
             SpellFields["ResistDiff"] = DB.ToInt(Request.Form["ResistMod"]);
-            SpellFields["dot_stacking_exempt"] = DB.ToInt(Request.Form["DotStackEx"]);
-            SpellFields["deleteable"] = DB.ToInt(Request.Form["Deleteable"]);
+            SpellFields["dot_stacking_exempt"] = (Request.Form["DotStackEx"] != "false") ? 1 : 0;
+            SpellFields["deleteable"] = (Request.Form["Deleteable"] != "false") ? 1 : 0;
             //SpellFields["RecourseLink"] = DB.ToInt(Request.Form[""]);
-            SpellFields["no_partial_resist"] = DB.ToInt(Request.Form["NoPartRes"]);
+            SpellFields["no_partial_resist"] = (Request.Form["NoPartRes"] != "false") ? 1 : 0;
             //SpellFields["field152"] = DB.ToInt(Request.Form["Field152"]);
             //SpellFields["field153"] = DB.ToInt(Request.Form["Field153"]);
-            SpellFields["short_buff_box"] = DB.ToInt(Request.Form["ShortBuff"]);
+            SpellFields["short_buff_box"] = (Request.Form["ShortBuff"] != "false") ? 1 : 0;
             //SpellFields["descnum"] = DB.ToInt(Request.Form[""]);
             //SpellFields["typedescnum"] = DB.ToInt(Request.Form[""]);
             //SpellFields["effectdescnum"] = DB.ToInt(Request.Form[""]);
             //SpellFields["effectdescnum2"] = DB.ToInt(Request.Form[""]);
-            SpellFields["npc_no_los"] = DB.ToInt(Request.Form["NPCNoLoS"]);
+            SpellFields["npc_no_los"] = (Request.Form["NPCNoLoS"] != "false") ? 1 : 0;
             //SpellFields["field160"] = DB.ToInt(Request.Form["Field160"]);
             //SpellFields["reflectable"] = DB.ToInt(Request.Form[""]);
             //SpellFields["bonushate"] = DB.ToInt(Request.Form[""]);
@@ -307,7 +317,7 @@ namespace EQArchitect.Models
             //SpellFields["ldon_trap"] = DB.ToInt(Request.Form[""]);
             SpellFields["EndurCost"] = DB.ToInt(Request.Form["Endur"]);
             SpellFields["EndurTimerIndex"] = DB.ToInt(Request.Form["EndurRate"]);
-            SpellFields["IsDiscipline"] = DB.ToInt(Request.Form["IsDisc"]);
+            SpellFields["IsDiscipline"] = (Request.Form["IsDisc"] != "false") ? 1 : 0;
             //SpellFields["field169"] = DB.ToInt(Request.Form["Field169"]);
             //SpellFields["field170"] = DB.ToInt(Request.Form[""]);
             //SpellFields["field171"] = DB.ToInt(Request.Form[""]);
@@ -406,13 +416,14 @@ namespace EQArchitect.Models
             _query.Append(" WHERE `id`=?;");
             _parms.Add(new OdbcParameter("id", DB.ToInt(Request.Form["SpellID"])));
 
-            if (DB.Execute(_query.ToString(), _parms) == 1)
+            switch (DB.Execute(_query.ToString(), _parms))
             {
-                return "YChanges saved.";
-            }
-            else
-            {
-                return "NError saving changes:\n\n" + HttpContext.Current.Session["DBError"];
+                case 0:
+                    return "NNo changes found.";
+                case 1:
+                    return "YChanges saved.";
+                default:
+                    return "NError saving changes:\n\n" + HttpContext.Current.Session["DBError"];
             }
         }
     }
