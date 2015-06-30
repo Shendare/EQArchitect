@@ -7,19 +7,53 @@
 
 var EQInfoLoaded = false;
 
-    var EffectType1List = "@(EQInfo.Type1SpellEffects)";
-    var EffectType2List = "@(EQInfo.Type2SpellEffects)";
+var EffectType1List = "@(EQInfo.Type1SpellEffects)";
+var EffectType2List = "@(EQInfo.Type2SpellEffects)";
+
+var EQListFieldNames = { };
     
-    @foreach (EQList _list in EQInfo.EQLists)
+@{
+    foreach (EQList _list in EQInfo.EQLists)
     {
-<text>var @(_list.ListName) = { };</text>
+        if (!_list.ExportToBrowser) { continue; }
+        @Html.Raw("var " + _list.ListName + " = { };\r\n");
+        @Html.Raw(_list.ListName + ".ListName = \"" + _list.ListName + "\";\r\n");
         
+        @Html.Raw("EQListFieldNames[\"" + _list.ListName + "\"]=[");
+
+        bool _firstCol = true;
+
+        foreach (string _colName in _list.ColumnNames)
+        {
+            if (_firstCol)
+            {
+                _firstCol = false;
+            }
+            else
+            {
+                @Html.Raw(',');
+            }
+            @Html.Raw('"');
+            @Html.Raw(_colName);
+            @Html.Raw('"');
+        }
+
+        @Html.Raw("];\r\n");
+
+        int _colIndex = 0;
+        foreach (string _colName in _list.ColumnNames)
+        {
+            @Html.Raw(_list.ListName + "[\"" + _colName + "\"]=" + _colIndex.ToString() + ";\r\n");
+            _colIndex++;
+        }
+                           
         foreach (KeyValuePair<int, string[]> _item in _list.Items)
         {
-            @(Html.Raw(_list.ListName + "[" + _item.Key + "]={"))
+            @Html.Raw(_list.ListName + "[" + _item.Key + "]=[");
         
             bool _first = true;
-            int _fieldnum = 0;
+            int _dummy = 0;
+            bool _isNumber = false;
 
             foreach (string _field in _item.Value)
             {
@@ -29,28 +63,63 @@ var EQInfoLoaded = false;
                 }
                 else
                 {
-                    @Html.Encode(',');
+                    @Html.Raw(',');
                 }
-                @Html.Raw('"');
-                @Html.Encode(_fieldnum < _list.ColumnNames.Length ? _list.ColumnNames[_fieldnum++] : "Field" + _fieldnum.ToString());
-                @Html.Raw("\":\"");
+                _isNumber = int.TryParse(_field, out _dummy);
+                
+                if (!_isNumber)
+                {
+                   @Html.Raw('"');
+                }
                 @Html.Raw(_field.Replace("\"", "\\\"").Replace("\\", "\\\\").Replace("\r", "").Replace("\n", ""));
-                @Html.Raw('"');
+                if (!_isNumber)
+                {
+                   @Html.Raw('"');
+                }
             }
 
-            @Html.Raw("};\r\n");
+            @Html.Raw("];\r\n");
         }
+}}
+
+function EQListField(EQList, ID, FieldName)
+{
+    if (EQList == undefined)
+    {
+        return "";
     }
+
+    var _field = EQList[ID];
+
+    if (_field == undefined)
+    {
+        return "";
+    }
+
+    var _fieldNum = EQList["FieldName"];
+
+    if (_fieldNum == undefined)
+    {
+        return "";
+    }
+
+    return _field[_fieldNum];
+}
 
 function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, TextField, TypeFilter, PrependSeparator)
 {
     var _list = document.getElementById(DropdownListName);
     var _found = (SelectedValue == null);
+    var _typeFieldIndex = -1;
+    var _textFieldIndex = -1;
+    var _idFieldIndex = -1;
 
     if ((!_list) || (!EQList) || (!_list.options))
     {
         return;
     }
+
+    var _fieldNames = EQListFieldNames[EQList.ListName];
 
     _list.options.length = 0;
 
@@ -59,13 +128,23 @@ function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, 
         // If not specified, determine ID field.
 
         // First, pick a field that ends with "ID"
-        Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
+        for (var _f = 0; _f < _fieldNames.length; _f++)
+        {
+            if (!IDField && (_fieldNames[_f].length > 1) && (_fieldNames[_f].substr(_fieldNames[_f].length - 2).toUpperCase() == "ID"))
+            {
+                IDField = _fieldNames[_f];
+                break;
+            }
+        }        
+        
+        /*Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
         {
             if (!IDField && (_fieldName.length > 1) && (_fieldName.substr(_fieldName.length - 2).toUpperCase() == "ID"))
             {
                 IDField = _fieldName;
             }
         })
+        */
 
         // If we didn't find one, use the index as the ID.
     }
@@ -76,18 +155,28 @@ function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, 
 
         // First, pick a field that ends with "Name"
 
-        Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
+        for (var _f = 0; _f < _fieldNames.length; _f++)
+        {
+            if (!TextField && (_fieldNames[_f].length > 3) && (_fieldNames[_f].substr(_fieldNames[_f].length - 4).toUpperCase() == "NAME"))
+            {
+                TextField = _fieldNames[_f];
+                break;
+            }
+        }
+
+        /*Object.keys(EQList[Object.keys(EQList)[0]]).forEach(function (_fieldName)
         {
             if (!TextField && (_fieldName.length > 3) && (_fieldName.substr(_fieldName.length - 4).toLowerCase() == "name"))
             {
                 TextField = _fieldName;
             }
         })
+        */
 
         // If we didn't find one, best we can do is choose the second field
         if (!TextField)
         {
-            TextField = Object.keys(EQList[Object.keys(EQList)[0]])[1];
+            TextField = _fieldNames[1]; //Object.keys(EQList[Object.keys(EQList)[0]])[1];
         }
 
         if (!TextField)
@@ -96,18 +185,40 @@ function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, 
         }
     }
 
+    for (var _f = 0; _f < _fieldNames.length; _f++)
+    {
+        if (IDField && (_fieldNames[_f].toUpperCase() == IDField.toUpperCase()))
+        {
+            _idFieldIndex = _f;
+        }
+        else if (TextField && (_fieldNames[_f].toUpperCase() == TextField.toUpperCase()))
+        {
+            _textFieldIndex = _f;
+        }
+        else if ((_fieldNames[_f].length > 3) && (_fieldNames[_f].substr(_fieldNames[_f].length - 4).toUpperCase() == "TYPE"))
+        {
+            _typeFieldIndex = _f;
+        }
+
+    }
+
+    if (_textFieldIndex < 0)
+    {
+        _textFieldIndex = (_fieldNames.length < 2) ? 0 : 1;
+    }
+
     //alert(DropdownListName + "[" + IDField + "] == \"" + TextField + "\"");
 
     var _curIndex = 0;
 
     Object.keys(EQList).forEach(function (_id)
     {
-        if ((TypeFilter == null) || (EQList[_id]["Type"] == TypeFilter))
+        if ((TypeFilter == null) || ((_typeFieldIndex >= 0) && (EQList[_id][_typeFieldIndex] == TypeFilter)))
         {
-            var _value = EQList[_id][TextField];
+            var _value = EQList[_id][_textFieldIndex];
             
             var _option = document.createElement("option");
-            _option.value = IDField ? EQList[_id][IDField] : _curIndex++;
+            _option.value = (_idFieldIndex >= 0) ? EQList[_id][_idFieldIndex] : _curIndex++;
             _option.text = (PrependSeparator > "") ? (_id + PrependSeparator + _value) : _value;
             if (_id == SelectedValue)
             {

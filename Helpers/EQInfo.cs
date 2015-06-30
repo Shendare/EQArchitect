@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Text;
 using System.Web;
@@ -38,6 +39,9 @@ namespace EQArchitect
         public static EQList SpellDurationFormulas = new EQList("spell_duration_formulas.csv");
         public static EQList SpellEffectFormulas = new EQList("spell_effect_formulas.csv");
 
+        public static EQList ItemNamesAndIcons = new EQList("SELECT `id`,`name`,`icon` FROM `items` ORDER BY `id`;", "ItemNamesAndIcons", "items");
+        public static EQList SpellNamesAndIcons = new EQList("SELECT `id`,`name`,`new_icon`,`goodEffect` FROM `spells_new` ORDER BY `id`;", "SpellNamesAndIcons", "spells_new");
+
         // NOTE: Used for calculating bonus damage from AAs, but currently ignored by server. Always treated as 0 when loading spells_new from database.
         public static EQList DamageShieldTypes = new EQList("damage_shield_types.csv");
 
@@ -56,6 +60,9 @@ namespace EQArchitect
         {
             EQLists = new List<EQList>();
 
+            ItemNamesAndIcons.ExportToBrowser = false;
+            SpellNamesAndIcons.ExportToBrowser = false;
+
             EQLists.Add(PlayerClasses);
             EQLists.Add(FullClasses);
             EQLists.Add(Skills);
@@ -73,6 +80,8 @@ namespace EQArchitect
             EQLists.Add(SpellEffectFormulas);
             EQLists.Add(DamageShieldTypes);
             EQLists.Add(MercSpellTypeFlags);
+            EQLists.Add(ItemNamesAndIcons);
+            EQLists.Add(SpellNamesAndIcons);
             
             CheckLists();
         }
@@ -126,7 +135,8 @@ namespace EQArchitect
 
         public string ListName;
 
-        protected string MyFilename;
+        protected string Source;
+        protected string SourceTable;
 
         protected int StartingID;
         protected int HighestID;
@@ -146,13 +156,28 @@ namespace EQArchitect
         public int ColumnCount;
         public DateTime LastUpdated;
 
+        public bool ExportToBrowser = true;
+
         protected static string ListPath = HttpContext.Current.Server.MapPath("~/lists/");
 
         // All column types are optional. If Col_ID=0, then the IDs will automatically increment for each entry, starting with 0.
+        public EQList(string Query, string ListName, string SourceTable) : this(Query, ListName, SourceTable, null) { }
+        public EQList(string Query, string ListName, string SourceTable, string[] UnknownPatterns)
+        {
+            this.Source = Query;
+
+            this.ListName = ListName;
+
+            this.Unknown = UnknownPatterns;
+
+            this.SourceTable = SourceTable;
+
+            this.LoadDB();
+        }
         public EQList(string Filename) : this(Filename, null) { }
         public EQList(string Filename, string[] UnknownPatterns)
         {
-            this.MyFilename = Filename;
+            this.Source = Filename;
 
             // Build ListName from Filename. "this_list_file.csv" becomes "ThisListFile"
             this.ListName = "";
@@ -176,7 +201,7 @@ namespace EQArchitect
 
         public void Load()
         {
-            string _filePath = ListPath + MyFilename;
+            string _filePath = ListPath + Source;
 
             this.ColumnNames = null;
             this.ColumnFromName = new Dictionary<string, int>();
@@ -436,18 +461,153 @@ namespace EQArchitect
             this.LastUpdated = _fileTime;
         }
 
+        public bool LoadDB()
+        {
+            DataTable _data = DB.GetData(this.Source);
+
+            this.ColumnCount = (_data == null) ? 0 : _data.Columns.Count;
+            this.ColumnNames = (this.ColumnCount == 0) ? null : new string[this.ColumnCount];
+            this.ColumnFromName = new Dictionary<string, int>();
+            this.Items = new Dictionary<int, string[]>();
+            this.SelectLists = null;
+
+            this.IDField = -1;
+            this.NickField = -1;
+            this.IDFromNick = new Dictionary<string, int>();
+
+            this.StartingID = int.MaxValue;
+            this.HighestID = int.MinValue;
+            this.LastSelectedIndex = -1;
+
+            int _col = 0;
+
+            if (_data == null)
+            {
+                return false;
+            }
+
+            foreach (DataColumn _column in _data.Columns)
+            {
+                string _colName = _column.ColumnName;
+
+                if (IDField < 0)
+                {
+                    if (_colName.EndsWith("ID", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        IDField = _col;
+                    }
+                }
+
+                if (NickField < 0)
+                {
+                    if (_colName.EndsWith("Nick", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        NickField = _col;
+                    }
+                }
+
+                ColumnNames[_col] = _colName;
+                ColumnFromName[_colName.ToLower()] = _col++;
+            }
+
+            List<string> _fields = new List<string>();
+            int _curIndex = 0;
+            int _id = 0;
+            int _lastID = 0;
+
+            foreach (DataRow _row in _data.Rows)
+            {
+                _fields.Clear();
+                
+                for (_col = 0; _col < _data.Columns.Count; _col++)
+                {
+                    _fields.Add(_row[_col].ToString());
+                }
+
+                if (IDField < 0)
+                {
+                    _id = _curIndex; // No ID fields in list. ID is the row number, starting with 0.
+                }
+                else if (!int.TryParse(_fields[IDField], out _id))
+                {
+                    _id = _lastID + 1; // Bad or missing ID field. Make it the last one we know about plus one.
+
+                    _fields[IDField] = _id.ToString(); // Make sure it's reflected in the Items[] array as well.
+                }
+
+                if (_id < StartingID)
+                {
+                    StartingID = _id;
+                }
+
+                if (_id > HighestID)
+                {
+                    HighestID = _id;
+                }
+
+                if (NickField >= 0)
+                {
+                    IDFromNick[_fields[NickField].ToLower()] = _id;
+                }
+
+                Items[_id] = _fields.ToArray();
+
+                _lastID = _id;
+                _curIndex++;
+            }
+
+            return true;
+        }
+
         public bool ReloadIfChanged()
         {
-            DateTime _fileTime = new FileInfo(ListPath + MyFilename).LastWriteTimeUtc;
-
-            if (_fileTime != LastUpdated)
+            if (GetLastUpdateTime() != LastUpdated)
             {
-                Load();
+                if (SourceTable == null)
+                {
+                    Load();
+                }
+                else
+                {
+                    LoadDB();
+                }
 
                 return true;
             }
 
             return false;
+        }
+
+        public DateTime GetLastUpdateTime()
+        {
+            if (SourceTable == null)
+            {
+                return new FileInfo(ListPath + Source).LastWriteTimeUtc;
+            }
+            else
+            {
+                string _dbName = (string)HttpContext.Current.Session["DBServerDatabase"];
+
+                //return (DateTime)DB.GetDataValue("SELECT UPDATE_TIME FROM information_schema.tables WHERE TABLE_SCHEMA='{0}' AND TABLE_NAME='{1}';".Replace("{0}", _dbName).Replace("{1}", SourceTable));
+
+                object _time = DB.GetDataValue("SELECT UPDATE_TIME FROM information_schema.tables WHERE TABLE_SCHEMA='{0}' AND TABLE_NAME='{1}';".Replace("{0}", _dbName).Replace("{1}", SourceTable));
+
+                DateTime _datetime;
+                
+                if (_time == null)
+                {
+                    _datetime = new DateTime(0);
+                }
+                else
+                {
+                    if (!DateTime.TryParse(_time.ToString(), out _datetime))
+                    {
+                        _datetime = new DateTime(0);
+                    }
+                }
+                
+                return _datetime;
+            }
         }
 
         public int Count { get { return (HighestID + 1 - StartingID); } }
@@ -456,7 +616,7 @@ namespace EQArchitect
 
         public int LastID { get { return HighestID; } }
 
-        public string Filename { get { return MyFilename; } }
+        public string Filename { get { return Source; } }
 
         public string Field(int ID, string FieldName)
         {

@@ -39,7 +39,7 @@ namespace EQArchitect
             {
                 Session["DBServerName"] = "(Demo)";
                 Session["DBServerPort"] = "(Default)";
-                Session["DBServerDatabase"] = "(Default)";
+                Session["DBServerDatabase"] = "eqademo";
                 Session["DBServerUsername"] = "(Default)";
                 Session["DBServerPasswordBlank"] = "(Default)";
                 Session["DBServerPassword"] = "";

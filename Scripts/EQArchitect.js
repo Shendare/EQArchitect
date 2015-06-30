@@ -1,6 +1,7 @@
 ﻿
 // For debugging, should be false to catch errors. Can decide when live whether to show or not.
 var EQA_HideErrors = false;
+var RootPath = '/EQArchitect/';
 
 var Backups = {};
 
@@ -306,6 +307,41 @@ function matchFieldToList(field, list)
             _field.value = _value;
         }
     }
+}
+
+function MakeGetURL(Path)
+{
+    return RootPath + "/Get/" + Path;
+}
+
+function RequestData(URL, DataKey, HandlerFunction)
+{
+    $.ajax({
+        url: URL,
+        type: "GET",
+        async: true,
+        success: function (result)
+        {
+            var _comment = result.indexOf("<!--");
+            if (_comment >= 0)
+            {
+                result = result.substr(0, _comment); // Strip debug Page Rendered in X seconds HTML comment if present.
+            }
+            
+            if (HandlerFunction)
+            {
+                HandlerFunction(DataKey, result);
+            }
+            else if (DataReceived)
+            {
+                DataReceived(DataKey, result);
+            }
+            else if (!EQA_HideErrors)
+            {
+                alert("RequestData: No DataReceived function found for handling DataKey " + DataKey + "!");
+            }
+        }
+    });
 }
 
 // Example URLs:

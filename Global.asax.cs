@@ -21,7 +21,10 @@ namespace EQArchitect
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             HttpContext.Current.Items["renderStartTime"] = DateTime.Now;
-            
+        }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
             EQInfo.CheckLists();
         }
 

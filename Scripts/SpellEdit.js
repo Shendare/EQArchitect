@@ -264,13 +264,24 @@ function Effect_Cancel()
     return false;
 }
 
+function SpellEdit_ReceiveData(DataKey, Data)
+{
+    switch (DataKey)
+    {
+        case "SummonItemEffect":
+            el("EffectData").value = Data;
+            el("EffectPreview").innerHTML = GetEffectDescription("", el("DurFormulaActual").value != "0", SelectedValue("EffectPreviewLevel"));
+            break;
+    }
+}
+
 function Effect_Changed()
 {
     switch (el("EffectID").value)
     {
         case "32": // Summon Item
-            FillFieldWithRequest("ItemName/" + el(EffectField_Base).value, el("EffectData"))
-            break;
+            RequestData(MakeGetURL("ItemName/" + el(EffectField_Base).value), "SummonItemEffect", SpellEdit_ReceiveData);
+            return;
     }
 
     el("EffectPreview").innerHTML = GetEffectDescription("", el("DurFormulaActual").value != "0", SelectedValue("EffectPreviewLevel"));

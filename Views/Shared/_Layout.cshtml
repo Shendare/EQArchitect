@@ -41,7 +41,6 @@
     <div class="container body-content">
         @RenderBody()
     </div>
-    <span id="web-developer-element-information-toolbar" style="display:none;"></span>
 
     <div id="DBConnection" class="Status@((DB.ConnectionGood()) ? "OK" : "Bad")" title="@(Session["DBServerHelp"])">
         <a href="~/Connect"><img src="/EQArchitect/icons/database.png" width="20" height="20" border="0" style="margin-right:8px;" />@(Session["DBServerName"])</a>
