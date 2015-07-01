@@ -207,13 +207,11 @@ function PopulateDropdownList(DropdownListName, EQList, SelectedValue, IDField, 
         _textFieldIndex = (_fieldNames.length < 2) ? 0 : 1;
     }
 
-    //alert(DropdownListName + "[" + IDField + "] == \"" + TextField + "\"");
-
     var _curIndex = 0;
 
     Object.keys(EQList).forEach(function (_id)
     {
-        if ((TypeFilter == null) || ((_typeFieldIndex >= 0) && (EQList[_id][_typeFieldIndex] == TypeFilter)))
+        if (("0123456789".indexOf(_id[0]) >= 0) && ((TypeFilter == null) || ((_typeFieldIndex >= 0) && (EQList[_id][_typeFieldIndex] == TypeFilter))))
         {
             var _value = EQList[_id][_textFieldIndex];
             
