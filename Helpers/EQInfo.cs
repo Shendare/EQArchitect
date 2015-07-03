@@ -561,6 +561,11 @@ namespace EQArchitect
 
         public bool ReloadIfChanged()
         {
+            if (SourceTable != null)
+            {
+                return false; // Don't hit against the database for list updates with every page view. Better to manually run EQList.LoadDB() when changes are made.
+            }
+            
             if (GetLastUpdateTime() != LastUpdated)
             {
                 if (SourceTable == null)
