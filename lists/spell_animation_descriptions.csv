@@ -108,7 +108,7 @@
 120,F,Embers completely fill area
 121,L,"Blue/purple steam, white lights surround head"
 122,F,Fire consumes torso
-123,O,Tenth Anniversary Fireworks
+123,W,Tenth Anniversary Fireworks
 124,X,Evocation Sound Effect 1
 125,X,Evocation Sound Effect 1
 126,X,Evocation Sound Effect 1
@@ -151,7 +151,7 @@
 165,P,"Pink/yellow lights around head, yellow acid, black bubbles"
 166,D,Bone ring around torso
 167,X,Alteration Sound Effect 2
-168,O,Eleventh Anniversary Fireworks
+168,W,Eleventh Anniversary Fireworks
 169,N,"Rock tornado, pink light, purple smoke"
 170,G,Pink/green smoke and black insects at feet
 171,T,Dark portal
@@ -305,9 +305,72 @@
 322,L,Orange smoke lights rise
 323,L,Pink-blue smoke lights rise
 324,M,Blue notes and sparkles around caster's and target's heads
-332,M,Red notes swirling (12s)
-333,M,White notes swirling (12s)
-334,M,Blue notes swirling (12s)
+332,M,Red notes swirling
+333,M,White notes swirling
+334,M,Blue notes swirling
 335,M,Green notes and skulls swirling
 336,M,"Red and white notes, blue stars"
 337,M,Red/green notes and white skulls rise
+338,M,Red notes rising
+339,M,White notes rising
+340,M,Blue notes rising
+341,M,Green notes and skulls rising
+342,M,Red/White/Blue notes with blue sparkles
+343,S,Pink and green sparkles surround head
+344,M,"Black notes, white skulls"
+345,M,Blue swirling notes
+346,-,None
+347,M,Green notes swirl around feet
+348,M,Blue notes surround feet
+349,D,Black smoky haze
+350,U,Blue smoky haze
+351,N,Brown smoky haze
+352,P,Dark green smoky haze
+353,L,Light green smoky haze
+354,D,Black smoky haze with white skulls
+355,L,Bright red smoky haze
+356,L,White smoky haze
+357,W,Super long delayed blue sparkles fall from sky
+358,W,Long delayed falling confetti lights
+359,W,Delayed falling lights and aura
+360,W,Long delayed falling blue sparkles
+361,W,Delayed falling confetti lights
+362,-,None
+363,S,"Green steam on caster, stars falling from sky"
+364,W,Starry fireworks
+365,W,Falling stars
+366,W,Starry fireworks
+367,W,"Starry fireworks, delayed blue swirling stars"
+368,R,Icy mist around caster
+369,R,Sparkling flames around caster
+370,T,Portal to Akanon
+371,T,Portal to Erudin
+372,T,Portal to Felwithe
+373,T,Portal to Freeport
+374,T,Portal to Kelethin
+375,T,Portal to Halas
+376,T,Portal to Kaladim
+377,T,Portal to Neriak
+378,T,Portal to Oggok
+379,T,Portal to the Plane of Knowledge
+380,T,Portal to Qeynos
+381,T,Portal to Rivervale
+382,T,Portal to Shar Vahl
+383,T,Portal to Grobb
+384,T,Portal to Cabilis
+385,T,Portal to Dranik's Scar
+386,R,Dizzy stars swirling over head
+387,R,Sleepy Z's swirling over head
+388,-,None
+389,R,Green bubbles up around head
+390,R,Little black smoke clouds fall from torso
+391,R,Black spots and blue skulls around head
+392,R,Green and brown dust cloud at feet
+393,R,Laughing blue skull and crossbones above head
+394,R,Bright red smoke falling from torso
+395,R,Red sparkles flash around head
+396,R,Putrid green filth rises around feet
+397,R,Purple sparkles emanate from head
+398,-,None
+399,-,None
+400,R,Yellow-blue gaseous flame from torso
