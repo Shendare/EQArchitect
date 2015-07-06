@@ -150,8 +150,8 @@
 164,E,Focused neural lightning storm
 165,P,"Pink/yellow lights around head, yellow acid, black bubbles"
 166,D,Bone ring around torso
-167,X,Alteration Sound Effect 2
-168,W,Eleventh Anniversary Fireworks
+167,W,Eleventh Anniversary Fireworks
+168,O,Mistmoore's face and teleportation sound effect
 169,N,"Rock tornado, pink light, purple smoke"
 170,G,Pink/green smoke and black insects at feet
 171,T,Dark portal
@@ -335,12 +335,12 @@
 359,W,Delayed falling lights and aura
 360,W,Long delayed falling blue sparkles
 361,W,Delayed falling confetti lights
-362,-,None
+362,W,Delayed starry firework blossoms
 363,S,"Green steam on caster, stars falling from sky"
 364,W,Starry fireworks
 365,W,Falling stars
 366,W,Starry fireworks
-367,W,"Starry fireworks, delayed blue swirling stars"
+367,W,"Starry fireworks, blue swirling stars"
 368,R,Icy mist around caster
 369,R,Sparkling flames around caster
 370,T,Portal to Akanon
@@ -373,4 +373,104 @@
 397,R,Purple sparkles emanate from head
 398,-,None
 399,-,None
-400,R,Yellow-blue gaseous flame from torso
+400,R,Yellow-purple gaseous flame from torso
+401,R,White bubbles floating around head
+402,-,None
+403,R,Yellow gaseous flame in torso
+404,-,None
+405,R,Bubbles rising up around feet
+406,R,Little white sparkles
+407,-,None
+408,R,Star glowing above head
+409,-,None
+410,-,Hand sparkles, rising blue bubbles
+411,R,Rising white bubbles
+412,R,Light blue aura, white sparkles
+413,R,Blue aura inside caster
+414,R,Subtle star glowing inside caster's torso
+415,R,Orange clouds emanating from caster's hands
+416,-,None
+417,-,None
+418,-,None
+419,-,None
+420,-,None
+421,-,None
+422,-,None
+423,-,None
+424,-,None
+425,-,None
+426,T,Silent portal gate
+427,-,None
+428,-,None
+429,-,None
+430,-,None
+431,-,None
+432,-,None
+433,-,None
+434,D,Black smoke on ground, white around caster
+435,-,None
+436,C,Pink glow and green sparkles around caster's hands
+437,X,Alteration Sound Effect 3
+438,X,Alteration Sound Effect 3
+439,C,Blue summoning circle under caster
+440,C,Brown summoning circle under caster
+441,C,Green summoning circle under caster
+442,C,Red summoning circle under caster
+443,C,White summoning circle under caster
+444,C,Black smoke emanating from caster's hands
+445,R,Gnomish balloon appears above caster and ropes lower down
+446,P,Putrid green cloud with black insects
+447,C,Pillar of flames around caster
+448,C,Blue cloud and lightning around caster
+449,-,None
+450,R,Hearts rise up and swirl around caster
+451,R,Black cloud around caster's torso and feet
+452,R,Raincloud and rain on caster
+453,R,Cloak of leaves surrounds caster
+454,R,Light blue wisps bubble around caster
+455,R,Blue and white cross glows from caster
+456,R,Jester hats and spinning coins surround caster
+457,R,Air tornado envelops caster with white cloud beneath
+458,R,Circle of clear blue water surrounds caster
+459,R,Blue crystals surround caster's hands and feet
+460,R,Red crystals surround caster's hands and feet
+461,R,Ice clouds billow from caster's hands and feet
+462,R,Flames rise from caster's torso and hands
+463,R,Red and blue crystals and smoke emanate from caster
+464,R,Black and red veins flash around caster
+465,R,Black clock/compass spins around caster
+466,R,Blood spikes jut out from caster and drip down
+467,R,Pink glowing symbol on caster
+468,R,Bladed orbs spin and swirl around caster
+469,R,Caster's hands glow with fire and white smoke rises
+470,R,Black crystals and smoke at caster's feet
+471,R,Column of swirling air rises up around caster
+472,R,Caster's hands glow with black and blue smoke
+473,R,Caster's feet burn with flickering flames
+474,R,Column of water around caster with black particles
+475,R,Clovers and dandelions sprout up around caster's feet
+476,R,Stormcloud forms over caster and rain falls
+477,R,Stormcloud forms over caster and snow falls
+478,R,Stormcloud forms over caster and lightning strikes
+479,C,Caster flips a gold coin
+480,W,Yellow/red/green sparkling firework
+481,W,Yellow/white sparkling firework
+482,W,Yellow streaming firework
+483,W,White and blue sparkling firework
+484,W,Firework of Bertoxxulous
+485,W,Firework of Cazic-Thule
+486,W,Firework of Karana
+487,W,Firework of Mithaniel Marr
+488,W,Firework of Rallos Zek
+489,W,Firework of Veeshan
+490,W,Firework of Brell Serilis
+491,W,Firework of Prexus
+492,W,Firework of the Tribunal
+493,W,Firework of Quellious
+494,W,Firework of Rodcet Nife
+495,W,Firework of Tunare
+496,W,Firework of Solusek Ro
+497,W,Firework of Innoruuk
+498,W,Firework of Bristlebane
+499,W,Firework of Erollisi Marr
+500,W,Firework of History
