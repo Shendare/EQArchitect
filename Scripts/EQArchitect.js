@@ -5,6 +5,8 @@ var RootPath = '/EQArchitect/';
 
 var Backups = {};
 
+var ItemInfo = {};
+
 function BackupField(Field)
 {
     var _el = el(Field);
@@ -311,7 +313,7 @@ function matchFieldToList(field, list)
 
 function MakeGetURL(Path)
 {
-    return RootPath + "/Get/" + Path;
+    return RootPath + "Get/" + Path;
 }
 
 function RequestData(URL, DataKey, HandlerFunction)
@@ -322,12 +324,6 @@ function RequestData(URL, DataKey, HandlerFunction)
         async: true,
         success: function (result)
         {
-            var _comment = result.indexOf("<!--");
-            if (_comment >= 0)
-            {
-                result = result.substr(0, _comment); // Strip debug Page Rendered in X seconds HTML comment if present.
-            }
-            
             if (HandlerFunction)
             {
                 HandlerFunction(DataKey, result);
@@ -340,48 +336,6 @@ function RequestData(URL, DataKey, HandlerFunction)
             {
                 alert("RequestData: No DataReceived function found for handling DataKey " + DataKey + "!");
             }
-        }
-    });
-}
-
-// Example URLs:
-//
-// SpellName/99917
-// ItemName/1001
-function FillElementWithRequest(URL, Element)
-{
-    $.ajax({
-        url: SpellRootPath + "/Get/" + URL,
-        type: "GET",
-        async: false,
-        context: Element,
-        success: function (result)
-        {
-            var _comment = result.indexOf("<!--");
-            if (_comment >= 0)
-            {
-                result = result.substr(0, _comment);
-            }
-            this.innerHTML = result;
-        }
-    });
-}
-
-function FillFieldWithRequest(URL, Element)
-{
-    $.ajax({
-        url: SpellRootPath + "/Get/" + URL,
-        type: "GET",
-        async: false,
-        context: Element,
-        success: function (result)
-        {
-            var _comment = result.indexOf("<!--");
-            if (_comment >= 0)
-            {
-                result = result.substr(0, _comment);
-            }
-            this.value = result;
         }
     });
 }
@@ -412,4 +366,46 @@ function CopyIDsToNames(FormName)
                 break;
         }
     }
+}
+
+function GetItemInfo(ItemID, DataKey, HandlerFunction)
+{
+    if (ItemInfo[ItemID])
+    {
+        if (HandlerFunction)
+        {
+            HandlerFunction(DataKey, ItemID, ItemInfo[ItemID]);
+        }
+        else if (!EQA_HideErrors)
+        {
+            alert("GetItemInfo: No handler function specified for ItemID " + ItemID + "!");
+        }
+
+        return;
+    }
+
+    $.ajax({
+        url: MakeGetURL("ItemInfo/" + ItemID),
+        type: "GET",
+        async: true,
+        success: function (result)
+        {
+            var _fields = result.split('|');
+
+            ItemInfo[ItemID] = {};
+
+            ItemInfo[ItemID].ID   = (_fields.length > 0) ? _fields[0] : "";
+            ItemInfo[ItemID].Name = (_fields.length > 1) ? _fields[1] : "";
+            ItemInfo[ItemID].Icon = (_fields.length > 2) ? _fields[2] : "";
+
+            if (HandlerFunction)
+            {
+                HandlerFunction(DataKey, ItemID, ItemInfo[ItemID]);
+            }
+            else if (!EQA_HideErrors)
+            {
+                alert("GetItemInfo: No handler function specified for ItemID " + ItemID + "!");
+            }
+        }
+    });
 }

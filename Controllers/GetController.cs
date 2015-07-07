@@ -44,6 +44,35 @@ namespace EQArchitect.Controllers
             return _name;
         }
 
+        public string ItemInfo(object ID)
+        {
+            EQArchitect.MvcApplication.NotReturningHTML();
+            
+            int _id = DB.ToInt(ID);
+
+            StringBuilder _result = new StringBuilder();
+
+            _result.Append(_id);
+            _result.Append('|');
+            
+            string _itemName = EQInfo.ItemNamesAndIcons.Field(_id, "name");
+
+            if (_itemName == "")
+            {
+                _result.Append("Unknown Item # ");
+                _result.Append(_id);
+            }
+            else
+            {
+                _result.Append(_itemName);
+            }
+
+            _result.Append('|');
+            _result.Append(EQInfo.ItemNamesAndIcons.Number(_id, "icon"));
+
+            return _result.ToString();
+        }
+
         public string RaceName(object ID)
         {
             EQArchitect.MvcApplication.NotReturningHTML();

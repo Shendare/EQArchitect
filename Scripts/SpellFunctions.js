@@ -565,6 +565,16 @@ function GetEffectFormulaDescription(formula, base, limit, max, divisor, unitsuf
     return _prefix + GetEffectFormulaText(_value1, _min, _value2, _max, unitsuffix) + _suffix;
 }
 
+function GetEffectDetails(DataKey, ID, Details)
+{
+    if (DataKey.substr(0, 17) == "SpellEffect32Slot")
+    {
+        var _slot = DataKey.substr(17);
+
+        el("TextEffect" + _slot).innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + ID + "\" target=\"blank\"><img src=\"" + RootPath + "itemicons/" + Details.Icon + ".gif\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
+    }
+}
+
 function GetEffectDescription(slot, spellhasduration, leveloverride)
 {
     var effid = el(EffectField_ID + slot).value * 1;
@@ -689,7 +699,9 @@ function GetEffectDescription(slot, spellhasduration, leveloverride)
         case 31: // Mez
             return effname + " Up to Level " + effmax + " (" + effbase + " Attempts)";
         case 32: // Summon Item
-            return effname + " <a href=\"/EQArchitect/Items/" + effbase + "\" target=\"blank\">" + effdata + "</a>";
+            GetItemInfo(effbase, "SpellEffect32Slot" + slot, GetEffectDetails);
+
+            return effname + " <a href=\"/EQArchitect/Items/" + effbase + "\" target=\"blank\">" + ((effdata == "") ? "Item # " + effbase : effdata) + "</a>";
         case 33: // Summon Mage Pet
         case 71: // Summon Necromancer Pet
         case 106: // Summon Beastlord Pet

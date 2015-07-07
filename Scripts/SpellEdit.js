@@ -264,13 +264,14 @@ function Effect_Cancel()
     return false;
 }
 
-function SpellEdit_ReceiveData(DataKey, Data)
+function SpellEdit_ReceiveData(DataKey, Data, Details)
 {
     switch (DataKey)
     {
         case "SummonItemEffect":
-            el("EffectData").value = Data;
-            el("EffectPreview").innerHTML = GetEffectDescription("", el("DurFormulaActual").value != "0", SelectedValue("EffectPreviewLevel"));
+            el("EffectData").value = Details.Name;
+            el("EffectPreview").innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + Details.ID + "\" target=\"blank\"><img src=\"" + RootPath + "itemicons/" + Details.Icon + ".gif\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
+
             break;
     }
 }
@@ -280,7 +281,7 @@ function Effect_Changed()
     switch (el("EffectID").value)
     {
         case "32": // Summon Item
-            RequestData(MakeGetURL("ItemName/" + el(EffectField_Base).value), "SummonItemEffect", SpellEdit_ReceiveData);
+            GetItemInfo(el(EffectField_Base).value, "SummonItemEffect", SpellEdit_ReceiveData);
             return;
     }
 
