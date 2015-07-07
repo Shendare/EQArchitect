@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Compression;
-using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,6 +18,8 @@ namespace EQArchitect.Controllers
 
         public string SpellName(object ID)
         {
+            EQArchitect.MvcApplication.NotReturningHTML();
+
             string _name = DB.GetText("SELECT name FROM spells_new WHERE id=" + DB.ToInt(ID).ToString());
 
             if (_name == "")
@@ -30,6 +32,8 @@ namespace EQArchitect.Controllers
 
         public string ItemName(object ID)
         {
+            EQArchitect.MvcApplication.NotReturningHTML();
+
             string _name = DB.GetText("SELECT name FROM items WHERE id=" + DB.ToInt(ID).ToString());
 
             if (_name == "")
@@ -42,11 +46,15 @@ namespace EQArchitect.Controllers
 
         public string RaceName(object ID)
         {
+            EQArchitect.MvcApplication.NotReturningHTML();
+
             return EQInfo.Races.Name(DB.ToInt(ID));
         }
 
         public ActionResult EQInfoJS()
         {
+            EQArchitect.MvcApplication.NotReturningHTML();
+
             // Cache the Javascript if no changes have been made to any of the information in it since the last call.
 
             string _modifiedHeader = Request.Headers["If-Modified-Since"];

@@ -28,11 +28,19 @@ namespace EQArchitect
             EQInfo.CheckLists();
         }
 
+        public static void NotReturningHTML()
+        {
+            HttpContext.Current.Items["renderStartTime"] = "";
+        }
+
         protected void Application_EndRequest(object sender, EventArgs e)
         {
-            DateTime start = (DateTime)HttpContext.Current.Items["renderStartTime"];
-            TimeSpan renderTime = DateTime.Now - start;
-            HttpContext.Current.Response.Write("<!-- Page Rendered At: " + DateTime.Now.ToUniversalTime().ToString("R") + ", Render Time: " + renderTime + " -->");
+            if (HttpContext.Current.Items["renderStartTime"] != "")
+            {
+                DateTime start = (DateTime)HttpContext.Current.Items["renderStartTime"];
+                TimeSpan renderTime = DateTime.Now - start;
+                HttpContext.Current.Response.Write("<!-- Page Rendered At: " + DateTime.Now.ToUniversalTime().ToString("R") + ", Render Time: " + renderTime + " -->");
+            }
         }
 
         protected void Application_PostRequestHandlerExecute(object sender, EventArgs e)
