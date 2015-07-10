@@ -30,12 +30,12 @@ namespace EQArchitect
 
         public static void NotReturningHTML()
         {
-            HttpContext.Current.Items["renderStartTime"] = "";
+            HttpContext.Current.Items["renderStartTime"] = null;
         }
 
         protected void Application_EndRequest(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Items["renderStartTime"] != "")
+            if (HttpContext.Current.Items["renderStartTime"] != null)
             {
                 DateTime start = (DateTime)HttpContext.Current.Items["renderStartTime"];
                 TimeSpan renderTime = DateTime.Now - start;
