@@ -18,8 +18,6 @@
     
     // TODO: Finish adding spell particle/animation videos
     
-    // TODO: Change Spell Icons to Sprite Tiles from latest Live game files
-    
     // TODO: Implement remaining fields
     
     // TODO: Add item rendering to EQInfo.js
@@ -64,6 +62,11 @@
             {
                 MaxLevel = @(EQInfo.MaxLevel);
                 SpellRootPath = rootPath;
+
+                for (var _r = 1; _r <= 8; _r++)
+                {
+                    UpdateReagent(_r);
+                }
 
                 DDL("SkillList", Skills, el("Skill").value);
                 DDL("CategoryList", SpellCategories, el("Category").value);
@@ -299,6 +302,19 @@
                         <option value="24"@(Spell.IntField("environmenttype") == 24 ? " selected" : "")>Teleportation Allowed (24)</option>
                     </select>
                     @Html.Label("Deleteable", "Deleteable:", new { @class = "Xa5 Ya5" }) @Html.CheckBox("Deleteable", Spell.IntField("Deleteable") != 0, new { @class="form-control Xa6 Ya5" })
+
+                    @Html.TextBox("ReagentID1", Spell.TextField("components1"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID2", Spell.TextField("components2"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID3", Spell.TextField("components3"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID4", Spell.TextField("components4"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID5", Spell.TextField("NoexpendReagent1"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID6", Spell.TextField("NoexpendReagent2"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID7", Spell.TextField("NoexpendReagent3"), new { @class = "HiddenField" })
+                    @Html.TextBox("ReagentID8", Spell.TextField("NoexpendReagent4"), new { @class = "HiddenField" })
+                    @Html.Label("Reagent1", "Reagent 1:", new { @class = "Xa1 Ya7 Z1" }) <span id="Reagent1" class="form-control TextField Xa2 Ya7 Z2" title="Item required in order to cast spell"></span> <button id="ButtonReagent1" class="btn btn-default Xa3 Ya7 Z2" onclick="Reagent_Choose(1); return false;">...</button> @Html.Label("ReagentQty1", "Qty:", new { @class = "Xa3 Ya7 Z2" }) @Html.TextBox("ReagentQty1", Spell.TextField("component_counts1"), new { @class = "form-control Xa4 Ya7 Z2 TinyField" }) @Html.Label("Reagent5", "Focus 1:", new { @class = "Xa4 Ya7 Z1" }) <span id="Reagent5" class="form-control TextField Xd4b Ya7 Z2" title="Optional item that enhances spell (if same as Reagent, stops it from being consumed)"></span> <button id="ButtonReagent5" class="btn btn-default Xa6 Ya7 Z2" onclick="Reagent_Choose(5); return false;">...</button>
+                    @Html.Label("Reagent2", "Reagent 2:", new { @class = "Xa1 Ya8 Z1" }) <span id="Reagent2" class="form-control TextField Xa2 Ya8 Z2" title="Item required in order to cast spell"></span> <button id="ButtonReagent2" class="btn btn-default Xa3 Ya8 Z2" onclick="Reagent_Choose(2); return false;">...</button> @Html.Label("ReagentQty2", "Qty:", new { @class = "Xa3 Ya8 Z2" }) @Html.TextBox("ReagentQty2", Spell.TextField("component_counts2"), new { @class = "form-control Xa4 Ya8 Z2 TinyField" }) @Html.Label("Reagent6", "Focus 2:", new { @class = "Xa4 Ya8 Z1" }) <span id="Reagent6" class="form-control TextField Xd4b Ya8 Z2" title="Optional item that enhances spell (if same as Reagent, stops it from being consumed)"></span> <button id="ButtonReagent6" class="btn btn-default Xa6 Ya8 Z2" onclick="Reagent_Choose(6); return false;">...</button>
+                    @Html.Label("Reagent3", "Reagent 3:", new { @class = "Xa1 Ya9 Z1" }) <span id="Reagent3" class="form-control TextField Xa2 Ya9 Z2" title="Item required in order to cast spell"></span> <button id="ButtonReagent3" class="btn btn-default Xa3 Ya9 Z2" onclick="Reagent_Choose(3); return false;">...</button> @Html.Label("ReagentQty2", "Qty:", new { @class = "Xa3 Ya9 Z2" }) @Html.TextBox("ReagentQty3", Spell.TextField("component_counts3"), new { @class = "form-control Xa4 Ya9 Z2 TinyField" }) @Html.Label("Reagent7", "Focus 3:", new { @class = "Xa4 Ya9 Z1" })    <span id="Reagent7" class="form-control TextField Xd4b Ya9 Z2" title="Optional item that enhances spell (if same as Reagent, stops it from being consumed)"></span> <button id="ButtonReagent7" class="btn btn-default Xa6 Ya9 Z2" onclick="Reagent_Choose(7); return false;">...</button>
+                    @Html.Label("Reagent4", "Reagent 4:", new { @class = "Xa1 Ya10 Z1" }) <span id="Reagent4" class="form-control TextField Xa2 Ya10 Z2" title="Item required in order to cast spell"></span> <button id="ButtonReagent4" class="btn btn-default Xa3 Ya10 Z2" onclick="Reagent_Choose(4); return false;">...</button> @Html.Label("ReagentQty2", "Qty:", new { @class = "Xa3 Ya10 Z2" }) @Html.TextBox("ReagentQty4", Spell.TextField("component_counts4"), new { @class = "form-control Xa4 Ya10 Z2 TinyField" }) @Html.Label("Reagent8", "Focus 4:", new { @class = "Xa4 Ya10 Z1" }) <span id="Reagent8" class="form-control TextField Xd4b Ya10 Z2" title="Optional item that enhances spell (if same as Reagent, stops it from being consumed)"></span> <button id="ButtonReagent8" class="btn btn-default Xa6 Ya10 Z2" onclick="Reagent_Choose(8); return false;">...</button>
 
                     @Html.Label("NoPartRes", "No Part Resist:", new { @class = "Xa5 Ya6" }) @Html.CheckBox("NoPartRes", Spell.IntField("NoPartRes") != 0, new { @class = "form-control Xa6 Ya6", title = "Do not allow this spell to be partially resisted. All or nothing." })
                 </div>

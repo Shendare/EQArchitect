@@ -68,7 +68,10 @@ namespace EQArchitect.Controllers
             }
 
             _result.Append('|');
-            _result.Append(EQInfo.ItemNamesAndIcons.Number(_id, "icon"));
+
+            int _icon = EQInfo.ItemNamesAndIcons.Number(_id, "icon");
+
+            _result.Append((_icon < 500) ? -1 : _icon);
 
             return _result.ToString();
         }

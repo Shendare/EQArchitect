@@ -106,7 +106,7 @@ select.form-control
     padding:0 0 0 2px;
 }
 
-input[type=text].form-control
+input[type=text].form-control, span.form-control
 {
     width:200px;
     height:24px;

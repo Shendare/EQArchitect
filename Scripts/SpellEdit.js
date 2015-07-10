@@ -476,3 +476,27 @@ function Animation_Choose(Type)
 
     return false;
 }
+
+function UpdateReagent(Slot, ItemID, ItemInfo)
+{
+    if ((ItemID == undefined) && (ItemInfo == undefined))
+    {
+        GetItemInfo(el("ReagentID" + Slot).value, Slot, UpdateReagent);
+    }
+    else
+    {
+        if ((ItemID * 1) < 1001)
+        {
+            el("Reagent" + Slot).innerHTML = "None (" + ItemID + ")";
+        }
+        else
+        {
+            el("Reagent" + Slot).innerHTML = "<a href=\"" + RootPath + "Items/" + ItemID + "\"><img src=\"" + RootPath + "icons/" + ItemInfo.Icon + ".png\" width=\"20\" height=\"20\" /> " + ItemInfo.Name + "</a>";
+        }
+    }
+}
+
+function Reagent_Choose(Slot)
+{
+    return false;
+}
