@@ -571,7 +571,7 @@ function GetEffectDetails(DataKey, ID, Details)
     {
         var _slot = DataKey.substr(17);
 
-        el("TextEffect" + _slot).innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + ID + "\" target=\"blank\"><img src=\"" + RootPath + "itemicons/" + Details.Icon + ".gif\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
+        el("TextEffect" + _slot).innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + ID + "\" target=\"blank\"><img src=\"" + RootPath + "icons/" + Details.Icon + ".png\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
     }
 }
 

@@ -6,7 +6,7 @@
     int CurIcon = Spell.IntField("new_icon");
 
     ViewBag.Title = "[" + Spell.TextField("id") + "] " + Spell.TextField("name") + " - " + (Spell.ClassName + " Spells").TrimStart();
-    ViewBag.Icon = "icons/" + CurIcon + ".gif";
+    ViewBag.Icon = "icons/" + CurIcon + ".png";
 
     ViewBag.HtmlAttrib = "onclick=\"Windows_CloseAll(event);\"";
 
@@ -119,7 +119,7 @@
 <table>
     <tr>
         <td align="center">
-            <h2 id="HeaderBlock" class="jumbotron"><img id="HeaderSpellIcon" src="~/icons/@(CurIcon).gif" width="44" height="44" class="@(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" /> [ @Spell.TextField("id") ] <span id="HeaderSpellName">@Spell.TextField("name")</span></h2>
+            <h2 id="HeaderBlock" class="jumbotron"><img id="HeaderSpellIcon" src="~/icons/@(CurIcon).png" width="44" height="44" class="@(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" /> [ @Spell.TextField("id") ] <span id="HeaderSpellName">@Spell.TextField("name")</span></h2>
         </td>
     </tr>
     <tr>
@@ -148,7 +148,7 @@
 
                     @Html.Label("TargetTypeList", "Target:", new { @class = "Xa1 Ya2" }) @Html.TextBox("TargetType", Spell.TextField("targettype"), new { @class = "HiddenField" }) <select id="TargetTypeList" class="form-control Xa2 Ya2" onchange="matchFieldToList('TargetType', this.id);"></select>
                     @Html.Label("SkillList", "Skill:", new { @class = "Xa3 Ya2" }) @Html.TextBox("Skill", Spell.TextField("skill"), new { @class = "HiddenField" }) <select id="SkillList" class="form-control Xa4 Ya2" onchange="matchFieldToList('Skill', this.id);"></select>
-                    @Html.Label("SpellIcon", "Icon:", new { @class = "Xa5 Ya2" }) <img id="SpellIcon" src="~/icons/@(CurIcon).gif" class="Xa6 Ya1 @(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" width="44" height="44" onclick="SpellIcon_Choose();" />
+                    @Html.Label("SpellIcon", "Icon:", new { @class = "Xa5 Ya2" }) <img id="SpellIcon" src="~/icons/@(CurIcon).png" class="Xa6 Ya1 @(Spell.IntField("goodEffect") == 0 ? "DetSpell" : "BenSpell")" width="44" height="44" onclick="SpellIcon_Choose();" />
 
                     @Html.Label("IsBenList", "Beneficial:", new { @class = "Xa1 Ya3" }) @Html.TextBox("IsBen", Spell.RawField("goodEffect"), new { @class = "HiddenField" }) <select id="IsBenList" class="form-control Xa2 Ya3" onchange="Beneficial_Changed();" onkeyup="Beneficial_Changed();"></select>
 
@@ -360,11 +360,11 @@
 
                 <div id="SpellIcons">
                     <div class="Header">Spell Icon Chooser</div>
-                    @for (int _i = -1; _i < 299; _i++)
+                    @for (int _i = -1; _i < 500; _i++)
                     {
-                        if (System.IO.File.Exists(RootPath + "icons/" + _i.ToString() + ".gif"))
+                        if (System.IO.File.Exists(RootPath + "icons/" + _i.ToString() + ".png"))
                         {
-                            <img id="SpellIcon_@(_i)" src="~/icons/@(_i).gif" onclick="SpellIcon_Apply(@(_i));" title="@(_i)" />
+                            <img id="SpellIcon_@(_i)" src="~/icons/@(_i).png" onclick="SpellIcon_Apply(@(_i));" title="@(_i)" />
                         }
                     }
                 </div>

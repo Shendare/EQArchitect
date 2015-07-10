@@ -47,7 +47,7 @@
                     {
                         <tr>@* <th style="border-right:1px solid black;">@(_curitem++)</th> *@
                             <th>@row["level"]</th>
-                            <td><a href="~/Spells/@(row["id"])@(List.ClassID != 0 ? "/" + List.ClassNick : "")" class="@((int)row["goodEffect"] == 0 ? "DetSpell" : "BenSpell")"><img src="~/icons/@(row["new_icon"]).gif" width="24" height="24" />@row["name"]</a></td>
+                            <td><a href="~/Spells/@(row["id"])@(List.ClassID != 0 ? "/" + List.ClassNick : "")" class="@((int)row["goodEffect"] == 0 ? "DetSpell" : "BenSpell")"><img src="~/icons/@(row["new_icon"]).png" width="24" height="24" />@row["name"]</a></td>
                             <th>@((int)row["mana"] == 0 ? "-" : row["mana"])</th>
                             <th>@EQInfo.Skills.Name((int)row["skill"])</th>
                         </tr>

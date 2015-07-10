@@ -66,9 +66,9 @@ function SpellIcon_Apply(IconNum)
 
         el("SpellIcon_" + IconNum).className = "IconSelected";
 
-        el("HeaderSpellIcon").src = "/EQArchitect/icons/" + IconNum + ".gif";
-        el("SpellIcon").src = "/EQArchitect/icons/" + IconNum + ".gif";
-        el("favicon").href = "/EQArchitect/icons/" + IconNum + ".gif";
+        el("HeaderSpellIcon").src = "/EQArchitect/icons/" + IconNum + ".png";
+        el("SpellIcon").src = "/EQArchitect/icons/" + IconNum + ".png";
+        el("favicon").href = "/EQArchitect/icons/" + IconNum + ".png";
 
         _iconField.value = IconNum;
 
@@ -270,7 +270,7 @@ function SpellEdit_ReceiveData(DataKey, Data, Details)
     {
         case "SummonItemEffect":
             el("EffectData").value = Details.Name;
-            el("EffectPreview").innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + Details.ID + "\" target=\"blank\"><img src=\"" + RootPath + "itemicons/" + Details.Icon + ".gif\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
+            el("EffectPreview").innerHTML = el(EffectListControl).options[32].text + " <a href=\"" + RootPath + "Items/" + Details.ID + "\" target=\"blank\"><img src=\"" + RootPath + "icons/" + Details.Icon + ".png\" width=\"20\" height=\"20\" /> " + Details.Name + "</a>";
 
             break;
     }
